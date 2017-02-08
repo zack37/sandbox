@@ -9,14 +9,14 @@ const times = parseInt(process.argv[2] || 10, 10);
 
 const answers = [...Array(times).keys()].map(fib);
 
-const window = source => windowSize => {
+const window = windowSize => source => {
   return _(source)
-    .map((x, i) => _(source).drop(i).take(windowSize).value())
+    .chunk(3)
     .filter(x => x.length === windowSize)
     .value();
 };
 
-const windows = window(answers)(3);
+const windows = window(3)(answers);
 console.log(times <= 20 ? windows : `Not printing windows because n (${times}) is too large.`);
 let values = [];
 assert(windows.every(([ first, second, sum ]) => {
