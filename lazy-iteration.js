@@ -23,7 +23,7 @@ const filter = predicate => {
 };
 
 const juxt = fns => (...args) => {
-  return map(x => x(...args))(fns);
+  return map(fn => fn(...args))(fns);
 };
 
 const reduce = (fn, start) => source => {
@@ -48,6 +48,10 @@ const join = (separator = ',') => source => {
   return reduced.substring(0, reduced.length - separator.length);
 };
 
+const pipe = (...fns) => init => {
+  return reduce((acc, cur) => cur(acc), init)(fns);
+};
+
 const filterAsReduce = predicate => source => {
   return source.reduce((acc, cur) => predicate(cur) ? acc.concat(cur) : acc, []);
 };
@@ -57,3 +61,5 @@ console.log([...filter(x => x % 2 === 0)([ 1, 2, 3, 4, 5, 6, 7 ])]);
 console.log([...juxt([ Math.min, Math.max ])( -3, 4, 9, 1 )]);
 console.log(filterAsReduce(x => x % 2 === 0)([ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]));
 console.log(join(', ')([ 1, 2, 3, 4, 5, 6, 7 ]), 'plus other stuff');
+const piped = pipe(map(x => x * 2), filter(x => !(x % 3)), join(', '));
+console.log(piped([...Array(100).keys()]));

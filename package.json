@@ -1,11 +1,10 @@
 {
   "name": "projects",
+  "description": "Just some stuff I play with when I get bored or have an idea pop into my head",
   "version": "1.0.0",
-  "description": "",
-  "main": "dynamic_fibonacci.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./*.js"
+  "author": "Zack Smith <zack.t.smith37@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/zack37/sandbox/issues"
   },
   "dependencies": {
     "benchmark": "^2.1.2",
@@ -19,9 +18,22 @@
     "ref-array": "^1.2.0",
     "ref-struct": "^1.1.0"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "eslint": "^3.9.1"
+  },
+  "homepage": "https://github.com/zack37/sandbox#readme",
+  "keywords": [
+    "projects",
+    "sandbox"
+  ],
+  "license": "ISC",
+  "main": "array-mutation-benchmarks.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zack37/sandbox.git"
+  },
+  "scripts": {
+    "lint": "eslint ./*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

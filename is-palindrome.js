@@ -2,7 +2,7 @@ const isPalindrome = str => {
   const stripped = str.toLowerCase().replace(/[^a-z0-9]/ig, '');
   if(stripped.length <= 1) { return true; }
   const length = stripped.length;
-  for(let i = 0; i < Math.ceil(length / 2); i++) {
+  for(let i = 0; i < Math.floor(length / 2); i++) {
     if(stripped[i] !== stripped[length-i-1]) {
       return false;
     }
