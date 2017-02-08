@@ -1,0 +1,7 @@
+[
+  { "name": "Fey Ancestry", "tags": ["advantage", "charm", "charmed", "sleep"], "description": "You have advantage on saving throws against being charmed, and magic cannot put you to sleep." },
+  { "name": "Mask of the Wild", "tags": ["hide"], "description": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena." },
+  { "name": "Expertise", "tags": ["skill", "skills", "proficiency", "proficiencies", "tool", "tools", "bonus"], "description": "Choose 2 skills, double proficiency modifier" },
+  { "name": "Sneak attack", "tags": ["attack", "sneak", "advantage"], "description": "Deal extra damage when you have advantage or an enemy of you enemy is within 5 feet." },
+  { "name": "Cunning Action", "tags": ["bonus", "action", "dash", "disengage", "hide"], "description": "Take bonus action to dash, disengage, or hide" }
+]

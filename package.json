@@ -1,0 +1,27 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dynamic_fibonacci.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./*.js"
+  },
+  "dependencies": {
+    "benchmark": "^2.1.2",
+    "ffi": "^2.2.0",
+    "lodash": "4",
+    "mathjs": "^3.8.0",
+    "observatory": "^1.0.0",
+    "pretty-bytes": "^4.0.2",
+    "ramda": "^0.22.1",
+    "ref": "^1.3.3",
+    "ref-array": "^1.2.0",
+    "ref-struct": "^1.1.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.9.1"
+  }
+}

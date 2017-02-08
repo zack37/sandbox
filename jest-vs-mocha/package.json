@@ -1,0 +1,23 @@
+{
+  "name": "jest-vs-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:mocha; npm run test:jest; npm run test:tape; npm run test:ava",
+    "test:mocha": "mocha sum-mocha.test.js",
+    "test:jest": "jest sum-jest.test.js",
+    "test:tape": "tape sum-tape.test.js | faucet",
+    "test:ava": "ava sum-ava.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "chai": "^3.5.0",
+    "faucet": "0.0.1",
+    "jest-cli": "^17.0.3",
+    "mocha": "^3.2.0",
+    "tape": "^4.6.3"
+  }
+}

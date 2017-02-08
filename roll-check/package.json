@@ -1,0 +1,18 @@
+{
+  "name": "roll-check",
+  "version": "1.0.0",
+  "description": "Look up skills based on my current D&D character",
+  "main": "index.js",
+  "bin": {
+    "roll-check": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zack Smith",
+  "license": "ISC",
+  "dependencies": {
+    "optionator": "^0.8.2",
+    "ramda": "^0.23.0"
+  }
+}

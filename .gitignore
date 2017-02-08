@@ -1,0 +1,11 @@
+node_modules/
+.idea/
+.vscode
+alacritty/
+ffi/
+allmefitness/
+forks/
+franz-plugins/
+motorola/
+rust-flip/
+.DS_Store
