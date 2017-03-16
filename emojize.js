@@ -26,4 +26,4 @@ const result = s
   .split(/\s+/)
   .map(words => words.split('').map(emojize).join(' '))
   .join('   ');
-console.log(result);
+process.stdout.write(result);

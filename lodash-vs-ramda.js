@@ -1,10 +1,11 @@
-const _ = require('lodash');
+const lodash = require('lodash');
+const underscore = require('underscore');
 const benchmarkPrint = require('./benchmark-print');
 const R = require('ramda');
-const { Suite } = require('benchmark');
+const Suite = require('benchmark').Suite;
 const suite = new Suite();
 
-const collection = [...Array(10000).keys()];
+const collection = R.range(1, 10001);
 const mapFunc = x => x*x;
 const filterFunc = x => x % 2 === 0;
 
@@ -13,8 +14,12 @@ R.map(mapFunc, collection);
 console.timeEnd('ramda#map');
 
 console.time('lodash#map');
-_.map(collection, mapFunc);
+lodash.map(collection, mapFunc);
 console.timeEnd('lodash#map');
+
+console.time('underscore#map');
+underscore.map(collection, mapFunc);
+console.timeEnd('underscore#map');
 
 console.time('native#map');
 collection.map(mapFunc);
@@ -25,8 +30,12 @@ R.filter(filterFunc, collection);
 console.timeEnd('ramda#filter');
 
 console.time('lodash#filter');
-_.filter(collection, filterFunc);
+lodash.filter(collection, filterFunc);
 console.timeEnd('lodash#filter');
+
+console.time('underscore#filter');
+underscore.filter(collection, filterFunc);
+console.timeEnd('underscore#filter');
 
 console.time('native#filter');
 collection.filter(filterFunc);
@@ -37,7 +46,10 @@ suite
     return R.map(mapFunc, collection);
   })
   .add('lodash#map', () => {
-    return _.map(collection, mapFunc);
+    return lodash.map(collection, mapFunc);
+  })
+  .add('underscore#map', () => {
+    return underscore.map(collection, mapFunc);
   })
   .add('native#map', () => {
     return collection.map(mapFunc);
@@ -46,7 +58,10 @@ suite
     return R.filter(filterFunc, collection);
   })
   .add('lodash#filter', () => {
-    return _.filter(collection, filterFunc);
+    return lodash.filter(collection, filterFunc);
+  })
+  .add('underscore#filter', () => {
+    return underscore.filter(collection, filterFunc);
   })
   .add('native#filter', () => {
     return collection.filter(filterFunc);

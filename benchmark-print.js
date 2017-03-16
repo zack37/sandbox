@@ -22,9 +22,9 @@ const max = source => {
   return Math.max.apply(Math, source);
 };
 
-const template = longestNameLength => ({ name, average, deviation }) => {
-  const padding = pad(longestNameLength, name);
-  return `${name}:${padding}${average} µs/iter (± ${deviation})`;
+const template = longestNameLength => (result) => {
+  const padding = pad(longestNameLength, result.name);
+  return `${result.name}:${padding}${result.average} µs/iter (± ${result.deviation})`;
 };
 
 module.exports = benchmarkResults => {

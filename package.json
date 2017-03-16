@@ -11,12 +11,15 @@
     "ffi": "^2.2.0",
     "lodash": "4",
     "mathjs": "^3.8.0",
+    "moment": "^2.17.1",
+    "node-fetch": "^1.6.3",
     "observatory": "^1.0.0",
     "pretty-bytes": "^4.0.2",
     "ramda": "^0.22.1",
     "ref": "^1.3.3",
     "ref-array": "^1.2.0",
-    "ref-struct": "^1.1.0"
+    "ref-struct": "^1.1.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "eslint": "^3.9.1"
@@ -28,10 +31,7 @@
   ],
   "license": "ISC",
   "main": "array-mutation-benchmarks.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zack37/sandbox.git"
-  },
+  "repository": "git+https://github.com/zack37/sandbox.git",
   "scripts": {
     "lint": "eslint ./*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
