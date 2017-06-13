@@ -6,10 +6,19 @@ const plot = require('./plot');
 
 const isPointInPath = (point, poly) => {
   const num = poly.length;
-  const x = point[0], y = point[1];
-  let j = num - 1, c = false;
-  for(let i = 0; i < num; i++) {
-    if( poly[i][1] > y !== poly[j][1] > y && x < (poly[j][0] - poly[i][0]) * (y - poly[i][1]) / (poly[j][1] - poly[i][1]) + poly[i][0] ) {
+  const x = point[0],
+    y = point[1];
+  let j = num - 1,
+    c = false;
+  for (let i = 0; i < num; i++) {
+    if (
+      poly[i][1] > y !== poly[j][1] > y &&
+      x <
+        (poly[j][0] - poly[i][0]) *
+          (y - poly[i][1]) /
+          (poly[j][1] - poly[i][1]) +
+          poly[i][0]
+    ) {
       c = !c;
     }
     j = i;
@@ -17,13 +26,19 @@ const isPointInPath = (point, poly) => {
   return c;
 };
 
-const [ node, file, numberOfEvents, numberOfPoints, precision ] = process.argv;
+const [node, file, numberOfEvents, numberOfPoints, precision] = process.argv;
 
 // const shape = plot(parseInt(numberOfPoints || 50000, 10), parseInt(precision || 10, 10));
 
 // shapeTask.done('Finished generating shape');
 
-const getBoundary = () => [ [ -1.0, -1.0 ], [ -11.0, -1.0 ], [ -11.0, -11.0 ], [ -1.0, -11.0 ], [ -1.0, -1.0 ] ];
+const getBoundary = () => [
+  [-1.0, -1.0],
+  [-11.0, -1.0],
+  [-11.0, -11.0],
+  [-1.0, -11.0],
+  [-1.0, -1.0]
+];
 
 // console.log('number of points in shape', shape.length);
 // const boundary = getBoundary();
@@ -32,10 +47,9 @@ const getBoundary = () => [ [ -1.0, -1.0 ], [ -11.0, -1.0 ], [ -11.0, -11.0 ], [
 
 // const events = [...Array(parseInt(numberOfEvents)).keys()];
 
-const otherBoundary = [ [ -5, 5 ], [ 5, 5 ], [ 5, 1 ], [ -5, 5 ], [ -5, 5 ] ];
+const otherBoundary = [[-5, 5], [5, 5], [5, 1], [-5, 5], [-5, 5]];
 
-console.log('==========', isPointInPath([ 0, 0 ], otherBoundary));
-
+console.log('==========', isPointInPath([0, 0], otherBoundary));
 
 // console.time(timerLabel);
 
@@ -74,29 +88,30 @@ const p100 = plot(100, 10);
 const p1000 = plot(1000, 10);
 const p10000 = plot(10000, 10);
 
-const sumSquaredOddNumbersIterative = (upper) => {
+const sumSquaredOddNumbersIterative = upper => {
   let sum = 0;
   let ns = 1;
   let i = 1;
-  while(ns < 1000) {
+  while (ns < 1000) {
     sum += ns;
-    i+=2;
-    ns = i*i;
+    i += 2;
+    ns = i * i;
   }
 
   return sum;
-}
+};
 
-const sumSquaredOddNumbersFunctional = (upper) => {
-  return _(_.range(1, Math.sqrt(upper), 2)).map(x => x*x).takeWhile(x => x < upper).sum();
+const sumSquaredOddNumbersFunctional = upper => {
+  return _(_.range(1, Math.sqrt(upper), 2))
+    .map(x => x * x)
+    .takeWhile(x => x < upper)
+    .sum();
 };
 
 const inner = (i, sum, upper) => {
-  const ns = i*i;
-  return ns > upper
-    ? sum
-    : inner(i + 2, sum + ns, upper);
-}
+  const ns = i * i;
+  return ns > upper ? sum : inner(i + 2, sum + ns, upper);
+};
 const sumSquaredOddNumbersRecursive = upper => inner(1, 0, upper);
 
 console.time('iterative');
@@ -140,22 +155,27 @@ suite
     e10000.filter(() => shape.some(p => isPointInPath(p, boundary)));
   })
   .add('benchmark_point_in_polygon_4_points', () => {
-    events.filter(() => p4.some(p => isPointInPath(p, boundary)))
+    events.filter(() => p4.some(p => isPointInPath(p, boundary)));
   })
   .add('benchmark_point_in_polygon_20_points', () => {
-    events.filter(() => p20.some(p => isPointInPath(p, boundary)))
+    events.filter(() => p20.some(p => isPointInPath(p, boundary)));
   })
   .add('benchmark_point_in_polygon_100_points', () => {
-    events.filter(() => p100.some(p => isPointInPath(p, boundary)))
+    events.filter(() => p100.some(p => isPointInPath(p, boundary)));
   })
   .add('benchmark_point_in_polygon_1000_points', () => {
-    events.filter(() => p1000.some(p => isPointInPath(p, boundary)))
+    events.filter(() => p1000.some(p => isPointInPath(p, boundary)));
   })
   .add('benchmark_point_in_polygon_10000_points', () => {
-    events.filter(() => p10000.some(p => isPointInPath(p, boundary)))
+    events.filter(() => p10000.some(p => isPointInPath(p, boundary)));
   })
   .on('complete', function() {
     // console.log(this);
-    console.log(this.filter('successful').map(({name, stats}) => ({ name, average: stats.mean*1e9 })));
+    console.log(
+      this.filter('successful').map(({ name, stats }) => ({
+        name,
+        average: stats.mean * 1e9
+      }))
+    );
   })
   .run({ async: true });

@@ -1,0 +1,97 @@
+{
+  "breakfast": [
+    {
+      "name": "Grass Fed Butter",
+      "amount": "1 Tbsp",
+      "kcal": 100,
+      "carbs": 0,
+      "fat": 11,
+      "protein": 0
+    },
+    {
+      "name": "Low Sodium Bacon",
+      "amount": "2 Slices",
+      "kcal": 180,
+      "carbs": 0,
+      "fat": 14,
+      "protein": 10
+    },
+    {
+      "name": "Provolone Cheese",
+      "amount": "1 Slice",
+      "kcal": 60,
+      "carbs": 0,
+      "fat": 5,
+      "protein": 4
+    },
+    {
+      "name": "Eggs",
+      "amount": "4 Whole",
+      "kcal": 320,
+      "carbs": 0,
+      "fat": 20,
+      "protein": 28
+    },
+    {
+      "name": "Coffeemate French Vanilla Coffee Creamer",
+      "amount": "1 Tbsp",
+      "kcal": 35,
+      "carbs": 5,
+      "fat": 2,
+      "protein": 0
+    },
+    {
+      "name": "Donut Shop Medium Roast",
+      "amount": "12 oz",
+      "kcal": 2,
+      "carbs": 0,
+      "fat": 0,
+      "protein": 0
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Ground Bison",
+      "amount": "6 Oz",
+      "kcal": 285,
+      "carbs": 0,
+      "fat": 16.5,
+      "protein": 34.5
+    },
+    {
+      "name": "Broccoli",
+      "amount": "1 Cup",
+      "kcal": 25,
+      "carbs": 11,
+      "fat": 0,
+      "protein": 4
+    },
+    {
+      "name": "Mixed Berries",
+      "amount": "1 Cup",
+      "kcal": 70,
+      "carbs": 17,
+      "fat": 0,
+      "protein": 1
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Tilapia",
+      "amount": "6 Oz",
+      "kcal": 150,
+      "carbs": 0,
+      "fat": 4,
+      "protein": 30
+    },
+    {
+      "name": "Broccoli",
+      "amount": "1 Cup",
+      "kcal": 67,
+      "carbs": 10.7,
+      "fat": 0,
+      "protein": 8
+    }
+  ],
+  "snacks": []
+}

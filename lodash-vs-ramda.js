@@ -6,7 +6,7 @@ const Suite = require('benchmark').Suite;
 const suite = new Suite();
 
 const collection = R.range(1, 10001);
-const mapFunc = x => x*x;
+const mapFunc = x => x * x;
 const filterFunc = x => x % 2 === 0;
 
 console.time('ramda#map');
@@ -70,4 +70,3 @@ suite
     benchmarkPrint(this);
   })
   .run();
-

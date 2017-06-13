@@ -15,14 +15,13 @@ const logLevels = {
 const sane = level => {
   return (R.keys(logLevels)
     .map(x => logLevels[x])
-    .find(x => x.stringLevel === level || x.intLevel === level)
-      || logLevels.info)
-    .log;
+    .find(x => x.stringLevel === level || x.intLevel === level) ||
+    logLevels.info).log;
 };
 
 const wtf = level => message => {
-  if(typeof level === 'string') {
-    switch(level.toLowerCase()) {
+  if (typeof level === 'string') {
+    switch (level.toLowerCase()) {
       case 'fatal':
       case 'error':
         console.log('ERROR', message);
@@ -44,7 +43,7 @@ const wtf = level => message => {
         break;
     }
   } else if (typeof level === 'number') {
-    switch(level) {
+    switch (level) {
       case 60:
       case 50:
         console.log('ERROR', message);
@@ -71,7 +70,12 @@ const wtf = level => message => {
 };
 
 console.log('wtf length', wtf.toString().length);
-console.log('sane length', sane.toString().length + util.inspect(logLevels).length + bound.toString().length);
+console.log(
+  'sane length',
+  sane.toString().length +
+    util.inspect(logLevels).length +
+    bound.toString().length
+);
 wtf(60)('stupid');
 wtf('fatal')('stupid');
 sane(60)('sane');

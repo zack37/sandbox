@@ -8,43 +8,38 @@ const tokenizer = input => {
   let current = 0;
   let tokens = [];
 
-  while(current < input.length) {
+  while (current < input.length) {
     let char = input[current];
 
-    if(char === '(' || char === ')') {
+    if (char === '(' || char === ')') {
       tokens.push({ type: 'paren', value: char });
       current++;
-    }
-    else if(whitespace.test(char)) {
+    } else if (whitespace.test(char)) {
       current++;
-    }
-    else if(numbers.test(char)) {
+    } else if (numbers.test(char)) {
       let value = '';
-      while(numbers.test(char)) {
+      while (numbers.test(char)) {
         value += char;
         char = input[++current];
       }
       tokens.push({ type: 'number', value });
-    }
-    else if(char === '"') {
+    } else if (char === '"') {
       let value = '';
       char = input[++current];
-      while(char !== '"') {
+      while (char !== '"') {
         value += char;
         char = input[++current];
       }
       char = input[++current];
       tokens.push({ type: 'string', value });
-    }
-    else if(letters.test(char)) {
+    } else if (letters.test(char)) {
       let value = '';
-      while(letters.test(char)) {
+      while (letters.test(char)) {
         value += char;
         char = input[++current];
       }
       tokens.push({ type: 'name', value });
-    }
-    else {
+    } else {
       throw new Error(`I don't know what this character is: ${char}`);
     }
   }
@@ -52,27 +47,30 @@ const tokenizer = input => {
   return tokens;
 };
 
-const parser = (tokens) => {
+const parser = tokens => {
   let current = 0;
 
   function walk() {
     let token = tokens[current];
 
-    if(token.type === 'number') {
+    if (token.type === 'number') {
       current++;
       return { type: 'NumberLiteral', value: token.value };
     }
-    if(token.type === 'string') {
+    if (token.type === 'string') {
       current++;
       return { type: 'StringLiteral', value: token.value };
     }
-    if(token.type === 'paren' && token.value === '(') {
+    if (token.type === 'paren' && token.value === '(') {
       token = tokens[++current];
       const node = { type: 'CallExpressions', name: token.value, params: [] };
 
       token = tokens[++current];
 
-      while(token.type !== 'paren' || token.type === 'paren' && token.value !== ')') {
+      while (
+        token.type !== 'paren' ||
+        (token.type === 'paren' && token.value !== ')')
+      ) {
         node.params.push(walk());
         token = tokens[current];
       }
@@ -90,7 +88,7 @@ const parser = (tokens) => {
     body: []
   };
 
-  while(current < tokens.length) {
+  while (current < tokens.length) {
     ast.body.push(walk());
   }
 
@@ -103,28 +101,27 @@ const traverser = (ast, visitor) => {
   }
 
   const traverseMap = {
-    'Program': node => traverseArray(node.body, node),
-    'CallExpression': node => traverseArray(node.params, node),
-    'NumberLiteral': () => {},
-    'StringLiteral': () => {}
-  }; 
+    Program: node => traverseArray(node.body, node),
+    CallExpression: node => traverseArray(node.params, node),
+    NumberLiteral: () => {},
+    StringLiteral: () => {}
+  };
 
   function traverseNode(node, parent) {
     const methods = visitor[node.type];
-    if(methods && methods.enter) {
+    if (methods && methods.enter) {
       methods.enter(node, parent);
     }
 
     const traverseType = traverseMap[node.type];
-    if(!traverseType) {
+    if (!traverseType) {
       throw new TypeError(node.type);
     }
     traverseType(node);
 
-    if(methods && methods.exit) {
+    if (methods && methods.exit) {
       methods.exit(node, parent);
     }
-
   }
 
   traverseNode(ast, null);
@@ -161,13 +158,13 @@ const transformer = ast => {
 
         node._context = expression.arguments;
 
-        if(parent.type !== 'CallExpression') {
+        if (parent.type !== 'CallExpression') {
           expression = { type: 'ExpressionStatement', expression };
         }
 
         parent._context.push(expression);
       }
-    } 
+    }
   });
 
   return newAst;
@@ -175,15 +172,19 @@ const transformer = ast => {
 
 const codeGenerator = node => {
   const codeGeneratorMap = {
-    'Program': R.pipe(R.prop('body'), R.map(codeGenerator), R.join('\n')),
-    'ExpressionStatement': node => codeGenerator(node.expression) + ';',
-    'CallExpressions': node => `${codeGenerator(node.callee)}(${R.map(codeGenerator, node.arguments).join(', ')})`,
-    'Identifier': node => node.name,
-    'NumberLiteral': node => node.value,
-    'StringLiteral': node => `"${node.value}"`
+    Program: R.pipe(R.prop('body'), R.map(codeGenerator), R.join('\n')),
+    ExpressionStatement: node => codeGenerator(node.expression) + ';',
+    CallExpressions: node =>
+      `${codeGenerator(node.callee)}(${R.map(
+        codeGenerator,
+        node.arguments
+      ).join(', ')})`,
+    Identifier: node => node.name,
+    NumberLiteral: node => node.value,
+    StringLiteral: node => `"${node.value}"`
   };
   const exp = codeGeneratorMap[node.type];
-  if(!exp) {
+  if (!exp) {
     throw new Error(node.type);
   }
   return exp(node);

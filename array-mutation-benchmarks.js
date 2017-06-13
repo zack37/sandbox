@@ -4,7 +4,9 @@ const benchmarkPrint = require('./benchmark-print');
 const bigList = [...Array(10000).keys()];
 
 const indexWhileMap = (fn, functor) => {
-  let idx = 0, len = functor.length, result = Array(len);
+  let idx = 0,
+    len = functor.length,
+    result = Array(len);
   while (idx < len) {
     result[idx] = fn(functor[idx]);
     idx++;
@@ -13,7 +15,9 @@ const indexWhileMap = (fn, functor) => {
 };
 
 const indexForMap = (fn, functor) => {
-  let idx = 0, len = functor.length, result = Array(len);
+  let idx = 0,
+    len = functor.length,
+    result = Array(len);
   for (; idx < len; idx++) {
     result[idx] = fn(functor[idx]);
   }

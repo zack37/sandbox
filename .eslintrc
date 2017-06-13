@@ -53,7 +53,6 @@
         "no-undef": "error",
         "no-unused-vars": "error",
         "no-use-before-define": "error",
-        "array-bracket-spacing": ["error", "always", { "singleValue": false }],
         "comma-dangle": ["error", "never"],
         "comma-spacing": "error",
         "comma-style": "error",

@@ -1,4 +1,4 @@
-const _ =  require('lodash');
+const _ = require('lodash');
 const { Suite } = require('benchmark');
 const benchmarkPrint = require('./benchmark-print');
 
@@ -10,10 +10,10 @@ suite
   .add('omit', () => {
     return _.omit(o, ['p']);
   })
-//  .add('spread', () => {
-//    const { p, ...copy } = o;
-//   return copy;
-//  })
+  //  .add('spread', () => {
+  //    const { p, ...copy } = o;
+  //   return copy;
+  //  })
   .add('undefined', () => {
     o.p = undefined;
     return o;

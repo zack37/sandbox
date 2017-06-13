@@ -3,7 +3,7 @@ const _ = require('lodash');
 const divisible = x => m => x % m[0] === 0;
 const getValue = m => m[1];
 
-const matches = [ [ 3, 'Fizz' ], [ 5, 'Buzz' ] ];
+const matches = [[3, 'Fizz'], [5, 'Buzz'], [6, 'Bang']];
 
 const fizzBuzz = x => _(matches).filter(divisible(x)).map(getValue).join('');
 

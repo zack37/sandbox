@@ -1,9 +1,11 @@
 const isPalindrome = str => {
-  const stripped = str.toLowerCase().replace(/[^a-z0-9]/ig, '');
-  if(stripped.length <= 1) { return true; }
+  const stripped = str.toLowerCase().replace(/[^a-z0-9]/gi, '');
+  if (stripped.length <= 1) {
+    return true;
+  }
   const length = stripped.length;
-  for(let i = 0; i < Math.floor(length / 2); i++) {
-    if(stripped[i] !== stripped[length-i-1]) {
+  for (let i = 0; i < Math.floor(length / 2); i++) {
+    if (stripped[i] !== stripped[length - i - 1]) {
       return false;
     }
   }
@@ -15,11 +17,16 @@ console.log(isPalindrome('purple'));
 console.log(isPalindrome('able was i, ere I saw elba.'));
 
 console.time('long palindrome');
-console.log(isPalindrome('Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.'));
+console.log(
+  isPalindrome(
+    'Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.'
+  )
+);
 console.timeEnd('long palindrome');
 
 console.time('longest palindrome');
-console.log(isPalindrome(`Star? Not I! Movie – it too has a star in or a cameo who wore mask – cast are livewires.
+console.log(
+  isPalindrome(`Star? Not I! Movie – it too has a star in or a cameo who wore mask – cast are livewires.
 
 Soda-pop straws are sold, as part-encased a hot tin, I saw it in mad dog I met. Is dog rosy? Tie-dye booths in rocks.
 
@@ -315,5 +322,6 @@ Odd locks, a maddened (I was aware) macaw on top, spot no seen knots, rifts or f
 
 Nits rub – snip now, I’ll abate, not snip, nits I held.
 
-Nubile Danish tomboys I led to old loser as no melons I held; no fish to my name. Nod lower, do I dare? No, one nods a hairy snipe. (Edit: one hairy snipe, eh?) See silliness, else we’ll ask cornish to obey deity’s or god’s item. I, God, damn it! I was in it! To Hades, acne trap, sad loser! As warts pop, a dosser I – we – vile rat, sack! Same row, oh woe! Macaroni, rats, as a hoot, tie. I vomit on rats.`));
+Nubile Danish tomboys I led to old loser as no melons I held; no fish to my name. Nod lower, do I dare? No, one nods a hairy snipe. (Edit: one hairy snipe, eh?) See silliness, else we’ll ask cornish to obey deity’s or god’s item. I, God, damn it! I was in it! To Hades, acne trap, sad loser! As warts pop, a dosser I – we – vile rat, sack! Same row, oh woe! Macaroni, rats, as a hoot, tie. I vomit on rats.`)
+);
 console.timeEnd('longest palindrome');

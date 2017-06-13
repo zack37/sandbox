@@ -1,7 +1,7 @@
 var personMethod = {};
 personMethod.sayName = function() {
   console.log(this.name);
-}
+};
 
 const createPerson = (name, age, homeState) => {
   var results = {

@@ -1,16 +1,14 @@
 /*eslint no-use-before-define: off */
 const map = fn => list => {
-  return list.isEmpty
-    ? list
-    : cons(fn(list.head), map(fn)(list.tail));
+  return list.isEmpty ? list : cons(fn(list.head), map(fn)(list.tail));
 };
 
 const reduce = (fn, acc) => list => {
-  if(list.isEmpty) {
+  if (list.isEmpty) {
     return acc;
   }
 
-  if(acc == null) {
+  if (acc == null) {
     acc = list.head;
     list = list.tail;
   }
@@ -64,22 +62,21 @@ const nil = new class Nil {
   constructor() {
     this.isEmpty = true;
   }
-};
+}();
 
 const list = function() {
-  if(!arguments.length) {
+  if (!arguments.length) {
     return nil;
   }
   const args = Array.isArray(arguments[0]) ? arguments[0] : arguments;
-  const [ head, ...tail ] = [...args];
+  const [head, ...tail] = [...args];
   return cons(head, list(...tail));
 };
 
 const toArray = reduce((acc, cur) => acc.concat(cur), []);
 
-
 let consList = cons(1, cons(2, cons(3, nil)));
-const double = x => x*2;
+const double = x => x * 2;
 const add = (acc, cur) => acc + cur;
 
 console.log(map(double)(consList));
