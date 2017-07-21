@@ -4,12 +4,13 @@ const isPalindrome = str => {
     return true;
   }
   const length = stripped.length;
-  for (let i = 0; i < Math.floor(length / 2); i++) {
-    if (stripped[i] !== stripped[length - i - 1]) {
-      return false;
-    }
-  }
-  return true;
+  return !![...Array(Math.floor(length/2)).keys()].find(i => stripped[i] !== stripped[length - i - 1]);
+  //for (let i = 0; i < Math.floor(length / 2); i++) {
+    //if (stripped[i] !== stripped[length - i - 1]) {
+      //return false;
+    //}
+  //}
+  //return true;
 };
 
 console.log(isPalindrome('kayak'));

@@ -7,12 +7,12 @@
     "roll-check": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "Zack Smith",
   "license": "ISC",
   "dependencies": {
     "optionator": "^0.8.2",
-    "ramda": "^0.23.0"
+    "ramda": "^0.24.1"
   }
 }
