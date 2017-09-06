@@ -29,7 +29,7 @@ function fork(config, retries = 0) {
 module.exports = config => {
   const configWithDefaults = Object.assign({}, defaults, config);
   if (config.enabled && cluster.isMaster) {
-    consoleWithDefaults.log(`Master ${process.pid} is running`);
+    configWithDefaults.log(`Master ${process.pid} is running`);
     return [...Array(configWithDefaults.maxWorkers).keys()].map(() =>
       fork(configWithDefaults)
     );

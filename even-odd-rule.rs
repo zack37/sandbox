@@ -33,44 +33,28 @@ fn next_collatz_number(n: usize) -> usize {
     if n&1 == 0 { n/2 } else { 3*n+1 }
 }
 
-fn collatz_inner(n: usize, sequence: Vec<usize>) -> Vec<usize> {
-    let mut temp = sequence;
-    if n == 1 {
-        temp.push(1);
-        return temp;
-    }
-    let new_n = next_collatz_number(n);
-    temp.push(n);
-    collatz_inner(new_n, temp)
-}
-
 fn collatz_sequence(start: usize) -> Vec<usize> {
-    collatz_inner(start, vec![])
-    // let mut sequence = vec![];
-    // let mut n = start;
+    let mut sequence = vec![];
+    let mut n = start;
 
-    // while n > 1 {
-    //     sequence.push(n);
-    //     n = next_collatz_number(n);
-    // }
+    while n > 1 {
+        sequence.push(n);
+        n = next_collatz_number(n);
+    }
 
-    // sequence.push(1);
-    // sequence
+    sequence.push(1);
+    sequence
 }
 
 fn main() {
     // println!("Are any points in path? {}", are_any_points_in_path(-1.0, -1.0));
 
-    //let longest_seqence_option = (1..1_000_000).map(collatz_sequence)
-        //.max_by_key(|x| x.len());
+    let longest_seqence_option = (1..1_000_000).map(collatz_sequence)
+        .max_by_key(|x| x.len());
 
-    //if let Some(longest_sequence) = longest_seqence_option {
-        //println!("{:?}", longest_sequence[0]);
-    //}
-
-    let f = 3.5_f64;
-
-    println!("{}", f.round());
+    if let Some(longest_sequence) = longest_seqence_option {
+        println!("Number with largest collatz sequence less than 1m: {:?}", longest_sequence[0]);
+    }
 
     println!("done");
 }

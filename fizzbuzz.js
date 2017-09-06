@@ -13,4 +13,4 @@ console.time('fizzbuzz');
 const result = fizzBuzzTo(31);
 console.timeEnd('fizzbuzz');
 
-result.forEach(x => console.log(x));
+console.log(result.join('\n'));
