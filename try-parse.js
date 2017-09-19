@@ -1,7 +1,8 @@
 JSON.tryParse = (text, reviver) => {
   try {
     return JSON.parse(text, reviver);
-  } catch (e) {
+  }
+  catch (e) {
     console.error(e);
     return undefined;
   }

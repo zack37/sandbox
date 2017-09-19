@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const assert = require('assert');
 
-const inner = (n, a, b) => (n <= 0 ? a : inner(n - 1, b, a + b));
+const inner = (n, a, b) => n <= 0 ? a : inner(n - 1, b, a + b);
 
 const fib = n => inner(n, 0, 1);
 

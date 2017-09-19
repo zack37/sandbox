@@ -45,7 +45,7 @@ const myConsole = function(stdout, stderr) {
   return instance;
 };
 
-const myc = (module.exports = myConsole(process.stdout, process.stderr));
+const myc = module.exports = myConsole(process.stdout, process.stderr);
 module.exports;
 module.exports.myConsole = myConsole;
 

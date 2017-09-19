@@ -57,7 +57,7 @@ const pipe = (...fns) => init => {
 
 const filterAsReduce = predicate => source => {
   return source.reduce(
-    (acc, cur) => (predicate(cur) ? acc.concat(cur) : acc),
+    (acc, cur) => predicate(cur) ? acc.concat(cur) : acc,
     []
   );
 };

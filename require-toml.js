@@ -9,7 +9,8 @@ const readToml = parser => (module, filename) => {
   try {
     const src = fs.readFileSync(filename, opts);
     module.exports = parser.parse(src);
-  } catch (e) {
+  }
+  catch (e) {
     if (e.line && e.column) {
       throw new Error(
         `Error compiling ${filename} at line ${e.line}, column ${e.column}: ${e.message}`

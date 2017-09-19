@@ -8,8 +8,8 @@ function dualifyTick(callback, promise) {
   return !callback
     ? promise
     : promise
-        .then(res => process.nextTick(() => callback(null, res)))
-        .catch(err => process.nextTick(() => callback(err)));
+      .then(res => process.nextTick(() => callback(null, res)))
+      .catch(err => process.nextTick(() => callback(err)));
 }
 
 const longPromiseSuccess = value => {

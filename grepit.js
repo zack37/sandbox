@@ -51,4 +51,4 @@ grep$(patternRegex, createReadStream('./big.file.txt'))
     value => console.log(blue('rx'), value),
     err => console.error(err),
     () => console.log('\n\n\n')
-);
+  );

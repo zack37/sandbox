@@ -12,9 +12,11 @@ const whileSearch = (term, list) => {
   for (let i = 0; i < Math.log2(list.length); i++) {
     if (list[n] === term) {
       return n;
-    } else if (list[n] > term) {
+    }
+    else if (list[n] > term) {
       n = Math.floor(n / 2);
-    } else {
+    }
+    else {
       n = Math.floor(n * 1.5);
     }
   }

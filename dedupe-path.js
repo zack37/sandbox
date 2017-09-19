@@ -4,7 +4,7 @@ const seen = {};
 
 const newEnvPath = process.env.PATH
   .split(path.delimiter)
-  .map(p => (seen[p] ? '' : ((seen[p] = true), p)))
+  .map(p => seen[p] ? '' : (seen[p] = true, p))
   .filter(p => p !== '')
   .join(path.delimiter);
 

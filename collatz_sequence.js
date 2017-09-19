@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 
-const modifier = n => (n % 2 === 0 ? n / 2 : 3 * n + 1);
+const modifier = n => n % 2 === 0 ? n / 2 : 3 * n + 1;
 
 const collatzInner = n => {
   const sequence = [];
