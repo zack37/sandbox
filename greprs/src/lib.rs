@@ -43,7 +43,7 @@ mod test {
     #[test]
     fn one_result() {
         let search = Config { search: "duct".to_string(), filename: "na".to_string(), insensitive: false };
-        let contents = "\
+        let contents = "
 Rust:
 safe, fast, productive.
 Pick three.";

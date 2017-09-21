@@ -48,7 +48,7 @@ grepAsync(patternRegex, createReadStream('./big.file.txt'))
 grep$(patternRegex, createReadStream('./big.file.txt'))
   .map(format(globalPattern))
   .subscribe(
-    value => console.log(blue('rx'), value),
+    console.log.bind(console, blue('rx')),
     err => console.error(err),
     () => console.log('\n\n\n')
   );
