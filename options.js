@@ -5,20 +5,17 @@ const armSchema = joi.object({
     .string()
     .required()
     .valid('Some', 'None', '_'),
-  guard: joi.func().arity(1),
+  guard: joi.func().maxArity(1),
   expr: joi
     .func()
     .required()
-    .arity(1)
+    .maxArity(1)
 });
 
 const armsSchema = joi
   .array()
   .min(1)
   .items(armSchema);
-
-const isSomeSymbol = Symbol('isSome');
-const isNoneSymbol = Symbol('isNone');
 
 function assertCovers(arms, type) {
   const coversCase = arms.some(x => x.is === type || x.is === '_');
@@ -41,20 +38,20 @@ class Option {
     });
   }
 
+  static some(value) {
+    return new Option({ isSome: true, isNone: false, value });
+  }
+
+  static none() {
+    return new Option({ isSome: false, isNone: true });
+  }
+
   get value() {
     if (this.isNone()) {
       throw new Error('cannot get a `none` value');
     }
 
     return this._value;
-  }
-
-  isSome() {
-    return this[isSomeSymbol];
-  }
-
-  isNone() {
-    return this[isNoneSymbol];
   }
 
   match({ Some, None }) {
@@ -157,6 +154,7 @@ class Option {
 }
 
 module.exports = {
-  some: value => new Option({ isSome: true, isNone: false, value }),
-  none: () => new Option({ isSome: false, isNone: true })
+  some: value => Option.some(value),
+  none: () => Option.none(),
+  from: value => value == null ? Option.none() : Option.some(value)
 };

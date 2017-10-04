@@ -1,26 +1,31 @@
-const { Observable, Subject } = require('rxjs/Rx');
+const { Observable } = require('rxjs/Rx');
+const ProgressBar = require('progress');
+const { add } = require('ramda');
 
-const SWITCH_INTERVAL = 7;
-const END_TIME = 120;
+const SCALE = 0.5;
+const SWITCH_INTERVAL = SCALE % 0.5 === 0 ? 7.5 : 7;
+const TOTAL_SECONDS = 120;
+const END_TIME = TOTAL_SECONDS / SCALE;
 const NUM_SWITCHES = 16;
+const INTERVAL = 100 * SCALE;
 
-console.log('START');
+const timer$ = Observable.interval(INTERVAL).take(END_TIME).map(add(1));
+const progress = new ProgressBar('brushing [:bar] :current :message', {
+  complete: '=',
+  incomplete: ' ',
+  total: TOTAL_SECONDS
+});
 
-const timer$ = Observable.interval(1000).takeWhile(x => x < END_TIME);
+const shouldSwitch = x =>
+  x % SWITCH_INTERVAL === 0 && x < NUM_SWITCHES * SWITCH_INTERVAL;
 
-// Used to send logs asynchronously
-const log$ = new Subject();
-log$.subscribe(console.log);
-
-function shouldSwitch(x) {
-  return x % SWITCH_INTERVAL === 0 && x <= NUM_SWITCHES * SWITCH_INTERVAL;
-}
-
-timer$
-  .skip(1)
-  .filter(shouldSwitch)
-  .subscribe(() => log$.next('SWITCH'));
+progress.render({ message: 'START' });
 
 timer$.subscribe({
-  complete: () => log$.next('DONE')
+  next: () => progress.tick(SCALE, { message: '' }),
+  complete: () => console.log('DONE')
 });
+
+timer$
+  .filter(shouldSwitch)
+  .subscribe(() => progress.render({ message: 'SWITCH' }));

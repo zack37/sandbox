@@ -1,7 +1,8 @@
 {
     "env": {
         "es6": true,
-        "node": true
+        "node": true,
+        "browser": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
@@ -30,7 +31,7 @@
         "use-isnan": "error",
         "valid-typeof": "error",
         "block-scoped-var": "error",
-        "complexity": ["error", 4],
+        "complexity": ["error", 9],
         "curly": ["error", "all"],
         "dot-location": ["error", "property"],
         "dot-notation": "error",
