@@ -1,0 +1,10 @@
+[package]
+authors = ["Zack Smith <zachary.smith@vivintsolar.com>"]
+name = "prime-test-rs"
+version = "0.1.0"
+
+[dependencies]
+num = "0.1.40"
+pbr = "1.0.0"
+rayon = "0.8.2"
+time = "0.1.38"

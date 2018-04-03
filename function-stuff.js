@@ -1,14 +1,13 @@
-var personMethod = {};
-personMethod.sayName = function() {
+function sayName() {
   console.log(this.name);
-};
+}
 
 const createPerson = (name, age, homeState) => {
   var results = {
     name,
     age,
     homeState,
-    sayName: personMethod.sayName
+    sayName
   };
   return results;
 };

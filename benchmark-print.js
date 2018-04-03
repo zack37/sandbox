@@ -1,7 +1,7 @@
 const R = require('ramda');
 
 const round = places => value => {
-  const shift = Math.pow(10, places);
+  const shift = 10 ** places;
   return (value * shift << 0) / shift;
 };
 
@@ -20,7 +20,7 @@ const pad = (longest, current) => {
 };
 
 const max = source => {
-  return Math.max.apply(Math, source);
+  return Math.max(...source);
 };
 
 const template = (longestNameLength, result) => {
@@ -28,13 +28,18 @@ const template = (longestNameLength, result) => {
   return `${result.name}:${padding}${result.average} µs/iter (± ${result.deviation})`;
 };
 
-module.exports = benchmarkResults => {
+module.exports = function(benchmarkResults) {
+  if(benchmarkResults.currentTarget) {
+    benchmarkResults = benchmarkResults.currentTarget;
+  }
+
   console.log('Showing µs/iter (lower is better)');
+  console.log('---------------------------------');
   const results = R.sortBy(
     R.prop('average'),
     R.map(pickValues, benchmarkResults)
   );
-  const longestNameLength = max(R.map(x => x.name.length, results));
+  const longestNameLength = max(R.map(R.path(['name', 'length']), results));
   const print = x => console.log(template(longestNameLength, x));
   R.forEach(print, results);
 };

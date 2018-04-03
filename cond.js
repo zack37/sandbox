@@ -1,7 +1,6 @@
 const R = require('ramda');
 
 const cond = pairs => (...args) => {
-  //let args = Array.prototype.slice.call(arguments);
   const match = pairs.find(([predicate]) => predicate.apply(null, args));
   return match && match[1].apply(null, args);
 };

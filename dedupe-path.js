@@ -1,11 +1,8 @@
 const path = require('path');
 
-const seen = {};
-
-const newEnvPath = process.env.PATH
-  .split(path.delimiter)
-  .map(p => seen[p] ? '' : (seen[p] = true, p))
-  .filter(p => p !== '')
+const newEnvPath = [
+  ...new Set(process.env.PATH.split(path.delimiter))
+]
   .join(path.delimiter);
 
 console.log(process.env.PATH);

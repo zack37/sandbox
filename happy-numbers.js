@@ -1,24 +1,37 @@
-const R = require('ramda');
+let cache = [1];
 
-const digitSum = R.pipe(
-  R.toString(),
-  R.split(''),
-  R.map(x => parseInt(x, 10)),
-  R.map(x => x * x),
-  R.sum()
-);
-const happyNumber = (num, prev = []) => {
-  if (num === 1) {
-    return true;
+function digitSum(value, sum = 0) {
+  if (value <= 0) {
+    return sum;
   }
-  if (prev.includes(num)) {
-    return false;
+  return digitSum(Math.floor(value / 10), sum + value % 10);
+}
+
+function squareDigitSum(value, sum = 0) {
+  if (value <= 0) {
+    return sum;
   }
-  return happyNumber(digitSum(num), prev.concat(num));
+  const d = value % 10;
+  return squareDigitSum(Math.floor(value / 10), sum + d * d);
+}
+
+const happyNumber = num => {
+  function inner(num, prev) {
+    if (cache.includes(num)) {
+      return true;
+    }
+    if (num === 1) {
+      cache = cache.concat(prev);
+      return true;
+    }
+    if (prev.includes(num)) {
+      return false;
+    }
+    return inner(squareDigitSum(num), prev.concat(num));
+  }
+
+  return inner(num, []);
 };
 
-const results = [...Array(101).keys()]
-  .map((x, i) => [i, happyNumber(x)])
-  .filter(x => x[1])
-  .map(x => x[0]);
+const results = [...Array(1000001).keys()].filter(happyNumber);
 console.log(results);

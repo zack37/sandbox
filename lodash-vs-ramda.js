@@ -5,6 +5,7 @@ const R = require('ramda');
 const Suite = require('benchmark').Suite;
 
 const collection = R.range(1, 10001);
+const emptyArray = Array(collection.length);
 const mapFunc = x => x * x;
 const filterFunc = x => x % 2 === 0;
 const onComplete = function() {
@@ -28,7 +29,7 @@ const mapSuite = new Suite('Map', { onComplete })
   })
   .add('forLoop', () => {
     let i = 0,
-      results = Array(collection.length);
+      results = emptyArray;
     for (; i < results.length; i++) {
       results[i] = mapFunc(i);
     }
@@ -36,11 +37,14 @@ const mapSuite = new Suite('Map', { onComplete })
   })
   .add('forLoop no function', () => {
     let i = 0,
-      results = Array(collection.length);
+      results = emptyArray;
     for (; i < results.length; i++) {
       results[i] = i * i;
     }
     return results;
+  })
+  .add('Array#from', () => {
+    return Array.from({ length: collection.length }, (_, i) => i * i);
   });
 
 const filterSuite = new Suite('Filter', { onComplete })
@@ -58,7 +62,7 @@ const filterSuite = new Suite('Filter', { onComplete })
   })
   .add('forLoop', () => {
     let i = 0,
-      results = Array(collection.length);
+      results = emptyArray;
     for (; i < results.length; i++) {
       if (filterFunc(i)) {
         results[i] = i;
@@ -68,7 +72,7 @@ const filterSuite = new Suite('Filter', { onComplete })
   })
   .add('forLoop no function', () => {
     let i = 0,
-      results = Array(collection.length);
+      results = emptyArray;
     for (; i < results.length; i++) {
       if (i % 2 === 0) {
         results[i] = i;

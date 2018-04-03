@@ -1,0 +1,127 @@
+[
+  {
+    "question": "Most of the time, I am willing to disclose appropriate personal feelings to help build trust",
+    "category": "share",
+    "number": 1
+  },
+  {
+    "question": "I make it a point to ask for help and encourage others' involvement",
+    "category": "involvement",
+    "number": 2
+  },
+  {
+    "question": "I make it a point to let others know I \"hear\" and understand how they feel before moving on in a discussion",
+    "category": "empathy",
+    "number": 3
+  },
+  {
+    "question": "I am comfortable letting others maintain control over tasks when the going get tough or the stakes go up",
+    "category": "support",
+    "number": 4
+  },
+  {
+    "question": "I am comfortable disclosing what I know about a situation or business rationale, as appropriate",
+    "category": "share",
+    "number": 5
+  },
+  {
+    "question": "I make it a point to maintain and enhance others' self-esteem",
+    "category": "esteem",
+    "number": 6
+  },
+  {
+    "question": "I think I do a good job of creating an environment in which others feel comfortable expressing their feelings, good or bad",
+    "category": "empathy",
+    "number": 7
+  },
+  {
+    "question": "I am comfortable being open with my coworkers and sharing my thoughts on important issues",
+    "category": "share",
+    "number": 8
+  },
+  {
+    "question": "I take opportunities to let others know the value they bring to the organization/team",
+    "category": "esteem",
+    "number": 9
+  },
+  {
+    "question": "I make sure I get input from team or group members before making a decision",
+    "category": "involvement",
+    "number": 10
+  },
+  {
+    "question": "I am comfortable showing others how to approach a task and then letting them do it on their own",
+    "category": "support",
+    "number": 11
+  },
+  {
+    "question": "I make it a point to express confidence in others' abilities",
+    "category": "esteem",
+    "number": 12
+  },
+  {
+    "question": "I am comfortable incorporating others' suggestions as part of a plan instead of doing it all myself",
+    "category": "involvement",
+    "number": 13
+  },
+  {
+    "question": "I provide others with support without removing their responsibility for action",
+    "category": "support",
+    "number": 14
+  },
+  {
+    "question": "I am good at helping others overcome barriers and identify the resources they need",
+    "category": "support",
+    "number": 15
+  },
+  {
+    "question": "I make it a point to explain the benefits of a newly delegated responsibility or task",
+    "category": "share",
+    "number": 16
+  },
+  {
+    "question": "I am comfortable asking for other people's ideas, opinions, or solutions",
+    "category": "involvement",
+    "number": 17
+  },
+  {
+    "question": "I am inclined to confirm how others are feeling by verbally summarizing the emotions and information they express",
+    "category": "empathy",
+    "number": 18
+  },
+  {
+    "question": "I usually make it a point to let people know that their accomplishments or ideas and suggestions are appreciated",
+    "category": "esteem",
+    "number": 19
+  },
+  {
+    "question": "I am comfortable supporting associates' ideas even if they aren't how I would approach situations or problems",
+    "category": "involvement",
+    "number": 20
+  },
+  {
+    "question": "I am good at developing an accurate understanding other others' feelings",
+    "category": "empathy",
+    "number": 21
+  },
+  {
+    "question": "I am good at complementing others when they do something well",
+    "category": "esteem",
+    "number": 22
+  },
+  {
+    "question": "I am good at listening to others and responding with empathy",
+    "category": "empathy",
+    "number": 23
+  },
+  {
+    "question": "I work with others to set up tracking procedures for monitoring the success or achievement of a project",
+    "category": "support",
+    "number": 24
+  },
+  {
+    "question": "I am good at letting others know of any issues or concerns I have regarding a situation or issue",
+    "category": "share",
+    "number": 25
+  }
+]

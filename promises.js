@@ -1,5 +1,5 @@
 const wait = () => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(resolve, 100);
   });
 };
@@ -7,14 +7,14 @@ const wait = () => {
 const race = () => {
   let value;
 
-  wait().then(() => {
-    value = 5;
-  });
-
-  return Promise.resolve().then(() => {
-    console.log('value', value);
-    return value;
-  });
+  return wait()
+    .then(() => {
+      value = 5;
+    })
+    .then(() => {
+      console.log('value', value);
+      return value;
+    });
 };
 
 async function raceAsync() {
@@ -27,12 +27,10 @@ async function raceAsync() {
   return value;
 }
 
-race()
-  .then((v) => {
-    console.log('v', v);
-  });
+race().then(v => {
+  console.log('v', v);
+});
 
-raceAsync()
-  .then((v) => {
-    console.log('v', v);
-  });
+raceAsync().then(v => {
+  console.log('v', v);
+});

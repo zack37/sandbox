@@ -5,9 +5,10 @@
         "browser": true
     },
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 2018,
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "experimentalObjectRestSpread": true
         },
         "sourceType": "module"
     },
@@ -54,7 +55,7 @@
         "no-undef": "error",
         "no-unused-vars": "error",
         "no-use-before-define": "error",
-        "comma-dangle": ["error", "never"],
+        "comma-dangle": ["error", "only-multiline"],
         "comma-spacing": "error",
         "comma-style": "error",
         "indent": ["error", 2],

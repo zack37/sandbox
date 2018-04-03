@@ -1,0 +1,8 @@
+[package]
+authors = ["Zack Smith <zachary.smith@vivintsolar.com>"]
+name = "compiler"
+version = "0.1.0"
+
+[dependencies]
+lazy_static = "1.0.0"
+regex = "0.2.3"

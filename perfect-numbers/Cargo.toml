@@ -1,0 +1,8 @@
+[package]
+authors = ["Zack Smith <zachary.smith@vivintsolar.com>"]
+name = "perfect-numbers"
+version = "0.1.0"
+
+[dependencies]
+rayon = "0.9.0"
+time = "0.1.38"

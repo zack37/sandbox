@@ -5,6 +5,8 @@ const numbers = /[0-9]/;
 const letters = /[a-z]/i;
 
 const tokenizer = input => {
+  console.log('tokenizing', input);
+
   let current = 0;
   let tokens = [];
 
@@ -53,6 +55,8 @@ const tokenizer = input => {
 };
 
 const parser = tokens => {
+  console.log('parsing', tokens);
+
   let current = 0;
 
   function walk() {
@@ -66,9 +70,13 @@ const parser = tokens => {
       current++;
       return { type: 'StringLiteral', value: token.value };
     }
+    if(token.type === 'name') {
+      current++;
+      return { type: 'Identifier', value: token.value };
+    }
     if (token.type === 'paren' && token.value === '(') {
       token = tokens[++current];
-      const node = { type: 'CallExpressions', name: token.value, params: [] };
+      const node = { type: 'CallExpression', name: token.value, params: [] };
 
       token = tokens[++current];
 
@@ -109,7 +117,8 @@ const traverser = (ast, visitor) => {
     Program: node => traverseArray(node.body, node),
     CallExpression: node => traverseArray(node.params, node),
     NumberLiteral: () => {},
-    StringLiteral: () => {}
+    StringLiteral: () => {},
+    Identifier: () => {},
   };
 
   function traverseNode(node, parent) {
@@ -140,7 +149,7 @@ const transformer = ast => {
 
   ast._context = newAst.body;
 
-  traverse(ast, {
+  traverser(ast, {
     NumberLiteral: {
       enter: (node, parent) => {
         parent._context.push({ type: 'NumberLiteral', value: node.value });
@@ -179,7 +188,7 @@ const codeGenerator = node => {
   const codeGeneratorMap = {
     Program: R.pipe(R.prop('body'), R.map(codeGenerator), R.join('\n')),
     ExpressionStatement: node => codeGenerator(node.expression) + ';',
-    CallExpressions: node =>
+    CallExpression: node =>
       `${codeGenerator(node.callee)}(${R.map(
         codeGenerator,
         node.arguments

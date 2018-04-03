@@ -1,0 +1,10 @@
+[package]
+authors = ["Zack Smith <zachary.smith@vivintsolar.com>"]
+name = "random-pi"
+version = "0.1.0"
+
+[dependencies]
+gcd = "1.1.0"
+rand = "0.4.2"
+rayon = "0.9.0"
+time = "0.1.39"

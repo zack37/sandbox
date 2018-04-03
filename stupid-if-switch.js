@@ -1,4 +1,4 @@
-const { values, find } = require('ramda');
+const { either, find, propEq, values } = require('ramda');
 const { inspect } = require('util');
 
 const bound = l => console.log.bind(console, l);
@@ -13,10 +13,12 @@ const logLevels = {
 };
 
 const sane = level => {
-  return (find(
-    x => x.stringLevel === level || x.intLevel === level,
-    values(logLevels)
-  ) || logLevels.info).log;
+  return (
+    find(
+      either(propEq('stringLevel', level), propEq('intLevel', level)),
+      values(logLevels)
+    ) || logLevels.info
+  ).log;
 };
 
 const wtf = level => message => {
