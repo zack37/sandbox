@@ -10,4 +10,9 @@ const filterFunc = x => {
   return x % 3 === 0;
 };
 
-console.log(R.pipe(R.map(mappingFunc), R.filter(filterFunc))(R.range(1, 10)));
+console.log(
+  R.pipe(
+    R.map(mappingFunc),
+    R.filter(filterFunc),
+  )(R.range(1, 10)),
+);

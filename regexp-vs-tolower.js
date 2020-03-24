@@ -1,6 +1,6 @@
-const benchmarkPrint = require('./benchmark-print');
 const { Suite } = require('benchmark');
 const { toLower } = require('lodash');
+const benchmarkPrint = require('./benchmark-print');
 
 const cached = /test/i;
 

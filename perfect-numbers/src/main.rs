@@ -12,14 +12,16 @@ fn is_perfect(n: &usize) -> bool {
     (1..upper + 1)
         .step_by(step)
         .filter(|&x| n % x == 0)
-        .sum::<usize>() == *n
+        .sum::<usize>()
+        == *n
 }
 
 fn main() {
     let start = PreciseTime::now();
 
     let perfect_numbers: Vec<usize> = (2..1_000_000_usize)
-        .into_par_iter()
+        // .into_par_iter()
+        .into_iter()
         .filter(is_perfect)
         .collect();
 

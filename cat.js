@@ -1,13 +1,14 @@
+const fs = require('fs');
 const { createInterface } = require('readline');
 const { Observable } = require('rxjs/Rx');
 
 const rl = createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: '> '
+  prompt: '> ',
 });
 
-rl.prompt();
+// Rl.prompt();
 
 function questionAsync(question) {
   return new Promise(resolve => rl.question(question, resolve));
@@ -25,7 +26,7 @@ commandMap.quit = () => {
 };
 commandMap.cat = () => {
   return Observable.fromPromise(
-    questionAsync('Enter a phrase you want repeated: ').then(console.log)
+    questionAsync('Enter a phrase you want repeated: ').then(console.log),
   );
 };
 
@@ -48,5 +49,5 @@ Observable.fromEvent(rl, 'line')
     () => {
       console.log('Goodbye!');
       process.exit(0);
-    }
+    },
   );

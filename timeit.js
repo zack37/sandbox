@@ -2,9 +2,9 @@ const timeit = (name, fn, ...args) => {
   return Promise.resolve()
     .then(() => {
       const start = process.hrtime();
-      const result = fn.apply(null, args);
+      const result = fn(...args);
 
-      if ('then' in result) {
+      if (result && typeof result.then === 'function') {
         return result.then(x => {
           const end = process.hrtime(start);
           return { result: x, end };
@@ -14,7 +14,7 @@ const timeit = (name, fn, ...args) => {
       const end = process.hrtime(start);
       return { result, end };
     })
-    .then(({ result, end: [ seconds, nanoseconds ] }) => {
+    .then(({ result, end: [seconds, nanoseconds] }) => {
       const secondsMS = seconds * 1000;
       const nanosecondsMS = nanoseconds / 1e6;
 

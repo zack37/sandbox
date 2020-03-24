@@ -6,7 +6,7 @@ const defaults = {
   maxWorkers: os.cpus().length,
   retryCount: 10,
   onSpawn: () => {},
-  log: console.log.bind(console)
+  log: console.log.bind(console),
 };
 
 function fork(config, retries = 0) {
@@ -15,11 +15,10 @@ function fork(config, retries = 0) {
   worker.on('exit', (code, signal) => {
     if (signal) {
       config.log(`Worker ${worker.pid} exited due to signal: ${signal}`);
-    }
-    else if (code !== 0) {
+      // eslint-disable-next-line no-negated-condition
+    } else if (code !== 0) {
       config.log(`Worker ${worker.pid} exited with code: ${code}`);
-    }
-    else {
+    } else {
       // Worker was exited normally, `return` to avoid restarting process
       return config.log(`Worker ${worker.pid} exited successfully`);
     }
@@ -33,18 +32,17 @@ function fork(config, retries = 0) {
   });
 }
 
-function forkAsync(config, retries = 0) {
+async function forkAsync(config, retries = 0) {
   return new Promise((resolve, reject) => {
     const worker = cluster.fork();
 
     worker.on('exit', (code, signal) => {
       if (signal) {
         config.log(`Worker ${worker.pid} exited due to signal: ${signal}`);
-      }
-      else if (code !== 0) {
+        // eslint-disable-next-line no-negated-condition
+      } else if (code !== 0) {
         config.log(`Worker ${worker.pid} exited with code: ${code}`);
-      }
-      else {
+      } else {
         // Worker was exited normally, `return` to avoid restarting process
         config.log(`Worker ${worker.pid} exited successfully`);
         return resolve();
@@ -55,36 +53,33 @@ function forkAsync(config, retries = 0) {
         return fork(config, retries + 1);
       }
 
-      return reject('Restart limit reached');
+      return reject(new Error('Restart limit reached'));
     });
   });
 }
 
-module.exports.balance = config => {
-  const configWithDefaults = Object.assign({}, defaults, config);
-  if (configWithDefaults.enabled && cluster.isMaster) {
-    configWithDefaults.log(`Master ${process.pid} is running`);
-    return [...Array(configWithDefaults.maxWorkers).keys()].forEach(() => {
-      fork(configWithDefaults);
-      configWithDefaults.onSpawn();
+module.exports.balance = cfg => {
+  const config = Object.assign({}, defaults, cfg);
+  if (config.enabled && cluster.isMaster) {
+    config.log(`Master ${process.pid} is running`);
+    return [...new Array(config.maxWorkers).keys()].forEach(() => {
+      fork(config);
+      config.onSpawn();
     });
   }
-  return configWithDefaults.onSpawn();
+  return config.onSpawn();
 };
 
-module.exports.balanceAsync = config => {
-  return Promise.resolve().then(() => {
-    const configWithDefaults = Object.assign({}, defaults, config);
-    if (configWithDefaults.enabled && cluster.isMaster) {
-      configWithDefaults.log(`Master ${process.pid} is running`);
-      return Promise.all(
-        [...Array(configWithDefaults.maxWorkers).keys()].forEach(() => {
-          return forkAsync(configWithDefaults).then(() =>
-            configWithDefaults.onSpawn()
-          );
-        })
-      );
-    }
-    return configWithDefaults.onSpawn();
-  });
+module.exports.balanceAsync = async cfg => {
+  const config = { ...defaults, ...cfg };
+  if (config.enabled && cluster.isMaster) {
+    config.log(`Master ${process.pid} is running`);
+    return Promise.all([...new Array(config.maxWorkers).keys()]).map(
+      async () => {
+        await forkAsync(config);
+        config.onSpawn();
+      },
+    );
+  }
+  return config.onSpawn();
 };

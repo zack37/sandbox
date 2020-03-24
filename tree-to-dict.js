@@ -1,4 +1,4 @@
-const { curry, forEach, isNil, map, prop } = require('lodash/fp');
+const { curry, isNil, map, prop } = require('lodash/fp');
 
 const tree = {
   root: {
@@ -9,7 +9,7 @@ const tree = {
     org: 'sales',
     manager: {
       id: '59697',
-      name: 'Chance Allred'
+      name: 'Chance Allred',
     },
     districtManager: [],
     market: '',
@@ -37,10 +37,10 @@ const tree = {
             districtManager: [
               {
                 id: '71815',
-                name: 'Chris Black'
-              }
+                name: 'Chris Black',
+              },
             ],
-            _parent: '288f4954c602c2048c919b84a2dcbd7a'
+            _parent: '288f4954c602c2048c919b84a2dcbd7a',
           },
           {
             _id: 'f56ae3b72e4b52c0f1527601a73f6caa',
@@ -51,9 +51,9 @@ const tree = {
             parent: '288f4954c602c2048c919b84a2dcbd7a',
             officeID: 50100,
             market: 'A',
-            _parent: '288f4954c602c2048c919b84a2dcbd7a'
-          }
-        ]
+            _parent: '288f4954c602c2048c919b84a2dcbd7a',
+          },
+        ],
       },
       {
         _id: '41b5444c67e95cfab80c1010be2903ff',
@@ -74,7 +74,7 @@ const tree = {
             parent: '41b5444c67e95cfab80c1010be2903ff',
             officeID: 50440,
             districtManager: [],
-            _parent: '41b5444c67e95cfab80c1010be2903ff'
+            _parent: '41b5444c67e95cfab80c1010be2903ff',
           },
           {
             _id: '41b5444c67e95cfab80c1010be31f7c7',
@@ -87,10 +87,10 @@ const tree = {
             districtManager: [
               {
                 id: '204265',
-                name: 'Vedina Singh'
-              }
+                name: 'Vedina Singh',
+              },
             ],
-            _parent: '41b5444c67e95cfab80c1010be2903ff'
+            _parent: '41b5444c67e95cfab80c1010be2903ff',
           },
           {
             _id: '41b5444c67e95cfab80c1010be321214',
@@ -103,10 +103,10 @@ const tree = {
             districtManager: [
               {
                 id: '204319',
-                name: 'Julian Smalls'
-              }
+                name: 'Julian Smalls',
+              },
             ],
-            _parent: '41b5444c67e95cfab80c1010be2903ff'
+            _parent: '41b5444c67e95cfab80c1010be2903ff',
           },
           {
             _id: '41b5444c67e95cfab80c1010be322529',
@@ -119,10 +119,10 @@ const tree = {
             districtManager: [
               {
                 id: '204266',
-                name: 'Rod Salka'
-              }
+                name: 'Rod Salka',
+              },
             ],
-            _parent: '41b5444c67e95cfab80c1010be2903ff'
+            _parent: '41b5444c67e95cfab80c1010be2903ff',
           },
           {
             _id: '41b5444c67e95cfab80c1010be3241dc',
@@ -135,12 +135,12 @@ const tree = {
             districtManager: [
               {
                 id: '204264',
-                name: 'Zachary Auala'
-              }
+                name: 'Zachary Auala',
+              },
             ],
-            _parent: '41b5444c67e95cfab80c1010be2903ff'
-          }
-        ]
+            _parent: '41b5444c67e95cfab80c1010be2903ff',
+          },
+        ],
       },
       {
         _id: 'e240c438f96f8419634673c7f991eb31',
@@ -151,29 +151,29 @@ const tree = {
         org: 'sales',
         manager: {
           id: '39702',
-          name: 'Daniel Reed'
+          name: 'Daniel Reed',
         },
         districtManager: [
           {
             id: '1317',
-            name: 'Tyler Williams'
+            name: 'Tyler Williams',
           },
           {
             id: '29133',
-            name: 'Jeremy Long'
+            name: 'Jeremy Long',
           },
           {
             id: '105237',
-            name: 'Jordan Williams'
+            name: 'Jordan Williams',
           },
           {
             id: '119839',
-            name: 'Dave Allred'
+            name: 'Dave Allred',
           },
           {
             id: '200609',
-            name: 'Devin Arp'
-          }
+            name: 'Devin Arp',
+          },
         ],
         _children: [
           {
@@ -186,16 +186,16 @@ const tree = {
             districtManager: [
               {
                 id: '9152',
-                name: 'Jeff Strong'
+                name: 'Jeff Strong',
               },
               {
                 id: '20787',
-                name: 'Darrell Doucette'
+                name: 'Darrell Doucette',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
-              }
+                name: 'Jordan Laplace',
+              },
             ],
             _children: [
               {
@@ -211,58 +211,58 @@ const tree = {
                 districtManager: [
                   {
                     id: '31490',
-                    name: 'Forrest Flesch'
+                    name: 'Forrest Flesch',
                   },
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '114737',
-                    name: 'Christian Macias'
+                    name: 'Christian Macias',
                   },
                   {
                     id: '21260',
-                    name: 'Jeffrey Galovan'
+                    name: 'Jeffrey Galovan',
                   },
                   {
                     id: '43914',
-                    name: 'Stuart Watson'
+                    name: 'Stuart Watson',
                   },
                   {
                     id: '3125',
-                    name: 'Cole Smith'
+                    name: 'Cole Smith',
                   },
                   {
                     id: '96960',
-                    name: 'Damion Nielsen'
+                    name: 'Damion Nielsen',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
+                    name: 'Alex Williams',
                   },
                   {
                     id: '203850',
-                    name: 'Talmage James'
-                  }
+                    name: 'Talmage James',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9544a42'
+                _parent: '750521139b7c4c3be0b855aad9544a42',
               },
               {
                 _id: '7dede0d30bcea2f47065381cc4270362',
@@ -277,47 +277,47 @@ const tree = {
                   {
                     id: '3588',
                     name: 'Adam Cox',
-                    bonusAllocation: '90'
+                    bonusAllocation: '90',
                   },
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '123649',
-                    name: 'Stephen Isbell'
+                    name: 'Stephen Isbell',
                   },
                   {
                     id: '9000343',
-                    name: 'Alex Williams'
+                    name: 'Alex Williams',
                   },
                   {
                     id: '3125',
-                    name: 'Cole Smith'
-                  }
+                    name: 'Cole Smith',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad9544a42'
+                _parent: '750521139b7c4c3be0b855aad9544a42',
               },
               {
                 _id: 'dfaf57bfd11d09ae9e0677647ed07d73',
@@ -331,19 +331,19 @@ const tree = {
                 districtManager: [
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '9000343',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad9544a42'
+                _parent: '750521139b7c4c3be0b855aad9544a42',
               },
               {
                 _id: 'e240c438f96f8419634673c7f991fabe',
@@ -358,55 +358,55 @@ const tree = {
                   {
                     id: '21260',
                     name: 'Jeff Galovan',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '43521',
                     name: 'Sterling Hills',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '10180',
-                    name: 'Todd Jensen'
+                    name: 'Todd Jensen',
                   },
                   {
                     id: '118045',
-                    name: 'Melvin Esquilin'
+                    name: 'Melvin Esquilin',
                   },
                   {
                     id: '9000343',
-                    name: 'Alex Williams'
+                    name: 'Alex Williams',
                   },
                   {
                     id: '68922',
-                    name: 'Daron Wilson'
+                    name: 'Daron Wilson',
                   },
                   {
                     id: '47736',
-                    name: 'Brian Peterson'
-                  }
+                    name: 'Brian Peterson',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad9544a42'
-              }
+                _parent: '750521139b7c4c3be0b855aad9544a42',
+              },
             ],
-            _parent: 'e240c438f96f8419634673c7f991eb31'
+            _parent: 'e240c438f96f8419634673c7f991eb31',
           },
           {
             _id: '750521139b7c4c3be0b855aad954920f',
@@ -418,16 +418,16 @@ const tree = {
             districtManager: [
               {
                 id: '105237',
-                name: 'Jordan Williams'
+                name: 'Jordan Williams',
               },
               {
                 id: '20787',
-                name: 'Darrell Doucette'
+                name: 'Darrell Doucette',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
-              }
+                name: 'Jordan Laplace',
+              },
             ],
             _children: [
               {
@@ -443,42 +443,42 @@ const tree = {
                 districtManager: [
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '93041',
-                    name: 'Jonathan Perez'
+                    name: 'Jonathan Perez',
                   },
                   {
                     id: '101292',
-                    name: 'Lindsay Palmer'
+                    name: 'Lindsay Palmer',
                   },
                   {
                     id: '119839',
-                    name: 'Dave Allred'
+                    name: 'Dave Allred',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: '288f4954c602c2048c919b84a2e4fef5',
@@ -491,57 +491,57 @@ const tree = {
                   {
                     id: '94791',
                     name: 'Clint Williams',
-                    bonusAllocation: '50'
+                    bonusAllocation: '50',
                   },
                   {
                     id: '36985',
-                    name: 'Bryce Jones'
+                    name: 'Bryce Jones',
                   },
                   {
                     id: '9152',
-                    name: 'Jeff Strong'
+                    name: 'Jeff Strong',
                   },
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '115110',
-                    name: 'Michael Wirtz'
+                    name: 'Michael Wirtz',
                   },
                   {
                     id: '94210',
-                    name: 'Gerald Cavanaugh'
+                    name: 'Gerald Cavanaugh',
                   },
                   {
                     id: '120210',
-                    name: 'Sean Cagle'
+                    name: 'Sean Cagle',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 officeID: 4546,
                 supportEmail: 'stocktonsupport@vivintsolar.com',
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: '4364b6070c11a042d06e6c8c2d592fd8',
@@ -556,63 +556,63 @@ const tree = {
                   {
                     id: '1373',
                     name: 'Jacob Bevans',
-                    bonusAllocation: '100'
+                    bonusAllocation: '100',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '98649',
-                    name: 'Lane Pohlsander'
+                    name: 'Lane Pohlsander',
                   },
                   {
                     id: '1373',
-                    name: 'Jacob Bevans'
+                    name: 'Jacob Bevans',
                   },
                   {
                     id: '118618',
-                    name: 'Joshua Orozco'
+                    name: 'Joshua Orozco',
                   },
                   {
                     id: '113361',
-                    name: 'Carl Busseau'
+                    name: 'Carl Busseau',
                   },
                   {
                     id: '120560',
-                    name: 'Pete Wilson'
+                    name: 'Pete Wilson',
                   },
                   {
                     id: '103966',
-                    name: 'Hugo Guardado'
+                    name: 'Hugo Guardado',
                   },
                   {
                     id: '94250',
-                    name: 'Patrick Morris'
+                    name: 'Patrick Morris',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: '4364b6070c11a042d06e6c8c2d5962b8',
@@ -627,53 +627,53 @@ const tree = {
                   {
                     id: '94250',
                     name: 'Patrick Morris',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '57960',
                     name: 'Quintion Lowe',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '1373',
-                    name: 'Jacob Bevans'
+                    name: 'Jacob Bevans',
                   },
                   {
                     id: '113361',
-                    name: 'Carl Busseau'
+                    name: 'Carl Busseau',
                   },
                   {
                     id: '201684',
-                    name: 'Josh Balling'
+                    name: 'Josh Balling',
                   },
                   {
                     id: '202584',
-                    name: 'Daniel Dyer'
+                    name: 'Daniel Dyer',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
                 _parent: '750521139b7c4c3be0b855aad954920f',
@@ -690,12 +690,12 @@ const tree = {
                     districtManager: [
                       {
                         id: '203013',
-                        name: 'Phil Horton'
-                      }
+                        name: 'Phil Horton',
+                      },
                     ],
-                    _parent: '4364b6070c11a042d06e6c8c2d5962b8'
-                  }
-                ]
+                    _parent: '4364b6070c11a042d06e6c8c2d5962b8',
+                  },
+                ],
               },
               {
                 _id: '5fee30546f4a9da84a60d85cebb5d08a',
@@ -707,49 +707,49 @@ const tree = {
                 districtManager: [
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '95368',
-                    name: 'Trevor Young'
+                    name: 'Trevor Young',
                   },
                   {
                     id: '119839',
-                    name: 'Dave Allred'
+                    name: 'Dave Allred',
                   },
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '200140',
-                    name: 'Robert Baldwin'
+                    name: 'Robert Baldwin',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 officeID: 4550,
                 supportEmail: 'santacruzsupport@vivintsolar.com',
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'c2175fd5cacf91f989bb9a3f25f28969',
@@ -764,68 +764,68 @@ const tree = {
                   {
                     id: '9152',
                     name: 'Jeff Strong',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '43749',
                     name: 'Landon Wimmer',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '36985',
-                    name: 'Bryce Jones'
+                    name: 'Bryce Jones',
                   },
                   {
                     id: '114347',
-                    name: 'Justin Wolf'
+                    name: 'Justin Wolf',
                   },
                   {
                     id: '114737',
-                    name: 'Christian Macias'
+                    name: 'Christian Macias',
                   },
                   {
                     id: '115110',
-                    name: 'Michael Wirtz'
+                    name: 'Michael Wirtz',
                   },
                   {
                     id: '9000343',
-                    name: 'Alex Williams'
+                    name: 'Alex Williams',
                   },
                   {
                     id: '3125',
-                    name: 'Cole Smith'
+                    name: 'Cole Smith',
                   },
                   {
                     id: '31490',
-                    name: 'Forrest Flesch'
+                    name: 'Forrest Flesch',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'cd6e32108eccc8c0b2c705e776a67f58',
@@ -838,43 +838,43 @@ const tree = {
                 districtManager: [
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '1373',
-                    name: 'Jacob Bevans'
+                    name: 'Jacob Bevans',
                   },
                   {
                     id: '118892',
-                    name: 'Brian Burnette'
+                    name: 'Brian Burnette',
                   },
                   {
                     id: '94307',
-                    name: 'Nathan Skousen'
+                    name: 'Nathan Skousen',
                   },
                   {
                     id: '118618',
-                    name: 'Joshua Orozco'
+                    name: 'Joshua Orozco',
                   },
                   {
                     id: '113361',
-                    name: 'Carl Busseau'
+                    name: 'Carl Busseau',
                   },
                   {
                     id: '120560',
-                    name: 'Pete Wilson'
+                    name: 'Pete Wilson',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'dfaf57bfd11d09ae9e0677647ed0ca8b',
@@ -889,30 +889,30 @@ const tree = {
                 districtManager: [
                   {
                     id: '112654',
-                    name: 'Isaac Jacobson'
+                    name: 'Isaac Jacobson',
                   },
                   {
                     id: '112732',
-                    name: 'Jonathan Jacobson'
+                    name: 'Jonathan Jacobson',
                   },
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '119839',
-                    name: 'Dave Allred'
+                    name: 'Dave Allred',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'dfaf57bfd11d09ae9e0677647ed13cd4',
@@ -927,58 +927,58 @@ const tree = {
                 districtManager: [
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '36740',
-                    name: 'Michael Otterson'
+                    name: 'Michael Otterson',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '111256',
-                    name: 'Matt LeStarge'
+                    name: 'Matt LeStarge',
                   },
                   {
                     id: '112528',
-                    name: 'Benjamin LeStarge'
+                    name: 'Benjamin LeStarge',
                   },
                   {
                     id: '109625',
-                    name: 'Chad Thompson'
+                    name: 'Chad Thompson',
                   },
                   {
                     id: '8898',
-                    name: 'Christopher White'
+                    name: 'Christopher White',
                   },
                   {
                     id: '115218',
-                    name: 'Daniel Vu'
+                    name: 'Daniel Vu',
                   },
                   {
                     id: '9152',
-                    name: 'Jeff Strong'
+                    name: 'Jeff Strong',
                   },
                   {
                     id: '115110',
-                    name: 'Michael Wirtz'
+                    name: 'Michael Wirtz',
                   },
                   {
                     id: '117262',
-                    name: 'Romeo Leyva'
+                    name: 'Romeo Leyva',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'e240c438f96f8419634673c7f9920506',
@@ -993,62 +993,62 @@ const tree = {
                   {
                     id: '3061',
                     name: 'Jared Slemboski',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '94283',
                     name: 'Matt Stevenson',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '66387',
                     name: 'Tim Clarkson',
-                    bonusAllocation: 0
+                    bonusAllocation: 0,
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '8898',
-                    name: 'Christopher White'
+                    name: 'Christopher White',
                   },
                   {
                     id: '9152',
-                    name: 'Jeff Strong'
+                    name: 'Jeff Strong',
                   },
                   {
                     id: '115110',
-                    name: 'Michael Wirtz'
+                    name: 'Michael Wirtz',
                   },
                   {
                     id: '96855',
-                    name: 'Brian Brooker'
+                    name: 'Brian Brooker',
                   },
                   {
                     id: '94188',
-                    name: 'Steven Hoover'
+                    name: 'Steven Hoover',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
+                    name: 'Alex Williams',
                   },
                   {
                     id: '94329',
-                    name: 'Dusty Broadhead'
-                  }
+                    name: 'Dusty Broadhead',
+                  },
                 ],
                 market: 'A',
                 _children: [
@@ -1064,13 +1064,13 @@ const tree = {
                     districtManager: [
                       {
                         id: '116742',
-                        name: 'Brian Sanchez'
-                      }
+                        name: 'Brian Sanchez',
+                      },
                     ],
-                    _parent: 'e240c438f96f8419634673c7f9920506'
-                  }
+                    _parent: 'e240c438f96f8419634673c7f9920506',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'e240c438f96f8419634673c7f99248d0',
@@ -1084,51 +1084,51 @@ const tree = {
                 districtManager: [
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '42398',
-                    name: 'Bryan Rossiter'
+                    name: 'Bryan Rossiter',
                   },
                   {
                     id: '119839',
-                    name: 'Dave Allred'
+                    name: 'Dave Allred',
                   },
                   {
                     id: '116538',
-                    name: 'Kevin Padilla'
+                    name: 'Kevin Padilla',
                   },
                   {
                     id: '111411',
-                    name: 'Taylor Eardley'
+                    name: 'Taylor Eardley',
                   },
                   {
                     id: '200140',
-                    name: 'Robert Baldwin'
+                    name: 'Robert Baldwin',
                   },
                   {
                     id: '112654',
-                    name: 'Isaac Jacobson'
+                    name: 'Isaac Jacobson',
                   },
                   {
                     id: '200609',
-                    name: 'Devin Arp'
+                    name: 'Devin Arp',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
+                _parent: '750521139b7c4c3be0b855aad954920f',
               },
               {
                 _id: 'e240c438f96f8419634673c7f9924a18',
@@ -1142,54 +1142,54 @@ const tree = {
                 districtManager: [
                   {
                     id: '3061',
-                    name: 'Jared Slemboski'
+                    name: 'Jared Slemboski',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '25220',
-                    name: 'Daniel Harris'
+                    name: 'Daniel Harris',
                   },
                   {
                     id: '1373',
-                    name: 'Jacob Bevans'
+                    name: 'Jacob Bevans',
                   },
                   {
                     id: '98649',
-                    name: 'Lane Pohlsander'
+                    name: 'Lane Pohlsander',
                   },
                   {
                     id: '113361',
-                    name: 'Carl Busseau'
+                    name: 'Carl Busseau',
                   },
                   {
                     id: '48343',
-                    name: 'Terek Cope'
+                    name: 'Terek Cope',
                   },
                   {
                     id: '111415',
-                    name: 'Alex Williams'
-                  }
+                    name: 'Alex Williams',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954920f'
-              }
+                _parent: '750521139b7c4c3be0b855aad954920f',
+              },
             ],
-            _parent: 'e240c438f96f8419634673c7f991eb31'
+            _parent: 'e240c438f96f8419634673c7f991eb31',
           },
           {
             _id: '750521139b7c4c3be0b855aad954c2a1',
@@ -1201,28 +1201,28 @@ const tree = {
             districtManager: [
               {
                 id: '94058',
-                name: 'Taylor Turnbull'
+                name: 'Taylor Turnbull',
               },
               {
                 id: '98055',
-                name: 'David Madsen'
+                name: 'David Madsen',
               },
               {
                 id: '42485',
-                name: 'Michael Brand'
+                name: 'Michael Brand',
               },
               {
                 id: '20787',
-                name: 'Darrell Doucette'
+                name: 'Darrell Doucette',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
+                name: 'Jordan Laplace',
               },
               {
                 id: '203860',
-                name: 'Jordan Binning'
-              }
+                name: 'Jordan Binning',
+              },
             ],
             _children: [
               {
@@ -1238,46 +1238,46 @@ const tree = {
                 districtManager: [
                   {
                     id: '98055',
-                    name: 'David Madsen'
+                    name: 'David Madsen',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '114339',
-                    name: 'Brian Thoemmes'
+                    name: 'Brian Thoemmes',
                   },
                   {
                     id: '112486',
-                    name: 'Jacob Tolman'
+                    name: 'Jacob Tolman',
                   },
                   {
                     id: '200857',
-                    name: 'Branson Hadfield'
+                    name: 'Branson Hadfield',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
-                  }
+                    name: 'Dallin West',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '288f4954c602c2048c919b84a2e5f5ea',
@@ -1289,61 +1289,61 @@ const tree = {
                 districtManager: [
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '98055',
-                    name: 'David Madsen'
+                    name: 'David Madsen',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '94275',
-                    name: 'Bart Ward'
+                    name: 'Bart Ward',
                   },
                   {
                     id: '32361',
-                    name: 'Mike Schreiner'
+                    name: 'Mike Schreiner',
                   },
                   {
                     id: '113087',
-                    name: 'Anis Rahal'
+                    name: 'Anis Rahal',
                   },
                   {
                     id: '105117',
-                    name: 'Jordon Baker'
+                    name: 'Jordon Baker',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
-                  }
+                    name: 'Dallin West',
+                  },
                 ],
                 officeID: 4467,
                 supportEmail: 'lacountysupport@vivintsolar.com',
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '3ae35d6414164b5b50a6ac64902f872f',
@@ -1357,30 +1357,30 @@ const tree = {
                 districtManager: [
                   {
                     id: '62136',
-                    name: 'Dan Dunn'
+                    name: 'Dan Dunn',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '117996',
-                    name: 'Samuel Hampsch'
+                    name: 'Samuel Hampsch',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
-                  }
+                    name: 'Joshua Gonzales',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '3faca4278e55671ac3292dca48701f29',
@@ -1392,7 +1392,7 @@ const tree = {
                 officeID: 50400,
                 market: 'B',
                 districtManager: [],
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '4364b6070c11a042d06e6c8c2d58b98a',
@@ -1407,59 +1407,59 @@ const tree = {
                   {
                     id: '62136',
                     name: 'Dan Dunn',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '117100',
-                    name: 'Tanner Torres'
+                    name: 'Tanner Torres',
                   },
                   {
                     id: '200562',
-                    name: 'Courtney Stevens'
+                    name: 'Courtney Stevens',
                   },
                   {
                     id: '201286',
-                    name: 'John Woodfield'
+                    name: 'John Woodfield',
                   },
                   {
                     id: '95129',
-                    name: 'Danny Copinga'
+                    name: 'Danny Copinga',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '94249',
-                    name: 'Tevita Niutupuivaha'
-                  }
+                    name: 'Tevita Niutupuivaha',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '4364b6070c11a042d06e6c8c2d590a3f',
@@ -1473,67 +1473,67 @@ const tree = {
                 districtManager: [
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '98055',
-                    name: 'David Madsen'
+                    name: 'David Madsen',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '117983',
-                    name: 'Tailor Gibbons'
+                    name: 'Tailor Gibbons',
                   },
                   {
                     id: '201286',
-                    name: 'John Woodfield'
+                    name: 'John Woodfield',
                   },
                   {
                     id: '94249',
-                    name: 'Tevita Niutupuivaha'
+                    name: 'Tevita Niutupuivaha',
                   },
                   {
                     id: '200633',
-                    name: 'JJ Pequeno'
+                    name: 'JJ Pequeno',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '95129',
-                    name: 'Danny Copinga'
+                    name: 'Danny Copinga',
                   },
                   {
                     id: '203873',
-                    name: 'Cameron Kimball'
-                  }
+                    name: 'Cameron Kimball',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '4364b6070c11a042d06e6c8c2d594022',
@@ -1547,63 +1547,63 @@ const tree = {
                 districtManager: [
                   {
                     id: '94337',
-                    name: 'Austin Clinger'
+                    name: 'Austin Clinger',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '94058',
-                    name: 'Taylor Turnbull'
+                    name: 'Taylor Turnbull',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '36985',
-                    name: 'Bryce Jones'
+                    name: 'Bryce Jones',
                   },
                   {
                     id: '121279',
-                    name: 'Kylie Gutierrez'
+                    name: 'Kylie Gutierrez',
                   },
                   {
                     id: '42485',
-                    name: 'Michael Brand'
+                    name: 'Michael Brand',
                   },
                   {
                     id: '113590',
-                    name: 'Carlos Nieto'
+                    name: 'Carlos Nieto',
                   },
                   {
                     id: '115969',
-                    name: 'Aaron Gutierrez'
+                    name: 'Aaron Gutierrez',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
-                  }
+                    name: 'Dallin West',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '4364b6070c11a042d06e6c8c2d59c69a',
@@ -1617,47 +1617,47 @@ const tree = {
                 districtManager: [
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '94058',
-                    name: 'Taylor Turnbull'
+                    name: 'Taylor Turnbull',
                   },
                   {
                     id: '42485',
-                    name: 'Michael Brand'
+                    name: 'Michael Brand',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '61066',
-                    name: 'Brandon Seidel'
+                    name: 'Brandon Seidel',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
-                  }
+                    name: 'Joshua Gonzales',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: '4cdf2b2475dd6c77e15ee8a3acceb823',
@@ -1671,63 +1671,63 @@ const tree = {
                 districtManager: [
                   {
                     id: '94231',
-                    name: 'Joshua Packard'
+                    name: 'Joshua Packard',
                   },
                   {
                     id: '94230',
-                    name: 'Wesley Calland'
+                    name: 'Wesley Calland',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '94058',
-                    name: 'Taylor Turnbull'
+                    name: 'Taylor Turnbull',
                   },
                   {
                     id: '96716',
-                    name: 'Daniel Maynard'
+                    name: 'Daniel Maynard',
                   },
                   {
                     id: '94337',
-                    name: 'Austin Clinger'
+                    name: 'Austin Clinger',
                   },
                   {
                     id: '42485',
-                    name: 'Michael Brand'
+                    name: 'Michael Brand',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '107044',
-                    name: 'Louis Kunz'
-                  }
+                    name: 'Louis Kunz',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: 'dfaf57bfd11d09ae9e0677647ed0d627',
@@ -1742,14 +1742,14 @@ const tree = {
                 districtManager: [
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
-                  }
+                    name: 'Joshua Gonzales',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: 'e240c438f96f8419634673c7f99212f3',
@@ -1764,59 +1764,59 @@ const tree = {
                   {
                     id: '1153',
                     name: 'Jeremy Marshall',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '98055',
-                    name: 'David Madsen'
+                    name: 'David Madsen',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '96686',
-                    name: 'Nadia Hamdan'
+                    name: 'Nadia Hamdan',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '61066',
-                    name: 'Brandon Seidel'
+                    name: 'Brandon Seidel',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
-                  }
+                    name: 'Joshua Gonzales',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: 'e240c438f96f8419634673c7f992480c',
@@ -1831,68 +1831,68 @@ const tree = {
                   {
                     id: '2137',
                     name: 'Regan George',
-                    bonusAllocation: '60'
+                    bonusAllocation: '60',
                   },
                   {
                     id: '1467',
                     name: 'Courtney Jones',
-                    bonusAllocation: '40'
+                    bonusAllocation: '40',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '94058',
-                    name: 'Taylor Turnbull'
+                    name: 'Taylor Turnbull',
                   },
                   {
                     id: '1475',
-                    name: 'Reno Mendenhall'
+                    name: 'Reno Mendenhall',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '94037',
-                    name: 'Nathan Scheib'
+                    name: 'Nathan Scheib',
                   },
                   {
                     id: '8898',
-                    name: 'Christopher White'
+                    name: 'Christopher White',
                   },
                   {
                     id: '42485',
-                    name: 'Michael Brand'
+                    name: 'Michael Brand',
                   },
                   {
                     id: '75138',
-                    name: 'Jordan Maya'
+                    name: 'Jordan Maya',
                   },
                   {
                     id: '61066',
-                    name: 'Brandon Seidel'
+                    name: 'Brandon Seidel',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
+                    name: 'Dallin West',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
-                  }
+                    name: 'Joshua Gonzales',
+                  },
                 ],
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
               },
               {
                 _id: 'e240c438f96f8419634673c7f9925860',
@@ -1904,60 +1904,60 @@ const tree = {
                 districtManager: [
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '105237',
-                    name: 'Jordan Williams'
+                    name: 'Jordan Williams',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '21260',
-                    name: 'Jeffrey Galovan'
+                    name: 'Jeffrey Galovan',
                   },
                   {
                     id: '9000343',
-                    name: 'Alex Williams'
+                    name: 'Alex Williams',
                   },
                   {
                     id: '114067',
-                    name: 'Mike Cozzie'
+                    name: 'Mike Cozzie',
                   },
                   {
                     id: '200576',
-                    name: 'Jeffrey Baumsteiger'
+                    name: 'Jeffrey Baumsteiger',
                   },
                   {
                     id: '200576',
-                    name: 'Jeffrey Baumsteiger'
+                    name: 'Jeffrey Baumsteiger',
                   },
                   {
                     id: '123118',
-                    name: 'Joshua Gonzales'
+                    name: 'Joshua Gonzales',
                   },
                   {
                     id: '200754',
-                    name: 'Dallin West'
-                  }
+                    name: 'Dallin West',
+                  },
                 ],
                 officeID: 3570,
                 supportEmail: 'thousandoakssupport@vivintsolar.com',
                 market: 'A',
-                _parent: '750521139b7c4c3be0b855aad954c2a1'
-              }
+                _parent: '750521139b7c4c3be0b855aad954c2a1',
+              },
             ],
-            _parent: 'e240c438f96f8419634673c7f991eb31'
+            _parent: 'e240c438f96f8419634673c7f991eb31',
           },
           {
             _id: 'c52eaae4567250e90bbe3c9c4530a1ba',
@@ -1970,28 +1970,28 @@ const tree = {
             districtManager: [
               {
                 id: '3061',
-                name: 'Jared Slemboski'
+                name: 'Jared Slemboski',
               },
               {
                 id: '40572',
-                name: 'Brandon Holmes'
+                name: 'Brandon Holmes',
               },
               {
                 id: '20787',
-                name: 'Darrell Doucette'
+                name: 'Darrell Doucette',
               },
               {
                 id: '76134',
-                name: 'Kathy Chen'
+                name: 'Kathy Chen',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
+                name: 'Jordan Laplace',
               },
               {
                 id: '21193',
-                name: 'Jason Crown'
-              }
+                name: 'Jason Crown',
+              },
             ],
             market: '',
             _children: [
@@ -2006,73 +2006,73 @@ const tree = {
                   {
                     id: '9409',
                     name: 'Michael Romney',
-                    bonusAllocation: '50'
+                    bonusAllocation: '50',
                   },
                   {
                     id: '30831',
-                    name: 'Troy Van Belle'
+                    name: 'Troy Van Belle',
                   },
                   {
                     id: '29133',
-                    name: 'Jeremy Long'
+                    name: 'Jeremy Long',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '116099',
-                    name: 'Alek Gilmore'
+                    name: 'Alek Gilmore',
                   },
                   {
                     id: '29140',
-                    name: 'Heber Packard'
+                    name: 'Heber Packard',
                   },
                   {
                     id: '98822',
-                    name: 'Kyle Naylor'
+                    name: 'Kyle Naylor',
                   },
                   {
                     id: '122913',
-                    name: 'Andrew Lasko'
+                    name: 'Andrew Lasko',
                   },
                   {
                     id: '106631',
-                    name: 'Cade Thueson'
+                    name: 'Cade Thueson',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 officeID: 4530,
                 supportEmail: 'azwestsupport@vivintsolar.com',
                 market: 'A',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: '288f4954c602c2048c919b84a2d1e08b',
@@ -2085,76 +2085,76 @@ const tree = {
                   {
                     id: '28724',
                     name: 'Adam Harper',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '29133',
-                    name: 'Jeremy Long'
+                    name: 'Jeremy Long',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '94234',
-                    name: 'Caleb Vincent'
+                    name: 'Caleb Vincent',
                   },
                   {
                     id: '110470',
-                    name: 'Santo Amodeo'
+                    name: 'Santo Amodeo',
                   },
                   {
                     id: '103983',
-                    name: 'Erick Thomas'
+                    name: 'Erick Thomas',
                   },
                   {
                     id: '116099',
-                    name: 'Alek Gilmore'
+                    name: 'Alek Gilmore',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '201920',
-                    name: 'Todd Christensen'
+                    name: 'Todd Christensen',
                   },
                   {
                     id: '106631',
-                    name: 'Cade Thueson'
+                    name: 'Cade Thueson',
                   },
                   {
                     id: '98822',
-                    name: 'Kyle Naylor'
+                    name: 'Kyle Naylor',
                   },
                   {
                     id: '122913',
-                    name: 'Andrew Lasko'
+                    name: 'Andrew Lasko',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 officeID: 4531,
                 supportEmail: 'azeastsupport@vivintsolar.com',
@@ -2173,12 +2173,12 @@ const tree = {
                     districtManager: [
                       {
                         id: '110470',
-                        name: 'Santo Amodeo'
-                      }
+                        name: 'Santo Amodeo',
+                      },
                     ],
-                    _parent: '288f4954c602c2048c919b84a2d1e08b'
-                  }
-                ]
+                    _parent: '288f4954c602c2048c919b84a2d1e08b',
+                  },
+                ],
               },
               {
                 _id: '288f4954c602c2048c919b84a2d1f8ca',
@@ -2191,57 +2191,57 @@ const tree = {
                   {
                     id: '45012',
                     name: 'Jeff Sorensen',
-                    bonusAllocation: '30'
+                    bonusAllocation: '30',
                   },
                   {
                     id: '61838',
-                    name: 'Scott Whiting'
+                    name: 'Scott Whiting',
                   },
                   {
                     id: '47769',
-                    name: 'Zachary Latimer'
+                    name: 'Zachary Latimer',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '114254',
-                    name: 'Deven Webster'
+                    name: 'Deven Webster',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 officeID: 4528,
                 supportEmail: 'konasupport@vivintsolar.com',
                 market: 'B',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: '6c4548ad0247cea45ee35032dcfe43e9',
@@ -2254,23 +2254,23 @@ const tree = {
                 districtManager: [
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 market: 'A',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: '94ac74350d15f605c84ec2a6959f944d',
@@ -2283,67 +2283,67 @@ const tree = {
                 districtManager: [
                   {
                     id: '38731',
-                    name: 'Chad Vogl'
+                    name: 'Chad Vogl',
                   },
                   {
                     id: '58331',
-                    name: 'Julius Gillmore'
+                    name: 'Julius Gillmore',
                   },
                   {
                     id: '95368',
-                    name: 'Trevor Young'
+                    name: 'Trevor Young',
                   },
                   {
                     id: '119064',
-                    name: 'Terry Xanthos'
+                    name: 'Terry Xanthos',
                   },
                   {
                     id: '61838',
-                    name: 'Scott Whiting'
+                    name: 'Scott Whiting',
                   },
                   {
                     id: '116351',
-                    name: 'Brock Morrison'
+                    name: 'Brock Morrison',
                   },
                   {
                     id: '94775',
-                    name: 'Jonathan Jensen'
+                    name: 'Jonathan Jensen',
                   },
                   {
                     id: '21193',
-                    name: 'Jason Crown'
+                    name: 'Jason Crown',
                   },
                   {
                     id: '114605',
-                    name: 'Zachary Randall'
+                    name: 'Zachary Randall',
                   },
                   {
                     id: '31469',
-                    name: 'Jason Baugh'
+                    name: 'Jason Baugh',
                   },
                   {
                     id: '94200',
-                    name: 'Benjamin Baker'
+                    name: 'Benjamin Baker',
                   },
                   {
                     id: '116099',
-                    name: 'Alek Gilmore'
+                    name: 'Alek Gilmore',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '201467',
-                    name: 'Adam Layton'
+                    name: 'Adam Layton',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
-                  }
+                    name: 'Kathy Chen',
+                  },
                 ],
                 market: 'A',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: '94ac74350d15f605c84ec2a695bc2d8c',
@@ -2357,80 +2357,80 @@ const tree = {
                 districtManager: [
                   {
                     id: '38731',
-                    name: 'Chad Vogl'
+                    name: 'Chad Vogl',
                   },
                   {
                     id: '61838',
-                    name: 'Scott Whiting'
+                    name: 'Scott Whiting',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '94200',
-                    name: 'Benjamin Baker'
+                    name: 'Benjamin Baker',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
+                    name: 'Tyler Mickelsen',
                   },
                   {
                     id: '58331',
-                    name: 'Julius Gillmore'
+                    name: 'Julius Gillmore',
                   },
                   {
                     id: '119064',
-                    name: 'Terry Xanthos'
+                    name: 'Terry Xanthos',
                   },
                   {
                     id: '21193',
-                    name: 'Jason Crown'
+                    name: 'Jason Crown',
                   },
                   {
                     id: '116351',
-                    name: 'Brock Morrison'
+                    name: 'Brock Morrison',
                   },
                   {
                     id: '114605',
-                    name: 'Zachary Randall'
+                    name: 'Zachary Randall',
                   },
                   {
                     id: '31469',
-                    name: 'Jason Baugh'
+                    name: 'Jason Baugh',
                   },
                   {
                     id: '94775',
-                    name: 'Jonathan Jensen'
+                    name: 'Jonathan Jensen',
                   },
                   {
                     id: '116099',
-                    name: 'Alek Gilmore'
+                    name: 'Alek Gilmore',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '120802',
-                    name: 'Darrell Olsen'
+                    name: 'Darrell Olsen',
                   },
                   {
                     id: '75581',
-                    name: 'Tad Thueson'
+                    name: 'Tad Thueson',
                   },
                   {
                     id: '202562',
-                    name: 'Austin Somers'
+                    name: 'Austin Somers',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '108785',
-                    name: 'Anthony Allred'
-                  }
+                    name: 'Anthony Allred',
+                  },
                 ],
                 _children: [
                   {
@@ -2445,10 +2445,10 @@ const tree = {
                     districtManager: [
                       {
                         id: '118843',
-                        name: 'Alan Malae'
-                      }
+                        name: 'Alan Malae',
+                      },
                     ],
-                    _parent: '94ac74350d15f605c84ec2a695bc2d8c'
+                    _parent: '94ac74350d15f605c84ec2a695bc2d8c',
                   },
                   {
                     _id: '8b57e694ed757f2a2a64126474a123e0',
@@ -2462,13 +2462,13 @@ const tree = {
                     districtManager: [
                       {
                         id: '75581',
-                        name: 'Tad Thueson'
-                      }
+                        name: 'Tad Thueson',
+                      },
                     ],
-                    _parent: '94ac74350d15f605c84ec2a695bc2d8c'
-                  }
+                    _parent: '94ac74350d15f605c84ec2a695bc2d8c',
+                  },
                 ],
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'af95fc6e4f479183d866c04a40dd7695',
@@ -2481,31 +2481,31 @@ const tree = {
                 districtManager: [
                   {
                     id: '202562',
-                    name: 'Austin Somers'
+                    name: 'Austin Somers',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '94200',
-                    name: 'Benjamin Baker'
+                    name: 'Benjamin Baker',
                   },
                   {
                     id: '29133',
-                    name: 'Jeremy Long'
+                    name: 'Jeremy Long',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
+                    name: 'Tyler Mickelsen',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
-                  }
+                    name: 'Kathy Chen',
+                  },
                 ],
                 market: 'A',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'c21285aec9a96ca95635ac0660d1092f',
@@ -2518,23 +2518,23 @@ const tree = {
                 districtManager: [
                   {
                     id: '201467',
-                    name: 'Adam Layton'
+                    name: 'Adam Layton',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 market: 'A',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'c21285aec9a96ca95635ac0660d6e560',
@@ -2547,23 +2547,23 @@ const tree = {
                 districtManager: [
                   {
                     id: '201475',
-                    name: 'Kamron Crandall'
+                    name: 'Kamron Crandall',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 market: 'A',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'c7ed15f38449ea38cb104e860d6a1ce8',
@@ -2577,38 +2577,38 @@ const tree = {
                 districtManager: [
                   {
                     id: '94283',
-                    name: 'Matthew Stevenson'
+                    name: 'Matthew Stevenson',
                   },
                   {
                     id: '120802',
-                    name: 'Darrell Olsen'
+                    name: 'Darrell Olsen',
                   },
                   {
                     id: '94329',
-                    name: 'Dusty Broadhead'
+                    name: 'Dusty Broadhead',
                   },
                   {
                     id: '94200',
-                    name: 'Benjamin Baker'
+                    name: 'Benjamin Baker',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
+                    name: 'Tyler Mickelsen',
                   },
                   {
                     id: '116351',
-                    name: 'Brock Morrison'
-                  }
+                    name: 'Brock Morrison',
+                  },
                 ],
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'cb4da43c484fa0fe10df60a5953e1ce3',
@@ -2622,94 +2622,94 @@ const tree = {
                 districtManager: [
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
+                    name: 'Tyler Mickelsen',
                   },
                   {
                     id: '119064',
-                    name: 'Terry Xanthos'
+                    name: 'Terry Xanthos',
                   },
                   {
                     id: '200596',
-                    name: 'Justin Whitesides'
+                    name: 'Justin Whitesides',
                   },
                   {
                     id: '200606',
-                    name: 'Peter Lukens'
+                    name: 'Peter Lukens',
                   },
                   {
                     id: '20573',
-                    name: 'Chris Hansen'
+                    name: 'Chris Hansen',
                   },
                   {
                     id: '121271',
-                    name: 'Jordan Smith'
+                    name: 'Jordan Smith',
                   },
                   {
                     id: '120913',
-                    name: 'Theodore Smith'
+                    name: 'Theodore Smith',
                   },
                   {
                     id: '95780',
-                    name: 'Patrick Carreiro'
+                    name: 'Patrick Carreiro',
                   },
                   {
                     id: '120993',
-                    name: 'Tucker Reid'
+                    name: 'Tucker Reid',
                   },
                   {
                     id: '123279',
-                    name: 'Hiroshi Inzunza'
+                    name: 'Hiroshi Inzunza',
                   },
                   {
                     id: '121993',
-                    name: 'Skyler Householder'
+                    name: 'Skyler Householder',
                   },
                   {
                     id: '200318',
-                    name: 'Jason Offret'
+                    name: 'Jason Offret',
                   },
                   {
                     id: '122360',
-                    name: 'Kyoshi Inzunza'
+                    name: 'Kyoshi Inzunza',
                   },
                   {
                     id: '200177',
-                    name: 'Brad Smith'
+                    name: 'Brad Smith',
                   },
                   {
                     id: '73073',
-                    name: 'David Orellana'
+                    name: 'David Orellana',
                   },
                   {
                     id: '109913',
-                    name: 'Evan Cornell'
+                    name: 'Evan Cornell',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '118614',
-                    name: 'Mark Farmer'
+                    name: 'Mark Farmer',
                   },
                   {
                     id: '120802',
-                    name: 'Darrell Olsen'
+                    name: 'Darrell Olsen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '116351',
-                    name: 'Brock Morrison'
-                  }
+                    name: 'Brock Morrison',
+                  },
                 ],
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'e240c438f96f8419634673c7f99224f2',
@@ -2724,59 +2724,59 @@ const tree = {
                   {
                     id: '47769',
                     name: 'Zachary Latimer',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '66991',
-                    name: 'Conway West'
+                    name: 'Conway West',
                   },
                   {
                     id: '41707',
-                    name: 'Kade Hansen'
+                    name: 'Kade Hansen',
                   },
                   {
                     id: '113462',
-                    name: 'Matthew Kievit'
+                    name: 'Matthew Kievit',
                   },
                   {
                     id: '9927',
-                    name: 'Brandon Dooley'
+                    name: 'Brandon Dooley',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 market: 'B',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'e240c438f96f8419634673c7f992392b',
@@ -2791,55 +2791,55 @@ const tree = {
                   {
                     id: '47769',
                     name: 'Zachary Latimer',
-                    bonusAllocation: '70'
+                    bonusAllocation: '70',
                   },
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '33707',
-                    name: 'Blake Cammack'
+                    name: 'Blake Cammack',
                   },
                   {
                     id: '63773',
-                    name: 'Gregory Larson'
+                    name: 'Gregory Larson',
                   },
                   {
                     id: '66043',
-                    name: 'Marcus Ward'
+                    name: 'Marcus Ward',
                   },
                   {
                     id: '66991',
-                    name: 'Conway West'
+                    name: 'Conway West',
                   },
                   {
                     id: '9927',
-                    name: 'Brandon Dooley'
+                    name: 'Brandon Dooley',
                   },
                   {
                     id: '94659',
-                    name: 'Zachary Vest'
+                    name: 'Zachary Vest',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
                 market: 'B',
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'f02fbbb4dd62dbde3068b399459d192b',
@@ -2854,46 +2854,46 @@ const tree = {
                 districtManager: [
                   {
                     id: '1317',
-                    name: 'Tyler Williams'
+                    name: 'Tyler Williams',
                   },
                   {
                     id: '96855',
-                    name: 'Brian Brooker'
+                    name: 'Brian Brooker',
                   },
                   {
                     id: '107466',
-                    name: 'Andy Marlowe'
+                    name: 'Andy Marlowe',
                   },
                   {
                     id: '116099',
-                    name: 'Alek Gilmore'
+                    name: 'Alek Gilmore',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '115371',
-                    name: 'Douglas Bowman'
+                    name: 'Douglas Bowman',
                   },
                   {
                     id: '119686',
-                    name: 'Tom Teaman'
+                    name: 'Tom Teaman',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
-                  }
+                    name: 'Tyler Mickelsen',
+                  },
                 ],
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
               },
               {
                 _id: 'fd6c2150f71e1899da198c5f8034eebf',
@@ -2906,76 +2906,76 @@ const tree = {
                 districtManager: [
                   {
                     id: '38731',
-                    name: 'Chad Vogl'
+                    name: 'Chad Vogl',
                   },
                   {
                     id: '107941',
-                    name: 'Tyler Mickelsen'
+                    name: 'Tyler Mickelsen',
                   },
                   {
                     id: '116351',
-                    name: 'Brock Morrison'
+                    name: 'Brock Morrison',
                   },
                   {
                     id: '31469',
-                    name: 'Jason Baugh'
+                    name: 'Jason Baugh',
                   },
                   {
                     id: '21193',
-                    name: 'Jason Crown'
+                    name: 'Jason Crown',
                   },
                   {
                     id: '118655',
-                    name: 'Daniel Beecroft'
+                    name: 'Daniel Beecroft',
                   },
                   {
                     id: '94200',
-                    name: 'Benjamin Baker'
+                    name: 'Benjamin Baker',
                   },
                   {
                     id: '58331',
-                    name: 'Julius Gillmore'
+                    name: 'Julius Gillmore',
                   },
                   {
                     id: '95368',
-                    name: 'Trevor Young'
+                    name: 'Trevor Young',
                   },
                   {
                     id: '119064',
-                    name: 'Terry Xanthos'
+                    name: 'Terry Xanthos',
                   },
                   {
                     id: '61838',
-                    name: 'Scott Whiting'
+                    name: 'Scott Whiting',
                   },
                   {
                     id: '45957',
-                    name: 'Jed Wintle'
+                    name: 'Jed Wintle',
                   },
                   {
                     id: '114605',
-                    name: 'Zachary Randall'
+                    name: 'Zachary Randall',
                   },
                   {
                     id: '94775',
-                    name: 'Jonathan Jensen'
+                    name: 'Jonathan Jensen',
                   },
                   {
                     id: '116099',
-                    name: 'Alek Gilmore'
+                    name: 'Alek Gilmore',
                   },
                   {
                     id: '40572',
-                    name: 'Brandon Holmes'
+                    name: 'Brandon Holmes',
                   },
                   {
                     id: '76134',
-                    name: 'Kathy Chen'
+                    name: 'Kathy Chen',
                   },
                   {
                     id: '109520',
-                    name: 'Benjamin Arthur'
-                  }
+                    name: 'Benjamin Arthur',
+                  },
                 ],
                 market: 'A',
                 _children: [
@@ -2988,16 +2988,16 @@ const tree = {
                     parent: 'fd6c2150f71e1899da198c5f8034eebf',
                     officeID: 50423,
                     districtManager: [],
-                    _parent: 'fd6c2150f71e1899da198c5f8034eebf'
-                  }
+                    _parent: 'fd6c2150f71e1899da198c5f8034eebf',
+                  },
                 ],
-                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba'
-              }
+                _parent: 'c52eaae4567250e90bbe3c9c4530a1ba',
+              },
             ],
-            _parent: 'e240c438f96f8419634673c7f991eb31'
-          }
+            _parent: 'e240c438f96f8419634673c7f991eb31',
+          },
         ],
-        _parent: '8e4003dbf818f90637881e2d8e0efc66'
+        _parent: '8e4003dbf818f90637881e2d8e0efc66',
       },
       {
         _id: 'e427e8b712f7e9777693f1735d00422b',
@@ -3009,28 +3009,28 @@ const tree = {
         districtManager: [
           {
             id: '29134',
-            name: 'Nicholas Hansen'
+            name: 'Nicholas Hansen',
           },
           {
             id: '61849',
-            name: 'Adam McClellan'
+            name: 'Adam McClellan',
           },
           {
             id: '46665',
-            name: 'Mark Toone'
+            name: 'Mark Toone',
           },
           {
             id: '20787',
-            name: 'Darrell Doucette'
+            name: 'Darrell Doucette',
           },
           {
             id: '119839',
-            name: 'Dave Allred'
+            name: 'Dave Allred',
           },
           {
             id: '63133',
-            name: 'Jordan Laplace'
-          }
+            name: 'Jordan Laplace',
+          },
         ],
         _children: [
           {
@@ -3043,16 +3043,16 @@ const tree = {
             districtManager: [
               {
                 id: '2594',
-                name: 'Brandon Hanna'
+                name: 'Brandon Hanna',
               },
               {
                 id: '46665',
-                name: 'Mark Toone'
+                name: 'Mark Toone',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
-              }
+                name: 'Jordan Laplace',
+              },
             ],
             _children: [
               {
@@ -3066,8 +3066,8 @@ const tree = {
                 districtManager: [
                   {
                     id: '9467',
-                    name: 'Patrick Jensen'
-                  }
+                    name: 'Patrick Jensen',
+                  },
                 ],
                 _children: [
                   {
@@ -3080,73 +3080,73 @@ const tree = {
                     districtManager: [
                       {
                         id: '42485',
-                        name: 'Michael Brand'
+                        name: 'Michael Brand',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '94714',
-                        name: 'Michael Uneberg'
+                        name: 'Michael Uneberg',
                       },
                       {
                         id: '116222',
-                        name: 'William Yule'
+                        name: 'William Yule',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '75005',
-                        name: 'Brett Goldstein'
+                        name: 'Brett Goldstein',
                       },
                       {
                         id: '200851',
-                        name: 'Thomas Court'
+                        name: 'Thomas Court',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '63681',
-                        name: 'Jordan Levent'
+                        name: 'Jordan Levent',
                       },
                       {
                         id: '94926',
-                        name: 'Matthew Gleason'
+                        name: 'Matthew Gleason',
                       },
                       {
                         id: '118427',
-                        name: 'Edward Fisher'
+                        name: 'Edward Fisher',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
-                      }
+                        name: 'Brian Brownlee',
+                      },
                     ],
                     officeID: 4443,
                     supportEmail: 'Longislandsupport@vivintsolar.com',
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76'
+                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76',
                   },
                   {
                     _id: 'e240c438f96f8419634673c7f992162f',
@@ -3161,67 +3161,67 @@ const tree = {
                       {
                         id: '94329',
                         name: 'Dusty Broadhead',
-                        bonusAllocation: '15'
+                        bonusAllocation: '15',
                       },
                       {
                         id: '42485',
-                        name: 'Michael Brand'
+                        name: 'Michael Brand',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '75053',
-                        name: 'Joseph Lombardi'
+                        name: 'Joseph Lombardi',
                       },
                       {
                         id: '74258',
-                        name: 'Jesse Plotnick'
+                        name: 'Jesse Plotnick',
                       },
                       {
                         id: '116222',
-                        name: 'William Yule'
+                        name: 'William Yule',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '200851',
-                        name: 'Thomas Court'
+                        name: 'Thomas Court',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '63681',
-                        name: 'Jordan Levent'
+                        name: 'Jordan Levent',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '122425',
-                        name: 'Anthony Fowler'
-                      }
+                        name: 'Anthony Fowler',
+                      },
                     ],
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76'
+                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76',
                   },
                   {
                     _id: 'f02fbbb4dd62dbde3068b399459d39b3',
@@ -3236,58 +3236,58 @@ const tree = {
                     districtManager: [
                       {
                         id: '42485',
-                        name: 'Michael Brand'
+                        name: 'Michael Brand',
                       },
                       {
                         id: '58388',
-                        name: 'Jordan Borchert'
+                        name: 'Jordan Borchert',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '75005',
-                        name: 'Brett Goldstein'
+                        name: 'Brett Goldstein',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '200797',
-                        name: 'Chase Russell'
+                        name: 'Chase Russell',
                       },
                       {
                         id: '200851',
-                        name: 'Thomas Court'
+                        name: 'Thomas Court',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '122425',
-                        name: 'Anthony Fowler'
+                        name: 'Anthony Fowler',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
-                      }
+                        name: 'Brian Brownlee',
+                      },
                     ],
-                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76'
+                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76',
                   },
                   {
                     _id: 'feba53a0d7ee6b64c9a5d6eb94361cb1',
@@ -3300,22 +3300,22 @@ const tree = {
                     districtManager: [
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '2594',
-                        name: 'Brandon Hanna'
-                      }
+                        name: 'Brandon Hanna',
+                      },
                     ],
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76'
-                  }
+                    _parent: '4ff9634c40d020dfcc10c53e47bc3b76',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9544fc7'
+                _parent: '750521139b7c4c3be0b855aad9544fc7',
               },
               {
                 _id: '4ff9634c40d020dfcc10c53e47dc0aae',
@@ -3328,16 +3328,16 @@ const tree = {
                 districtManager: [
                   {
                     id: '94316',
-                    name: 'Zachary Allred'
+                    name: 'Zachary Allred',
                   },
                   {
                     id: '121228',
-                    name: 'James Preece'
+                    name: 'James Preece',
                   },
                   {
                     id: '2594',
-                    name: 'Brandon Hanna'
-                  }
+                    name: 'Brandon Hanna',
+                  },
                 ],
                 _parent: '750521139b7c4c3be0b855aad9544fc7',
                 _children: [
@@ -3352,63 +3352,63 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '106361',
-                        name: 'Erik Orton'
+                        name: 'Erik Orton',
                       },
                       {
                         id: '113992',
-                        name: 'Anthony Nuara'
+                        name: 'Anthony Nuara',
                       },
                       {
                         id: '95009',
-                        name: 'Philip Lockwood'
+                        name: 'Philip Lockwood',
                       },
                       {
                         id: '59726',
-                        name: 'Kyle Potter'
+                        name: 'Kyle Potter',
                       },
                       {
                         id: '121228',
-                        name: 'James Preece'
+                        name: 'James Preece',
                       },
                       {
                         id: '61994',
-                        name: 'Chase Taylor'
+                        name: 'Chase Taylor',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '75138',
-                        name: 'Jordan Maya'
+                        name: 'Jordan Maya',
                       },
                       {
                         id: '94801',
-                        name: 'Osahon Aikhionbare'
+                        name: 'Osahon Aikhionbare',
                       },
                       {
                         id: '106647',
-                        name: 'Michael Monteleone'
+                        name: 'Michael Monteleone',
                       },
                       {
                         id: '200851',
-                        name: 'Thomas Court'
+                        name: 'Thomas Court',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae'
+                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae',
                   },
                   {
                     _id: '73443c0bbff612b808fe1f7236fd6686',
@@ -3422,58 +3422,58 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '96762',
-                        name: 'Daniel Rizzo'
+                        name: 'Daniel Rizzo',
                       },
                       {
                         id: '105733',
-                        name: 'John Mandelino'
+                        name: 'John Mandelino',
                       },
                       {
                         id: '121228',
-                        name: 'James Preece'
+                        name: 'James Preece',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '94329',
-                        name: 'Dusty Broadhead'
+                        name: 'Dusty Broadhead',
                       },
                       {
                         id: '201192',
-                        name: 'Andrew Semel-DeFeo'
+                        name: 'Andrew Semel-DeFeo',
                       },
                       {
                         id: '201189',
-                        name: 'Steven Lapage'
+                        name: 'Steven Lapage',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '201388',
-                        name: 'Damien Semel-Defeo'
+                        name: 'Damien Semel-Defeo',
                       },
                       {
                         id: '200851',
-                        name: 'Thomas Court'
+                        name: 'Thomas Court',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '76974',
-                        name: 'Doug Yates'
-                      }
+                        name: 'Doug Yates',
+                      },
                     ],
-                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae'
+                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae',
                   },
                   {
                     _id: 'e91a484d53e457c200fb599f3900d10e',
@@ -3487,75 +3487,75 @@ const tree = {
                     districtManager: [
                       {
                         id: '95534',
-                        name: 'Zachary Timmerman'
+                        name: 'Zachary Timmerman',
                       },
                       {
                         id: '76292',
-                        name: 'Jacob Anderson'
+                        name: 'Jacob Anderson',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '96762',
-                        name: 'Daniel Rizzo'
+                        name: 'Daniel Rizzo',
                       },
                       {
                         id: '121228',
-                        name: 'James Preece'
+                        name: 'James Preece',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '76974',
-                        name: 'Doug Yates'
+                        name: 'Doug Yates',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '201388',
-                        name: 'Damien Semel-Defeo'
+                        name: 'Damien Semel-Defeo',
                       },
                       {
                         id: '201192',
-                        name: 'Andrew Semel-DeFeo'
+                        name: 'Andrew Semel-DeFeo',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '200851',
-                        name: 'Thomas Court'
+                        name: 'Thomas Court',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '203618',
-                        name: 'Wilfredo Madrid'
+                        name: 'Wilfredo Madrid',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
-                      }
+                        name: 'Brian Brownlee',
+                      },
                     ],
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae'
+                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae',
                   },
                   {
                     _id: 'f02fbbb4dd62dbde3068b399459d307d',
@@ -3569,39 +3569,39 @@ const tree = {
                     districtManager: [
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '106647',
-                        name: 'Michael Monteleone'
+                        name: 'Michael Monteleone',
                       },
                       {
                         id: '9467',
-                        name: 'Patrick Jensen'
+                        name: 'Patrick Jensen',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '113992',
-                        name: 'Anthony Nuara'
+                        name: 'Anthony Nuara',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
-                      }
+                        name: 'Brian Brownlee',
+                      },
                     ],
-                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae'
-                  }
-                ]
-              }
+                    _parent: '4ff9634c40d020dfcc10c53e47dc0aae',
+                  },
+                ],
+              },
             ],
-            _parent: 'e427e8b712f7e9777693f1735d00422b'
+            _parent: 'e427e8b712f7e9777693f1735d00422b',
           },
           {
             _id: '750521139b7c4c3be0b855aad95453b4',
@@ -3612,21 +3612,21 @@ const tree = {
             org: 'sales',
             manager: {
               id: '29134',
-              name: 'Nicholas Hansen'
+              name: 'Nicholas Hansen',
             },
             districtManager: [
               {
                 id: '29134',
-                name: 'Nicholas Hansen'
+                name: 'Nicholas Hansen',
               },
               {
                 id: '46665',
-                name: 'Mark Toone'
+                name: 'Mark Toone',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
-              }
+                name: 'Jordan Laplace',
+              },
             ],
             _children: [
               {
@@ -3640,12 +3640,12 @@ const tree = {
                 districtManager: [
                   {
                     id: '61066',
-                    name: 'Brandon Seidel'
+                    name: 'Brandon Seidel',
                   },
                   {
                     id: '74344',
-                    name: 'Anthony Monaco'
-                  }
+                    name: 'Anthony Monaco',
+                  },
                 ],
                 _parent: '750521139b7c4c3be0b855aad95453b4',
                 _children: [
@@ -3659,65 +3659,65 @@ const tree = {
                     districtManager: [
                       {
                         id: '75138',
-                        name: 'Jordan Maya'
+                        name: 'Jordan Maya',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '95326',
-                        name: 'Ryan Antoniuk'
+                        name: 'Ryan Antoniuk',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '96260',
-                        name: 'James Graver'
+                        name: 'James Graver',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '122735',
-                        name: 'Philip Chamberlain'
+                        name: 'Philip Chamberlain',
                       },
                       {
                         id: '120056',
-                        name: 'Johnny Cruz'
+                        name: 'Johnny Cruz',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     officeID: 4549,
                     supportEmail: 'jerseyshoresupport@vivintsolar.com',
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47f03fc0'
+                    _parent: '4ff9634c40d020dfcc10c53e47f03fc0',
                   },
                   {
                     _id: 'e91a484d53e457c200fb599f390031ab',
@@ -3731,63 +3731,63 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94618',
-                        name: 'Jamaine Olson'
+                        name: 'Jamaine Olson',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '96260',
-                        name: 'James Graver'
+                        name: 'James Graver',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '117628',
-                        name: 'Jack Chamberlain'
+                        name: 'Jack Chamberlain',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '99604',
-                        name: 'Juan Arraya'
+                        name: 'Juan Arraya',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '117645',
-                        name: 'Drew Schanen'
+                        name: 'Drew Schanen',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     market: 'B',
-                    _parent: '4ff9634c40d020dfcc10c53e47f03fc0'
+                    _parent: '4ff9634c40d020dfcc10c53e47f03fc0',
                   },
                   {
                     _id: 'f02fbbb4dd62dbde3068b399459cfbf0',
@@ -3802,76 +3802,76 @@ const tree = {
                     districtManager: [
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '99604',
-                        name: 'Juan Arraya'
+                        name: 'Juan Arraya',
                       },
                       {
                         id: '29134',
-                        name: 'Nicholas Hansen'
+                        name: 'Nicholas Hansen',
                       },
                       {
                         id: '121541',
-                        name: 'MaryLee Paolillo'
+                        name: 'MaryLee Paolillo',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '104778',
-                        name: "Vincent D'Amelio"
+                        name: "Vincent D'Amelio",
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '111660',
-                        name: 'Mair Costa'
+                        name: 'Mair Costa',
                       },
                       {
                         id: '124284',
-                        name: 'Joseph Ruple'
+                        name: 'Joseph Ruple',
                       },
                       {
                         id: '119370',
-                        name: 'Konrad Barjuah'
+                        name: 'Konrad Barjuah',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: '4ff9634c40d020dfcc10c53e47f03fc0'
-                  }
-                ]
+                    _parent: '4ff9634c40d020dfcc10c53e47f03fc0',
+                  },
+                ],
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd650c4986',
@@ -3884,12 +3884,12 @@ const tree = {
                 districtManager: [
                   {
                     id: '29663',
-                    name: 'Courtney Torgesen'
+                    name: 'Courtney Torgesen',
                   },
                   {
                     id: '74344',
-                    name: 'Anthony Monaco'
-                  }
+                    name: 'Anthony Monaco',
+                  },
                 ],
                 _children: [
                   {
@@ -3902,85 +3902,85 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '29663',
-                        name: 'Courtney Torgesen'
+                        name: 'Courtney Torgesen',
                       },
                       {
                         id: '106631',
-                        name: 'Cade Thueson'
+                        name: 'Cade Thueson',
                       },
                       {
                         id: '40572',
-                        name: 'Brandon Holmes'
+                        name: 'Brandon Holmes',
                       },
                       {
                         id: '100794',
-                        name: 'Robert Wyssling'
+                        name: 'Robert Wyssling',
                       },
                       {
                         id: '97639',
-                        name: 'Nkosi Stewart'
+                        name: 'Nkosi Stewart',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '96260',
-                        name: 'James Graver'
+                        name: 'James Graver',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94340',
-                        name: 'Spencer Craig'
+                        name: 'Spencer Craig',
                       },
                       {
                         id: '104436',
-                        name: 'Matthew Hofherr'
+                        name: 'Matthew Hofherr',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '94317',
-                        name: 'Tanner Chamberlain'
+                        name: 'Tanner Chamberlain',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '120056',
-                        name: 'Johnny Cruz'
-                      }
+                        name: 'Johnny Cruz',
+                      },
                     ],
                     officeID: 2266,
                     supportEmail: 'Jerseynorthsupport@vivintsolar.com',
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd650c4986'
+                    _parent: 'cb9f6d33d058288f44ad03bd650c4986',
                   },
                   {
                     _id: '4364b6070c11a042d06e6c8c2d58d207',
@@ -3995,84 +3995,84 @@ const tree = {
                       {
                         id: '94177',
                         name: 'Cameron Catmull',
-                        bonusAllocation: '10'
+                        bonusAllocation: '10',
                       },
                       {
                         id: '94316',
                         name: 'Zachary Allred',
-                        bonusAllocation: '70'
+                        bonusAllocation: '70',
                       },
                       {
                         id: '42485',
-                        name: 'Michael Brand'
+                        name: 'Michael Brand',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94324',
-                        name: 'Warith Saleem'
+                        name: 'Warith Saleem',
                       },
                       {
                         id: '96984',
-                        name: 'Chris Castellonese'
+                        name: 'Chris Castellonese',
                       },
                       {
                         id: '94317',
-                        name: 'Tanner Chamberlain'
+                        name: 'Tanner Chamberlain',
                       },
                       {
                         id: '121228',
-                        name: 'James Preece'
+                        name: 'James Preece',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '96260',
-                        name: 'James Graver'
+                        name: 'James Graver',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '120056',
-                        name: 'Johnny Cruz'
-                      }
+                        name: 'Johnny Cruz',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd650c4986'
+                    _parent: 'cb9f6d33d058288f44ad03bd650c4986',
                   },
                   {
                     _id: 'dfaf57bfd11d09ae9e0677647ed15b1f',
@@ -4087,66 +4087,66 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94340',
-                        name: 'Spencer Craig'
+                        name: 'Spencer Craig',
                       },
                       {
                         id: '112916',
-                        name: 'Amos Oveson'
+                        name: 'Amos Oveson',
                       },
                       {
                         id: '29663',
-                        name: 'Courtney Torgesen'
+                        name: 'Courtney Torgesen',
                       },
                       {
                         id: '120056',
-                        name: 'Jonathan Cruz'
+                        name: 'Jonathan Cruz',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '94317',
-                        name: 'Tanner Chamberlain'
+                        name: 'Tanner Chamberlain',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd650c4986'
+                    _parent: 'cb9f6d33d058288f44ad03bd650c4986',
                   },
                   {
                     _id: 'feba53a0d7ee6b64c9a5d6eb94351ab2',
@@ -4160,13 +4160,13 @@ const tree = {
                     districtManager: [
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd650c4986'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd650c4986',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad95453b4'
+                _parent: '750521139b7c4c3be0b855aad95453b4',
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd652e0108',
@@ -4179,20 +4179,20 @@ const tree = {
                 districtManager: [
                   {
                     id: '51904',
-                    name: 'Brian Brownlee'
+                    name: 'Brian Brownlee',
                   },
                   {
                     id: '114747',
-                    name: 'David Edwards'
+                    name: 'David Edwards',
                   },
                   {
                     id: '58036',
-                    name: 'Dillon Brown'
+                    name: 'Dillon Brown',
                   },
                   {
                     id: '74344',
-                    name: 'Anthony Monaco'
-                  }
+                    name: 'Anthony Monaco',
+                  },
                 ],
                 _children: [
                   {
@@ -4206,71 +4206,71 @@ const tree = {
                     districtManager: [
                       {
                         id: '95802',
-                        name: 'Nick Hansen'
+                        name: 'Nick Hansen',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '55941',
-                        name: 'Jon Sanders'
+                        name: 'Jon Sanders',
                       },
                       {
                         id: '118820',
-                        name: 'Steven Habina'
+                        name: 'Steven Habina',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '114001',
-                        name: 'Mark Chase'
+                        name: 'Mark Chase',
                       },
                       {
                         id: '103184',
-                        name: 'Xavier Kimbrough'
+                        name: 'Xavier Kimbrough',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '114747',
-                        name: 'David Edwards'
+                        name: 'David Edwards',
                       },
                       {
                         id: '58036',
-                        name: 'Dillon Brown'
+                        name: 'Dillon Brown',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '200939',
-                        name: 'Joel Perez'
-                      }
+                        name: 'Joel Perez',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd652e0108'
+                    _parent: 'cb9f6d33d058288f44ad03bd652e0108',
                   },
                   {
                     _id: '3b5ba369af849e24b82d0abb8b3d18df',
@@ -4283,81 +4283,81 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '95802',
-                        name: 'Nick Hansen'
+                        name: 'Nick Hansen',
                       },
                       {
                         id: '103184',
-                        name: 'Xavier Kimbrough'
+                        name: 'Xavier Kimbrough',
                       },
                       {
                         id: '120081',
-                        name: 'William Ermi'
+                        name: 'William Ermi',
                       },
                       {
                         id: '123018',
-                        name: 'Kimberly Baran'
+                        name: 'Kimberly Baran',
                       },
                       {
                         id: '119064',
-                        name: 'Terry Xanthos'
+                        name: 'Terry Xanthos',
                       },
                       {
                         id: '104369',
-                        name: 'Stephen Ay'
+                        name: 'Stephen Ay',
                       },
                       {
                         id: '109619',
-                        name: 'Chief Whitehead'
+                        name: 'Chief Whitehead',
                       },
                       {
                         id: '57882',
-                        name: 'Daniel Riddle'
+                        name: 'Daniel Riddle',
                       },
                       {
                         id: '94316',
-                        name: 'Zachary Allred'
+                        name: 'Zachary Allred',
                       },
                       {
                         id: '9152',
-                        name: 'Jeff Strong'
+                        name: 'Jeff Strong',
                       },
                       {
                         id: '114747',
-                        name: 'David Edwards'
+                        name: 'David Edwards',
                       },
                       {
                         id: '109650',
-                        name: 'Josh Chalphin'
+                        name: 'Josh Chalphin',
                       },
                       {
                         id: '74344',
-                        name: 'Anthony Monaco'
+                        name: 'Anthony Monaco',
                       },
                       {
                         id: '51904',
-                        name: 'Brian Brownlee'
+                        name: 'Brian Brownlee',
                       },
                       {
                         id: '200939',
-                        name: 'Joel Perez'
+                        name: 'Joel Perez',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd652e0108'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd652e0108',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad95453b4'
-              }
+                _parent: '750521139b7c4c3be0b855aad95453b4',
+              },
             ],
-            _parent: 'e427e8b712f7e9777693f1735d00422b'
+            _parent: 'e427e8b712f7e9777693f1735d00422b',
           },
           {
             _id: '750521139b7c4c3be0b855aad9546396',
@@ -4369,12 +4369,12 @@ const tree = {
             districtManager: [
               {
                 id: '20787',
-                name: 'Darrell Doucette'
+                name: 'Darrell Doucette',
               },
               {
                 id: '63133',
-                name: 'Jordan Laplace'
-              }
+                name: 'Jordan Laplace',
+              },
             ],
             _children: [
               {
@@ -4388,31 +4388,31 @@ const tree = {
                 districtManager: [
                   {
                     id: '201650',
-                    name: 'Neal Rogers'
+                    name: 'Neal Rogers',
                   },
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
+                    name: 'Darrell Doucette',
                   },
                   {
                     id: '21868',
-                    name: 'Michael Coons'
+                    name: 'Michael Coons',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
+                    name: 'Lynsey Wilson',
                   },
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '118863',
-                    name: 'George Berry'
-                  }
+                    name: 'George Berry',
+                  },
                 ],
                 market: 'B',
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '269866ab6d248e8b1512e56b74507b36',
@@ -4425,43 +4425,43 @@ const tree = {
                 districtManager: [
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '94345',
-                    name: 'Joseph Wilkins'
+                    name: 'Joseph Wilkins',
                   },
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '201650',
-                    name: 'Neal Rogers'
+                    name: 'Neal Rogers',
                   },
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
+                    name: 'Darrell Doucette',
                   },
                   {
                     id: '63133',
-                    name: 'Jordan Laplace'
+                    name: 'Jordan Laplace',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
+                    name: 'Lynsey Wilson',
                   },
                   {
                     id: '21868',
-                    name: 'Michael Coons'
+                    name: 'Michael Coons',
                   },
                   {
                     id: '118863',
-                    name: 'George Berry'
-                  }
+                    name: 'George Berry',
+                  },
                 ],
                 market: 'B',
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '3b5ba369af849e24b82d0abb8b2e5494',
@@ -4474,27 +4474,27 @@ const tree = {
                 districtManager: [
                   {
                     id: '46665',
-                    name: 'Mark Toone'
+                    name: 'Mark Toone',
                   },
                   {
                     id: '29133',
-                    name: 'Jeremy Long'
+                    name: 'Jeremy Long',
                   },
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '62207',
-                    name: 'Derek Landino'
+                    name: 'Derek Landino',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
-                  }
+                    name: 'Lynsey Wilson',
+                  },
                 ],
                 market: 'B',
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '3b5ba369af849e24b82d0abb8b3103c5',
@@ -4507,59 +4507,59 @@ const tree = {
                 districtManager: [
                   {
                     id: '46665',
-                    name: 'Mark Toone'
+                    name: 'Mark Toone',
                   },
                   {
                     id: '29133',
-                    name: 'Jeremy Long'
+                    name: 'Jeremy Long',
                   },
                   {
                     id: '62207',
-                    name: 'Derek Landino'
+                    name: 'Derek Landino',
                   },
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
+                    name: 'Lynsey Wilson',
                   },
                   {
                     id: '96838',
-                    name: 'Dakota LaBounty'
+                    name: 'Dakota LaBounty',
                   },
                   {
                     id: '106365',
-                    name: 'Jacob Miller'
+                    name: 'Jacob Miller',
                   },
                   {
                     id: '119235',
-                    name: 'Jacques Hatchett'
+                    name: 'Jacques Hatchett',
                   },
                   {
                     id: '63133',
-                    name: 'Jordan Laplace'
+                    name: 'Jordan Laplace',
                   },
                   {
                     id: '200340',
-                    name: 'William Bernardi'
+                    name: 'William Bernardi',
                   },
                   {
                     id: '201092',
-                    name: 'Curtis Love'
+                    name: 'Curtis Love',
                   },
                   {
                     id: '120059',
-                    name: 'Joseph McClintock'
+                    name: 'Joseph McClintock',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
-                  }
+                    name: 'Lynsey Wilson',
+                  },
                 ],
                 market: 'B',
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '3faca4278e55671ac3292dca48698309',
@@ -4573,14 +4573,14 @@ const tree = {
                 districtManager: [
                   {
                     id: '63133',
-                    name: 'Jordan Laplace'
+                    name: 'Jordan Laplace',
                   },
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
-                  }
+                    name: 'Darrell Doucette',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '440adb9ef69b90eb3668b1def873bede',
@@ -4593,10 +4593,10 @@ const tree = {
                 districtManager: [
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
-                  }
+                    name: 'Darrell Doucette',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '440adb9ef69b90eb3668b1def876d6f5',
@@ -4609,10 +4609,10 @@ const tree = {
                 districtManager: [
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
-                  }
+                    name: 'Darrell Doucette',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '47671d253151b14418b045b9f15c358b',
@@ -4625,12 +4625,12 @@ const tree = {
                 districtManager: [
                   {
                     id: '63133',
-                    name: 'Jordan Laplace'
+                    name: 'Jordan Laplace',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
-                  }
+                    name: 'Lynsey Wilson',
+                  },
                 ],
                 market: 'B',
                 _parent: '750521139b7c4c3be0b855aad9546396',
@@ -4643,7 +4643,7 @@ const tree = {
                     org: 'sales',
                     parent: '47671d253151b14418b045b9f15c358b',
                     officeID: 99999,
-                    _parent: '47671d253151b14418b045b9f15c358b'
+                    _parent: '47671d253151b14418b045b9f15c358b',
                   },
                   {
                     _id: 'c430164ec6fa40186483dce75d99ba82',
@@ -4653,7 +4653,7 @@ const tree = {
                     org: 'sales',
                     parent: '47671d253151b14418b045b9f15c358b',
                     officeID: 99999,
-                    _parent: '47671d253151b14418b045b9f15c358b'
+                    _parent: '47671d253151b14418b045b9f15c358b',
                   },
                   {
                     _id: 'c430164ec6fa40186483dce75d99bba1',
@@ -4663,9 +4663,9 @@ const tree = {
                     org: 'sales',
                     parent: '47671d253151b14418b045b9f15c358b',
                     officeID: 99999,
-                    _parent: '47671d253151b14418b045b9f15c358b'
-                  }
-                ]
+                    _parent: '47671d253151b14418b045b9f15c358b',
+                  },
+                ],
               },
               {
                 _id: '65345b12978e814698473cdac72143c8',
@@ -4679,18 +4679,18 @@ const tree = {
                 districtManager: [
                   {
                     id: '99604',
-                    name: 'Juan Arraya'
+                    name: 'Juan Arraya',
                   },
                   {
                     id: '103921',
-                    name: 'Shane McCann'
+                    name: 'Shane McCann',
                   },
                   {
                     id: '201731',
-                    name: 'Mark Letourneau'
-                  }
+                    name: 'Mark Letourneau',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: '73443c0bbff612b808fe1f7236efc732',
@@ -4704,38 +4704,38 @@ const tree = {
                 districtManager: [
                   {
                     id: '46665',
-                    name: 'Mark Toone'
+                    name: 'Mark Toone',
                   },
                   {
                     id: '94619',
-                    name: 'Briant Katilus'
+                    name: 'Briant Katilus',
                   },
                   {
                     id: '62207',
-                    name: 'Derek Landino'
+                    name: 'Derek Landino',
                   },
                   {
                     id: '96477',
-                    name: 'Brandon Lewis'
+                    name: 'Brandon Lewis',
                   },
                   {
                     id: '96477',
-                    name: 'Brandon Lewis'
+                    name: 'Brandon Lewis',
                   },
                   {
                     id: '123807',
-                    name: 'Erik Wilson'
+                    name: 'Erik Wilson',
                   },
                   {
                     id: '63133',
-                    name: 'Jordan Laplace'
+                    name: 'Jordan Laplace',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
-                  }
+                    name: 'Lynsey Wilson',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: 'afb739dfee8175b2f163235d73307cef',
@@ -4749,46 +4749,46 @@ const tree = {
                 districtManager: [
                   {
                     id: '63133',
-                    name: 'Jordan Laplace'
+                    name: 'Jordan Laplace',
                   },
                   {
                     id: '201650',
-                    name: 'Neal Rogers'
+                    name: 'Neal Rogers',
                   },
                   {
                     id: '69885',
-                    name: 'Gene Lowell'
+                    name: 'Gene Lowell',
                   },
                   {
                     id: '61849',
-                    name: 'Adam Mcclellan'
+                    name: 'Adam Mcclellan',
                   },
                   {
                     id: '46665',
-                    name: 'Mark Toone'
+                    name: 'Mark Toone',
                   },
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
+                    name: 'Darrell Doucette',
                   },
                   {
                     id: '99604',
-                    name: 'Juan Arraya'
+                    name: 'Juan Arraya',
                   },
                   {
                     id: '64062',
-                    name: 'Lynsey Wilson'
+                    name: 'Lynsey Wilson',
                   },
                   {
                     id: '103921',
-                    name: 'Shane McCann'
+                    name: 'Shane McCann',
                   },
                   {
                     id: '201969',
-                    name: 'Clyde Larsen'
-                  }
+                    name: 'Clyde Larsen',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd6539545a',
@@ -4801,8 +4801,8 @@ const tree = {
                 districtManager: [
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
-                  }
+                    name: 'Darrell Doucette',
+                  },
                 ],
                 _children: [
                   {
@@ -4818,68 +4818,68 @@ const tree = {
                       {
                         id: '94303',
                         name: 'Brady Cullum',
-                        bonusAllocation: '50'
+                        bonusAllocation: '50',
                       },
                       {
                         id: '20787',
                         name: 'Darrell Douchette',
-                        bonusAllocation: '50'
+                        bonusAllocation: '50',
                       },
                       {
                         id: '46665',
-                        name: 'Mark Toone'
+                        name: 'Mark Toone',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '113991',
-                        name: 'James White'
+                        name: 'James White',
                       },
                       {
                         id: '118446',
-                        name: 'Bridget McNally-Cardenas'
+                        name: 'Bridget McNally-Cardenas',
                       },
                       {
                         id: '94619',
-                        name: 'Briant Katilus'
+                        name: 'Briant Katilus',
                       },
                       {
                         id: '94295',
-                        name: 'Nicholas Butts'
+                        name: 'Nicholas Butts',
                       },
                       {
                         id: '67280',
-                        name: 'Nathan Bowen'
+                        name: 'Nathan Bowen',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '120256',
-                        name: 'Jason King'
+                        name: 'Jason King',
                       },
                       {
                         id: '106583',
-                        name: 'Gregory Carey'
+                        name: 'Gregory Carey',
                       },
                       {
                         id: '75769',
-                        name: 'Nicholas Yucha'
+                        name: 'Nicholas Yucha',
                       },
                       {
                         id: '63133',
-                        name: 'Jordan Laplace'
+                        name: 'Jordan Laplace',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd6539545a'
+                    _parent: 'cb9f6d33d058288f44ad03bd6539545a',
                   },
                   {
                     _id: '9ead698e7eae5851e58c688b6a11a25b',
@@ -4892,67 +4892,67 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94345',
-                        name: 'Joseph Wilkins'
+                        name: 'Joseph Wilkins',
                       },
                       {
                         id: '21304',
-                        name: 'Jesse Pilcher'
+                        name: 'Jesse Pilcher',
                       },
                       {
                         id: '20787',
-                        name: 'Darrell Doucette'
+                        name: 'Darrell Doucette',
                       },
                       {
                         id: '46665',
-                        name: 'Mark Toone'
+                        name: 'Mark Toone',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '67280',
-                        name: 'Nathan Bowen'
+                        name: 'Nathan Bowen',
                       },
                       {
                         id: '94295',
-                        name: 'Nicholas Butts'
+                        name: 'Nicholas Butts',
                       },
                       {
                         id: '94770',
-                        name: 'Michael Mussetter'
+                        name: 'Michael Mussetter',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '94332',
-                        name: 'Lee Oler'
+                        name: 'Lee Oler',
                       },
                       {
                         id: '94303',
-                        name: 'Brady Cullum'
+                        name: 'Brady Cullum',
                       },
                       {
                         id: '106583',
-                        name: 'Gregory Carey'
+                        name: 'Gregory Carey',
                       },
                       {
                         id: '94774',
-                        name: 'Dane McAllister'
+                        name: 'Dane McAllister',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd6539545a'
+                    _parent: 'cb9f6d33d058288f44ad03bd6539545a',
                   },
                   {
                     _id: 'e240c438f96f8419634673c7f991febf',
@@ -4967,72 +4967,72 @@ const tree = {
                       {
                         id: '46665',
                         name: 'Mark Toone',
-                        bonusAllocation: '70'
+                        bonusAllocation: '70',
                       },
                       {
                         id: '63133',
                         name: 'Jordan Laplace',
-                        bonusAllocation: '30'
+                        bonusAllocation: '30',
                       },
                       {
                         id: '29344',
                         name: 'Keith Huling',
-                        bonusAllocation: '0'
+                        bonusAllocation: '0',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '96855',
-                        name: 'Brian Brooker'
+                        name: 'Brian Brooker',
                       },
                       {
                         id: '113991',
-                        name: 'James White'
+                        name: 'James White',
                       },
                       {
                         id: '20787',
-                        name: 'Darrell Doucette'
+                        name: 'Darrell Doucette',
                       },
                       {
                         id: '118446',
-                        name: 'Bridget McNally-Cardenas'
+                        name: 'Bridget McNally-Cardenas',
                       },
                       {
                         id: '67280',
-                        name: 'Nathan Bowen'
+                        name: 'Nathan Bowen',
                       },
                       {
                         id: '94295',
-                        name: 'Nicholas Butts'
+                        name: 'Nicholas Butts',
                       },
                       {
                         id: '37534',
-                        name: 'Ryan Tall'
+                        name: 'Ryan Tall',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '114001',
-                        name: 'Mark Chase'
+                        name: 'Mark Chase',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '118152',
-                        name: 'Quentin Dotson'
-                      }
+                        name: 'Quentin Dotson',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd6539545a'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd6539545a',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
+                _parent: '750521139b7c4c3be0b855aad9546396',
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd653f7e83',
@@ -5045,8 +5045,8 @@ const tree = {
                 districtManager: [
                   {
                     id: '20787',
-                    name: 'Darrell Doucette'
-                  }
+                    name: 'Darrell Doucette',
+                  },
                 ],
                 _children: [
                   {
@@ -5062,74 +5062,74 @@ const tree = {
                     districtManager: [
                       {
                         id: '47019',
-                        name: 'Travis Hutchinson'
+                        name: 'Travis Hutchinson',
                       },
                       {
                         id: '46665',
-                        name: 'Mark Toone'
+                        name: 'Mark Toone',
                       },
                       {
                         id: '33707',
-                        name: 'Blake Cammack'
+                        name: 'Blake Cammack',
                       },
                       {
                         id: '63773',
-                        name: 'Gregory Larson'
+                        name: 'Gregory Larson',
                       },
                       {
                         id: '66043',
-                        name: 'Marcus Ward'
+                        name: 'Marcus Ward',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '30793',
-                        name: 'Chris Burgess'
+                        name: 'Chris Burgess',
                       },
                       {
                         id: '113991',
-                        name: 'James White'
+                        name: 'James White',
                       },
                       {
                         id: '118446',
-                        name: 'Bridget McNally-Cardenas'
+                        name: 'Bridget McNally-Cardenas',
                       },
                       {
                         id: '104355',
-                        name: 'Dallin Andrus'
+                        name: 'Dallin Andrus',
                       },
                       {
                         id: '94295',
-                        name: 'Nicholas Butts'
+                        name: 'Nicholas Butts',
                       },
                       {
                         id: '67280',
-                        name: 'Nathan Bowen'
+                        name: 'Nathan Bowen',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '63133',
-                        name: 'Jordan Laplace'
+                        name: 'Jordan Laplace',
                       },
                       {
                         id: '20787',
-                        name: 'Darrell Doucette'
+                        name: 'Darrell Doucette',
                       },
                       {
                         id: '202517',
-                        name: 'Hadley Ferrell'
+                        name: 'Hadley Ferrell',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd653f7e83'
+                    _parent: 'cb9f6d33d058288f44ad03bd653f7e83',
                   },
                   {
                     _id: 'e40a61784126037052d5cf75e6143ce1',
@@ -5143,10 +5143,10 @@ const tree = {
                     districtManager: [
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd653f7e83'
+                    _parent: 'cb9f6d33d058288f44ad03bd653f7e83',
                   },
                   {
                     _id: 'e91a484d53e457c200fb599f393fed9e',
@@ -5160,61 +5160,61 @@ const tree = {
                     districtManager: [
                       {
                         id: '21304',
-                        name: 'Jesse Pilcher'
+                        name: 'Jesse Pilcher',
                       },
                       {
                         id: '46665',
-                        name: 'Mark Toone'
+                        name: 'Mark Toone',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '113991',
-                        name: 'James White'
+                        name: 'James White',
                       },
                       {
                         id: '20787',
-                        name: 'Darrell Doucette'
+                        name: 'Darrell Doucette',
                       },
                       {
                         id: '63133',
-                        name: 'Jordan Laplace'
+                        name: 'Jordan Laplace',
                       },
                       {
                         id: '118495',
-                        name: 'Wannita Landon'
+                        name: 'Wannita Landon',
                       },
                       {
                         id: '118446',
-                        name: 'Bridget McNally-Cardenas'
+                        name: 'Bridget McNally-Cardenas',
                       },
                       {
                         id: '67280',
-                        name: 'Nathan Bowen'
+                        name: 'Nathan Bowen',
                       },
                       {
                         id: '94295',
-                        name: 'Nicholas Butts'
+                        name: 'Nicholas Butts',
                       },
                       {
                         id: '74108',
-                        name: 'Frantz Ostmann'
+                        name: 'Frantz Ostmann',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd653f7e83'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd653f7e83',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9546396'
-              }
+                _parent: '750521139b7c4c3be0b855aad9546396',
+              },
             ],
-            _parent: 'e427e8b712f7e9777693f1735d00422b'
+            _parent: 'e427e8b712f7e9777693f1735d00422b',
           },
           {
             _id: '750521139b7c4c3be0b855aad9547559',
@@ -5226,12 +5226,12 @@ const tree = {
             districtManager: [
               {
                 id: '61849',
-                name: 'Adam Mcclellan'
+                name: 'Adam Mcclellan',
               },
               {
                 id: '46665',
-                name: 'Mark Toone'
-              }
+                name: 'Mark Toone',
+              },
             ],
             _parent: 'e427e8b712f7e9777693f1735d00422b',
             _children: [
@@ -5246,12 +5246,12 @@ const tree = {
                 districtManager: [
                   {
                     id: '30160',
-                    name: 'Chris Gallagher'
+                    name: 'Chris Gallagher',
                   },
                   {
                     id: '94194',
-                    name: 'Nicholas Howard'
-                  }
+                    name: 'Nicholas Howard',
+                  },
                 ],
                 _parent: '750521139b7c4c3be0b855aad9547559',
                 _children: [
@@ -5268,34 +5268,34 @@ const tree = {
                     districtManager: [
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '201162',
-                        name: 'Donald Gomez'
+                        name: 'Donald Gomez',
                       },
                       {
                         id: '103254',
-                        name: 'Mckenzie Watts'
+                        name: 'Mckenzie Watts',
                       },
                       {
                         id: '98456',
-                        name: 'Jacob McClellan'
+                        name: 'Jacob McClellan',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
+                        name: 'Jeff Hershberger',
                       },
                       {
                         id: '120698',
-                        name: 'Giancarlo Desario'
-                      }
+                        name: 'Giancarlo Desario',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd65754a03'
+                    _parent: 'cb9f6d33d058288f44ad03bd65754a03',
                   },
                   {
                     _id: 'dfaf57bfd11d09ae9e0677647ed1660c',
@@ -5309,54 +5309,54 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '30160',
-                        name: 'Chris Gallagher'
+                        name: 'Chris Gallagher',
                       },
                       {
                         id: '68647',
-                        name: 'Darcey Barrus'
+                        name: 'Darcey Barrus',
                       },
                       {
                         id: '94194',
-                        name: 'Nicholas Howard'
+                        name: 'Nicholas Howard',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '201159',
-                        name: 'Anthony Clark'
+                        name: 'Anthony Clark',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
-                      }
+                        name: 'Jeff Hershberger',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd65754a03'
+                    _parent: 'cb9f6d33d058288f44ad03bd65754a03',
                   },
                   {
                     _id: 'e240c438f96f8419634673c7f9922057',
@@ -5370,89 +5370,89 @@ const tree = {
                     districtManager: [
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '113996',
-                        name: 'Amanda Powers'
+                        name: 'Amanda Powers',
                       },
                       {
                         id: '68647',
-                        name: 'Darcey Barrus'
+                        name: 'Darcey Barrus',
                       },
                       {
                         id: '94194',
-                        name: 'Nicholas Howard'
+                        name: 'Nicholas Howard',
                       },
                       {
                         id: '98456',
-                        name: 'Jacob McClellan'
+                        name: 'Jacob McClellan',
                       },
                       {
                         id: '121198',
-                        name: 'Iran Hernandez'
+                        name: 'Iran Hernandez',
                       },
                       {
                         id: '103254',
-                        name: 'Mckenzie Watts'
+                        name: 'Mckenzie Watts',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '124254',
-                        name: 'Serge Didenko'
+                        name: 'Serge Didenko',
                       },
                       {
                         id: '93549',
-                        name: 'John Stanasek'
+                        name: 'John Stanasek',
                       },
                       {
                         id: '71800',
-                        name: 'Suki Singh'
+                        name: 'Suki Singh',
                       },
                       {
                         id: '201162',
-                        name: 'Donald Gomez'
+                        name: 'Donald Gomez',
                       },
                       {
                         id: '98456',
-                        name: 'Jacob McClellan'
+                        name: 'Jacob McClellan',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
+                        name: 'Jeff Hershberger',
                       },
                       {
                         id: '120698',
-                        name: 'Giancarlo Desario'
-                      }
+                        name: 'Giancarlo Desario',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd65754a03'
-                  }
-                ]
+                    _parent: 'cb9f6d33d058288f44ad03bd65754a03',
+                  },
+                ],
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd657db74e',
@@ -5465,12 +5465,12 @@ const tree = {
                 districtManager: [
                   {
                     id: '50194',
-                    name: 'Richard Howell'
+                    name: 'Richard Howell',
                   },
                   {
                     id: '94194',
-                    name: 'Nicholas Howard'
-                  }
+                    name: 'Nicholas Howard',
+                  },
                 ],
                 _children: [
                   {
@@ -5484,65 +5484,65 @@ const tree = {
                       {
                         id: '65368',
                         name: 'Dave Yates',
-                        bonusAllocation: '40'
+                        bonusAllocation: '40',
                       },
                       {
                         id: '76974',
-                        name: 'Douglas Yates'
+                        name: 'Douglas Yates',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '68647',
-                        name: 'Darcey Barrus'
+                        name: 'Darcey Barrus',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '94185',
-                        name: 'Carl Crosland'
+                        name: 'Carl Crosland',
                       },
                       {
                         id: '94194',
-                        name: 'Nicholas Howard'
+                        name: 'Nicholas Howard',
                       },
                       {
                         id: '117351',
-                        name: 'John DeCaro'
+                        name: 'John DeCaro',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
+                        name: 'Jeff Hershberger',
                       },
                       {
                         id: '96869',
-                        name: 'Tristen Smith'
-                      }
+                        name: 'Tristen Smith',
+                      },
                     ],
                     officeID: 4518,
                     supportEmail: 'pioneervalleysupport@vivintsolar.com',
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd657db74e'
+                    _parent: 'cb9f6d33d058288f44ad03bd657db74e',
                   },
                   {
                     _id: '4364b6070c11a042d06e6c8c2d597607',
@@ -5557,78 +5557,78 @@ const tree = {
                       {
                         id: '50194',
                         name: 'Richard Howell',
-                        bonusAllocation: '30'
+                        bonusAllocation: '30',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '68647',
-                        name: 'Darcey Barrus'
+                        name: 'Darcey Barrus',
                       },
                       {
                         id: '92905',
-                        name: 'Brian Wagner'
+                        name: 'Brian Wagner',
                       },
                       {
                         id: '94064',
-                        name: 'Austin Kelley'
+                        name: 'Austin Kelley',
                       },
                       {
                         id: '95372',
-                        name: 'Gary Harrison'
+                        name: 'Gary Harrison',
                       },
                       {
                         id: '94203',
-                        name: 'Bryce Nelson'
+                        name: 'Bryce Nelson',
                       },
                       {
                         id: '94349',
-                        name: 'James Richins'
+                        name: 'James Richins',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '103284',
-                        name: 'Daniel Noel'
+                        name: 'Daniel Noel',
                       },
                       {
                         id: '105005',
-                        name: 'Gregory Penn'
+                        name: 'Gregory Penn',
                       },
                       {
                         id: '94194',
-                        name: 'Nicholas Howard'
+                        name: 'Nicholas Howard',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
-                      }
+                        name: 'Jeff Hershberger',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd657db74e'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd657db74e',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9547559'
+                _parent: '750521139b7c4c3be0b855aad9547559',
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd658e813b',
@@ -5641,12 +5641,12 @@ const tree = {
                 districtManager: [
                   {
                     id: '2587',
-                    name: 'Howard Nell'
+                    name: 'Howard Nell',
                   },
                   {
                     id: '94194',
-                    name: 'Nicholas Howard'
-                  }
+                    name: 'Nicholas Howard',
+                  },
                 ],
                 _children: [
                   {
@@ -5661,54 +5661,54 @@ const tree = {
                     districtManager: [
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '94185',
-                        name: 'Carl Crosland'
+                        name: 'Carl Crosland',
                       },
                       {
                         id: '94506',
-                        name: 'B. Dexter Hofhines'
+                        name: 'B. Dexter Hofhines',
                       },
                       {
                         id: '200187',
-                        name: 'David Precourt'
+                        name: 'David Precourt',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
-                      }
+                        name: 'Jeff Hershberger',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd658e813b'
+                    _parent: 'cb9f6d33d058288f44ad03bd658e813b',
                   },
                   {
                     _id: '4364b6070c11a042d06e6c8c2d599bdb',
@@ -5723,71 +5723,71 @@ const tree = {
                       {
                         id: '68647',
                         name: 'Darcey Barrus',
-                        bonusAllocation: '30'
+                        bonusAllocation: '30',
                       },
                       {
                         id: '2587',
                         name: 'Howard Nell',
-                        bonusAllocation: '70'
+                        bonusAllocation: '70',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94179',
-                        name: 'Eric Israelsen'
+                        name: 'Eric Israelsen',
                       },
                       {
                         id: '95107',
-                        name: 'James Nell'
+                        name: 'James Nell',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '201266',
-                        name: 'Juary Goncalves'
+                        name: 'Juary Goncalves',
                       },
                       {
                         id: '105005',
-                        name: 'Gregory Penn'
+                        name: 'Gregory Penn',
                       },
                       {
                         id: '94194',
-                        name: 'Nicholas Howard'
+                        name: 'Nicholas Howard',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
+                        name: 'Jeff Hershberger',
                       },
                       {
                         id: '94185',
-                        name: 'Carl Crosland'
-                      }
+                        name: 'Carl Crosland',
+                      },
                     ],
                     market: 'B',
-                    _parent: 'cb9f6d33d058288f44ad03bd658e813b'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd658e813b',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9547559'
+                _parent: '750521139b7c4c3be0b855aad9547559',
               },
               {
                 _id: 'cb9f6d33d058288f44ad03bd65a72efa',
@@ -5800,16 +5800,16 @@ const tree = {
                 districtManager: [
                   {
                     id: '30831',
-                    name: 'Troy Van Belle'
+                    name: 'Troy Van Belle',
                   },
                   {
                     id: '71800',
-                    name: 'Suki Singh'
+                    name: 'Suki Singh',
                   },
                   {
                     id: '202113',
-                    name: 'Clint Cushing'
-                  }
+                    name: 'Clint Cushing',
+                  },
                 ],
                 _children: [
                   {
@@ -5824,58 +5824,58 @@ const tree = {
                     districtManager: [
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '119175',
-                        name: 'Alex Pederson'
+                        name: 'Alex Pederson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeffrey Hershberger'
+                        name: 'Jeffrey Hershberger',
                       },
                       {
                         id: '200816',
-                        name: 'David Jones'
+                        name: 'David Jones',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '94320',
-                        name: 'Dylan McMurtry'
+                        name: 'Dylan McMurtry',
                       },
                       {
                         id: '103672',
-                        name: 'Joshua Jones'
+                        name: 'Joshua Jones',
                       },
                       {
                         id: '202113',
-                        name: 'Clint Cushing'
+                        name: 'Clint Cushing',
                       },
                       {
                         id: '118911',
-                        name: 'Paul Amenta'
+                        name: 'Paul Amenta',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa'
+                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa',
                   },
                   {
                     _id: 'dfaf57bfd11d09ae9e0677647ed15f36',
@@ -5890,62 +5890,62 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '67723',
-                        name: 'Nicholas Gallagher'
+                        name: 'Nicholas Gallagher',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '103672',
-                        name: 'Joshua Jones'
+                        name: 'Joshua Jones',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '101653',
-                        name: 'Lance Rich'
+                        name: 'Lance Rich',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
+                        name: 'Jeff Hershberger',
                       },
                       {
                         id: '94320',
-                        name: 'Dylan McMurtry'
+                        name: 'Dylan McMurtry',
                       },
                       {
                         id: '118911',
-                        name: 'Paul Amenta'
+                        name: 'Paul Amenta',
                       },
                       {
                         id: '202113',
-                        name: 'Clint Cushing'
+                        name: 'Clint Cushing',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
-                      }
+                        name: 'Lynsey Wilson',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa'
+                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa',
                   },
                   {
                     _id: 'dfaf57bfd11d09ae9e0677647ed174f7',
@@ -5960,58 +5960,58 @@ const tree = {
                     districtManager: [
                       {
                         id: '29133',
-                        name: 'Jeremy Long'
+                        name: 'Jeremy Long',
                       },
                       {
                         id: '94320',
-                        name: 'Dylan McMurtry'
+                        name: 'Dylan McMurtry',
                       },
                       {
                         id: '101653',
-                        name: 'Lance Rich'
+                        name: 'Lance Rich',
                       },
                       {
                         id: '61849',
-                        name: 'Adam Mcclellan'
+                        name: 'Adam Mcclellan',
                       },
                       {
                         id: '30831',
-                        name: 'Troy Van Belle'
+                        name: 'Troy Van Belle',
                       },
                       {
                         id: '110828',
-                        name: 'Glen Myers'
+                        name: 'Glen Myers',
                       },
                       {
                         id: '50194',
-                        name: 'Richard Howell'
+                        name: 'Richard Howell',
                       },
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '65368',
-                        name: 'Dave Yates'
+                        name: 'Dave Yates',
                       },
                       {
                         id: '103672',
-                        name: 'Joshua Jones'
+                        name: 'Joshua Jones',
                       },
                       {
                         id: '202113',
-                        name: 'Clint Cushing'
+                        name: 'Clint Cushing',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
-                      }
+                        name: 'Jeff Hershberger',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa'
+                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa',
                   },
                   {
                     _id: 'f02fbbb4dd62dbde3068b399459d651a',
@@ -6026,235 +6026,235 @@ const tree = {
                     districtManager: [
                       {
                         id: '2587',
-                        name: 'Howard Nell'
+                        name: 'Howard Nell',
                       },
                       {
                         id: '64062',
-                        name: 'Lynsey Wilson'
+                        name: 'Lynsey Wilson',
                       },
                       {
                         id: '119170',
-                        name: 'Jeff Hershberger'
-                      }
+                        name: 'Jeff Hershberger',
+                      },
                     ],
-                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa'
-                  }
+                    _parent: 'cb9f6d33d058288f44ad03bd65a72efa',
+                  },
                 ],
-                _parent: '750521139b7c4c3be0b855aad9547559'
-              }
-            ]
-          }
+                _parent: '750521139b7c4c3be0b855aad9547559',
+              },
+            ],
+          },
         ],
-        _parent: '8e4003dbf818f90637881e2d8e0efc66'
-      }
-    ]
+        _parent: '8e4003dbf818f90637881e2d8e0efc66',
+      },
+    ],
   },
   oversights: [
     {
       name: 'Western',
       id: 'e240c438f96f8419634673c7f991eb31',
       type: 'region',
-      officeId: null
+      officeId: null,
     },
     {
       name: 'AZ-01 West Solar',
       id: '288f4954c602c2048c919b84a2d1da9a',
       type: 'office',
-      officeId: 4530
+      officeId: 4530,
     },
     {
       name: 'AZ-02 East Solar',
       id: '288f4954c602c2048c919b84a2d1e08b',
       type: 'office',
-      officeId: 4531
+      officeId: 4531,
     },
     {
       name: 'UT-06 Dixie Solar',
       id: 'af95fc6e4f479183d866c04a40dd7695',
       type: 'office',
-      officeId: 8433
+      officeId: 8433,
     },
     {
       name: 'SC-01 Greenvile Solar',
       id: '3b5ba369af849e24b82d0abb8b2e5494',
       type: 'office',
-      officeId: 6340
+      officeId: 6340,
     },
     {
       name: 'SC-02 Columbia Solar',
       id: '3b5ba369af849e24b82d0abb8b3103c5',
       type: 'office',
-      officeId: 6341
+      officeId: 6341,
     },
     {
       name: 'NY-2 Long Island East Solar',
       id: '288f4954c602c2048c919b84a2d22ee0',
       type: 'office',
-      officeId: 4443
+      officeId: 4443,
     },
     {
       name: 'NY-1 Long Island West Solar',
       id: 'e240c438f96f8419634673c7f992162f',
       type: 'office',
-      officeId: 3378
+      officeId: 3378,
     },
     {
       name: 'NY-03 Nassau Solar',
       id: 'f02fbbb4dd62dbde3068b399459d39b3',
       type: 'office',
-      officeId: 6026
+      officeId: 6026,
     },
     {
       name: 'NY-06 Rockland Solar',
       id: '73443c0bbff612b808fe1f7236f97e9c',
       type: 'office',
-      officeId: 6388
+      officeId: 6388,
     },
     {
       name: 'NY-07 Poughkeepsie Solar',
       id: '73443c0bbff612b808fe1f7236fd6686',
       type: 'office',
-      officeId: 6389
+      officeId: 6389,
     },
     {
       name: 'NY-04 Albany Solar',
       id: 'e91a484d53e457c200fb599f3900d10e',
       type: 'office',
-      officeId: 4529
+      officeId: 4529,
     },
     {
       name: 'NY-05 NYC North Solar',
       id: 'f02fbbb4dd62dbde3068b399459d307d',
       type: 'office',
-      officeId: 6027
+      officeId: 6027,
     },
     {
       name: 'NJ-4 Jersey Shore Solar',
       id: 'cec29b1c39ba5bdbea527ad91a84aaef',
       type: 'office',
-      officeId: 4549
+      officeId: 4549,
     },
     {
       name: 'NJ-03 South Jersey Solar',
       id: 'e91a484d53e457c200fb599f390031ab',
       type: 'office',
-      officeId: 4438
+      officeId: 4438,
     },
     {
       name: 'NJ-06 Atlantic City Solar',
       id: 'f02fbbb4dd62dbde3068b399459cfbf0',
       type: 'office',
-      officeId: 6021
+      officeId: 6021,
     },
     {
       name: 'NJ-1 North Jersey Solar',
       id: '288f4954c602c2048c919b84a2d43cda',
       type: 'office',
-      officeId: 2266
+      officeId: 2266,
     },
     {
       name: 'NJ-2 NYC South Solar',
       id: '4364b6070c11a042d06e6c8c2d58d207',
       type: 'office',
-      officeId: 4412
+      officeId: 4412,
     },
     {
       name: 'NJ-05 Princeton Solar',
       id: 'dfaf57bfd11d09ae9e0677647ed15b1f',
       type: 'office',
-      officeId: 6020
+      officeId: 6020,
     },
     {
       name: 'PA-01 Philly South Solar',
       id: '3b5ba369af849e24b82d0abb8b3a8a6b',
       type: 'office',
-      officeId: 6028
+      officeId: 6028,
     },
     {
       name: 'PA-02 Philly North Solar',
       id: '3b5ba369af849e24b82d0abb8b3d18df',
       type: 'office',
-      officeId: 6324
+      officeId: 6324,
     },
     {
       name: 'MD-2 Baltimore Solar',
       id: '4364b6070c11a042d06e6c8c2d58fa6a',
       type: 'office',
-      officeId: 4435
+      officeId: 4435,
     },
     {
       name: 'MD-05 Eastern Shore Solar',
       id: '9ead698e7eae5851e58c688b6a11a25b',
       type: 'office',
-      officeId: 6391
+      officeId: 6391,
     },
     {
       name: 'MD-1 DC North Solar',
       id: 'e240c438f96f8419634673c7f991febf',
       type: 'office',
-      officeId: 3264
+      officeId: 3264,
     },
     {
       name: 'MD-04 DC South Solar',
       id: 'c0b51ea2a1d210578ae1c442deffb209',
       type: 'office',
-      officeId: 4924
+      officeId: 4924,
     },
     {
       name: 'MD-03 West Solar',
       id: 'e91a484d53e457c200fb599f393fed9e',
       type: 'office',
-      officeId: 4508
+      officeId: 4508,
     },
     {
       name: 'MA-05 Boston Central Solar',
       id: 'dfaf57bfd11d09ae9e0677647ed1660c',
       type: 'office',
-      officeId: 6018
+      officeId: 6018,
     },
     {
       name: 'MA-1 Boston North Solar',
       id: 'e240c438f96f8419634673c7f9922057',
       type: 'office',
-      officeId: 2659
+      officeId: 2659,
     },
     {
       name: 'MA-4 Pioneer Valley Solar',
       id: '288f4954c602c2048c919b84a2e6104c',
       type: 'office',
-      officeId: 4518
+      officeId: 4518,
     },
     {
       name: 'MA-2 Boston West Solar',
       id: '4364b6070c11a042d06e6c8c2d597607',
       type: 'office',
-      officeId: 4456
+      officeId: 4456,
     },
     {
       name: 'MA-06 Cape Cod Solar',
       id: '3ae35d6414164b5b50a6ac649030cdf2',
       type: 'office',
-      officeId: 6322
+      officeId: 6322,
     },
     {
       name: 'MA-3 Boston South Solar',
       id: '4364b6070c11a042d06e6c8c2d599bdb',
       type: 'office',
-      officeId: 4457
+      officeId: 4457,
     },
     {
       name: 'CT-01 New Haven Solar',
       id: 'dfaf57bfd11d09ae9e0677647ed15f36',
       type: 'office',
-      officeId: 4893
+      officeId: 4893,
     },
     {
       name: 'CT-02 Stamford Solar',
       id: 'dfaf57bfd11d09ae9e0677647ed174f7',
       type: 'office',
-      officeId: 4548
-    }
-  ]
+      officeId: 4548,
+    },
+  ],
 };
 
 const traverse = curry((dict, node) => {
@@ -6262,20 +6262,20 @@ const traverse = curry((dict, node) => {
 
   const flatNode = {
     ...rest,
-    _children: map(prop('_id'), _children)
+    _children: map(prop('_id'), _children),
   };
 
   dict.set(flatNode._id, flatNode);
 
   if (!isNil(_children)) {
-    forEach(traverse(dict), _children);
+    _children.forEach(traverse(dict));
   }
 
   return dict;
 });
 
 const dict = traverse(new Map(), tree.root);
-const keys = Array.from(dict.keys());
+const keys = [...dict.keys()];
 
 console.log('dictionary', keys);
 console.log('# nodes', keys.length);

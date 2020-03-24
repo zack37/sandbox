@@ -12,15 +12,13 @@ module.exports = sender$ => {
       debug('Running rizo pipeline');
       const rnd = random();
       if (rnd < 0.05) {
-        // parrot wave
+        // Parrot wave
         for (const r of '7654321'.split('')) {
           await msg.react(responses[`parrotWave${r}`]);
         }
-      }
-      else if (rnd <= 0.15) {
+      } else if (rnd <= 0.15) {
         await msg.react(responses.partyParrot);
-      }
-      else if (rnd <= 0.2) {
+      } else if (rnd <= 0.2) {
         await msg.react(responses.ultraFastParrot);
       }
     });

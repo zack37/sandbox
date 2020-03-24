@@ -18,19 +18,21 @@ const race = () => {
 };
 
 async function raceAsync() {
-  let value;
-
   await wait();
-  value = 5;
+  const value = await 5;
 
   console.log('value', value);
   return value;
 }
 
+console.time('race');
 race().then(v => {
   console.log('v', v);
+  console.timeEnd('race');
 });
 
+console.time('raceAsync');
 raceAsync().then(v => {
   console.log('v', v);
+  console.timeEnd('raceAsync');
 });

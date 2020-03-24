@@ -3,13 +3,15 @@ function sayName() {
 }
 
 const createPerson = (name, age, homeState) => {
-  var results = {
+  const object = {
     name,
     age,
     homeState,
-    sayName
   };
-  return results;
+
+  object.sayName = sayName.bind(object);
+
+  return object;
 };
 
 const zack = createPerson('Zack', 24, 'Utah');

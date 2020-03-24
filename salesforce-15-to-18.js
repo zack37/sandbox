@@ -1,4 +1,12 @@
 const assert = require('assert');
+const joi = require('joi');
+
+const idSchema = joi
+  .string()
+  .alphanum()
+  .required()
+  .min(15)
+  .max(18);
 
 const [, , arg] = process.argv;
 
@@ -16,22 +24,20 @@ const binaryIdLookup = binaryString =>
   String.fromCharCode(Number.parseInt(binaryString, 2) + 65);
 
 const convert = id => {
-  if (!id || typeof id !== 'string' ||id.length !== 15 && id.length !== 18) {
-    throw new Error('Id should be a non empty, 15 or 18 character string');
-  }
-  if(id.length === 18) {
+  joi.assert(id, idSchema);
+  if (id.length === 18) {
     return id;
   }
 
-  const triplets = Array.from({ length: 3 }, (_, i) =>
-    id.substr(i * 5, 5).split('')
+  const chunks = Array.from({ length: 3 }, (_, i) =>
+    id.substr(i * 5, 5).split(''),
   );
 
-  const suffix = triplets
-    .map(triplet => {
-      const binaryString = triplet
+  const suffix = chunks
+    .map(chunk => {
+      const binaryString = chunk
         .reverse()
-        .map(c => isUpperCase(c) ? '1' : '0')
+        .map(c => (isUpperCase(c) ? '1' : '0'))
         .join('');
 
       return binaryIdLookup(binaryString);
@@ -49,11 +55,15 @@ console.log(result);
 assert.equal(
   convert('a2x41000001IuPu'),
   'a2x41000001IuPuAAK',
-  'Conversion failed'
+  'Conversion failed',
 );
 assert.throws(() => convert(''), 'Convert should throw for empty string');
+assert.throws(
+  () => convert('a2x41000001IuPujb99'),
+  'Convert should throw for string longer than 18 characters',
+);
 assert.equal(
   convert('a2x41000001IuPuAAK'),
   'a2x41000001IuPuAAK',
-  'Did not return same result'
+  'Did not return same result',
 );

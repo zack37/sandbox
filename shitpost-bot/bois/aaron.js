@@ -14,9 +14,8 @@ module.exports = sender$ => {
       if (rnd <= 0.05) {
         await msg.channel.send(responses.bepsiGif);
         await msg.channel.send(responses.aaronIrl);
-      }
-      else if (rnd <= 0.3) {
+      } else if (rnd <= 0.3) {
         await msg.react(responses.bepsiReact);
       }
     });
-}
+};

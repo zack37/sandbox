@@ -7,21 +7,27 @@ const defaults = {
   initial: 1000,
   maxTimeout: Infinity,
   type: 'exp',
-  timeoutFn: null
+  timeoutFn: null,
 };
 
 const timeoutMap = {
-  poly: (min, max, backoff, i) => Math.min(min + backoff ** i * 10**Math.floor(Math.log10(min)), max),
-  exp: (min, max, backoff, i) => Math.min(min + i ** backoff * 10**Math.floor(Math.log10(min)), max),
-  linear: (min, max, backoff, i) => Math.min(min + i * backoff * 10**Math.floor(Math.log10(min)), max)
+  poly: (min, max, backoff, i) =>
+    Math.min(min + backoff ** i * 10 ** Math.floor(Math.log10(min)), max),
+  exp: (min, max, backoff, i) =>
+    Math.min(min + i ** backoff * 10 ** Math.floor(Math.log10(min)), max),
+  linear: (min, max, backoff, i) =>
+    Math.min(min + i * backoff * 10 ** Math.floor(Math.log10(min)), max),
 };
 
 function backoffRetry(options = {}) {
-  const { attempts, backoff, initial, maxTimeout, type, timeoutFn } = Object.assign(
-    {},
-    defaults,
-    options
-  );
+  const {
+    attempts,
+    backoff,
+    initial,
+    maxTimeout,
+    type,
+    timeoutFn,
+  } = Object.assign({}, defaults, options);
   const timeout = timeoutFn || timeoutMap[type] || (() => 0);
 
   return errorsObs$ => {
@@ -71,5 +77,5 @@ Observable.of(0)
     complete() {
       console.log('complete');
       ender.next();
-    }
+    },
   });

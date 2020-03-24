@@ -631,10 +631,10 @@ console.log('loc:', lines.length);
 
 Observable.from(lines)
   .filter((line, i) => {
-    // const isAllWhitespace = allWhitespacePattern.test(line);
+    // Const isAllWhitespace = allWhitespacePattern.test(line);
     // const isComment = commentRegexp.test(line);
     // return !isAllWhitespace && !isComment;
-    if(slocPattern.test(line)) {
+    if (slocPattern.test(line)) {
       console.log(`line: ${i} ${line}`);
     }
     return !slocPattern.test(line);

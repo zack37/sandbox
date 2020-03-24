@@ -15,24 +15,28 @@ const getDownloads = url => axios.get(url).then(path(['data', 'downloads']));
 const format = compose(
   join('\n    '),
   map(([k, v]) => `${startCase(k)}: ${v}`),
-  toPairs()
+  toPairs(),
 );
 
 const fetchDownloads = pkg => {
   const pkgUrl = downloadsUrl(pkg);
   const timeframeUrls = map(pkgUrl, timeframes);
-  return Promise.map(
-    timeframeUrls,
-    getDownloads
-  ).spread((lastDay, lastWeek, lastMonth) => ({
-    package: pkg,
-    lastDay,
-    lastWeek,
-    lastMonth
-  }));
+  return Promise.map(timeframeUrls, getDownloads).spread(
+    (lastDay, lastWeek, lastMonth) => ({
+      package: pkg,
+      lastDay,
+      lastWeek,
+      lastMonth,
+    }),
+  );
 };
 
 Promise.map(packages, fetchDownloads)
-  .then(compose(join('\n'), map(format)))
+  .then(
+    compose(
+      join('\n'),
+      map(format),
+    ),
+  )
   .then(console.log.bind(console))
   .catch(console.error.bind(console));

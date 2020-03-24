@@ -4,15 +4,15 @@ const myConsole = function(stdout, stderr) {
   const ctx = {
     stdout,
     stderr,
-    times: new Map()
+    times: new Map(),
   };
 
-  let instance = {
+  const instance = {
     log: (...args) => ctx.stdout.write(util.format.apply(ctx, args) + '\n'),
     warn: (...args) => ctx.stderr.write(util.format.apply(ctx, args) + '\n'),
     dir: (obj, opts) => {
       ctx.stdout.write(
-        util.inspect(obj, util._extend({ customeInspect: false }, opts)) + '\n'
+        util.inspect(obj, util._extend({ customeInspect: false }, opts)) + '\n',
       );
     },
     time: label => ctx.times.set(label, Date.now()),
@@ -36,7 +36,7 @@ const myConsole = function(stdout, stderr) {
       if (!expression) {
         require('assert').ok(false, util.format.apply(ctx, args));
       }
-    }
+    },
   };
 
   instance.info = instance.log;
@@ -45,7 +45,7 @@ const myConsole = function(stdout, stderr) {
   return instance;
 };
 
-const myc = module.exports = myConsole(process.stdout, process.stderr);
+const myc = (module.exports = myConsole(process.stdout, process.stderr));
 module.exports;
 module.exports.myConsole = myConsole;
 

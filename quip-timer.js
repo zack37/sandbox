@@ -18,7 +18,7 @@ const progress = new ProgressBar('brushing [:bar] :current :message', {
   incomplete: ' ',
   head: '>',
   total: TOTAL_SECONDS,
-  stream: process.stdout
+  stream: process.stdout,
 });
 
 const shouldSwitch = x =>
@@ -30,12 +30,10 @@ timer$.subscribe({
   next: () => progress.tick(SCALE, { message: '' }),
   complete: () => {
     progress.terminate();
-  }
+  },
 });
 
-timer$
-  .filter(shouldSwitch)
-  .subscribe(() => switchLabel$.next());
+timer$.filter(shouldSwitch).subscribe(() => switchLabel$.next());
 
 switchLabel$.subscribe(() => {
   progress.render({ message: 'SWITCH' });

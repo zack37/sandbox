@@ -2,7 +2,9 @@ const { Client } = require('discord.js');
 const { Observable, Subject } = require('rxjs/Rx');
 const ms = require('ms');
 const debug = require('debug')('shitpost');
-const { discord: { authToken } } = require('./config');
+const {
+  discord: { authToken },
+} = require('./config');
 const bois = require('./bois');
 const { ThrowOnOperator } = require('../rxjs-throwOn');
 
@@ -10,8 +12,8 @@ const maxAttempts = 5;
 
 function isIncorrectToken(message) {
   return (
-    message === 'An invalid token was provided.' |
-    message === 'Incorrect login details were provided.'
+    (message === 'An invalid token was provided.') |
+    (message === 'Incorrect login details were provided.')
   );
 }
 
@@ -19,7 +21,7 @@ function init(bot) {
   const sender$ = new Subject();
   const error$ = new Subject();
   debug('initializing bois');
-  //                                          forward errors to error pipeline
+  //                                          Forward errors to error pipeline
   bois(sender$).forEach(boi => boi.subscribe({ error: e => error$.next(e) }));
 
   return Observable.fromEvent(bot, 'message')
@@ -32,9 +34,9 @@ function init(bot) {
         debug(
           `Emergency shut-off requested by ${msg.author.username}#${
             msg.author.discriminator
-          } id ${msg.author.id}`
+          } id ${msg.author.id}`,
         );
-        // exit instead of set exitCode because this needs to be shut off immediately
+        // Exit instead of set exitCode because this needs to be shut off immediately
         process.exit(503);
       }
     })
@@ -67,7 +69,7 @@ function runBot() {
         async ([attempt, error]) => {
           if (isIncorrectToken(error.message)) {
             debug('Discord auth token is invalid');
-            process.exit(1); // exit the app because no number of retries will correct the problem
+            process.exit(1); // Exit the app because no number of retries will correct the problem
           }
 
           debug('error encountered', error);
@@ -83,7 +85,7 @@ function runBot() {
           const wait = ms(`${attempt}m`);
           debug(`Retrying after ${ms(wait, { long: true })}`);
           await Observable.timer(wait).toPromise();
-        }
+        },
       );
     })
     .subscribe();

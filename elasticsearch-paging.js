@@ -3,15 +3,29 @@ const { Client } = require('elasticsearch');
 const ProgressBar = require('progress');
 
 const esClient = new Client({
-  host: 'https://koboldeveloper:4tgv7Dt68UMJ@esstage.vivintsolar.com:443',
+  host: '',
 });
 const index = 'dealer_index';
 const type = 'epc_rate';
 let progress;
 
 const query = {};
+const cursor = '';
 
 function search({ size, from, body }) {
+  return Observable.create((observer) => {
+    redisClint.scan(..., (err, [nextCursor, results]) => {
+      cursor = nextCursor;
+      if(err) {
+        return observer.error(err);
+      }
+      if(results.length === 0) {
+        return observer.complete();
+      }
+
+      observer.next(results);
+    })
+  });
   return Observable.defer(() => {
     return esClient.search({ size, from, index, type, body }).then(response => {
       const { total, hits } = response.hits;
@@ -45,20 +59,18 @@ function pageSearch(size, body) {
   //   });
 
   /// Makes 1 extra request, but looks much nicer
-  return (
-    Observable.range(0, Infinity, Scheduler.asap)
-      .concatMap(page => search({ from: page * size, size, body }))
-      .do(({ total }) => {
-        if (!progress) {
-          progress = new ProgressBar('[:bar] :current/:total :elapseds', {
-            total,
-            width: Math.min(50, total),
-            renderThrottle: 0,
-          });
-        }
-      })
-      .takeWhile(results => results.data.length)
-  );
+  return Observable.range(0, Infinity, Scheduler.asap)
+    .concatMap(page => search({ from: page * size, size, body }))
+    .do(({ total }) => {
+      if (!progress) {
+        progress = new ProgressBar('[:bar] :current/:total :elapseds :rate', {
+          total,
+          width: Math.min(50, total),
+          renderThrottle: 0,
+        });
+      }
+    })
+    .takeWhile(results => results.data.length);
 }
 
 function run() {
@@ -67,10 +79,10 @@ function run() {
     pageSearch(size, query)
       // .map(prop('data'))
       // .flatMap(list => Observable.from(list))
-      .do(() => console.log('got stuff'))
-      // .subscribe(({ data }) => {
-      //   progress.tick(data.length);
-      // })
+      // .do(() => console.log('got stuff'))
+      .subscribe(({ data }) => {
+        progress.tick(data.length);
+      })
   );
 }
 

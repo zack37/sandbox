@@ -4,7 +4,7 @@ const comparisonMap = {
   '>=': (reg, value, map) => map[reg] >= value,
   '<=': (reg, value, map) => map[reg] <= value,
   '!=': (reg, value, map) => map[reg] !== value,
-  '==': (reg, value, map) => map[reg] === value
+  '==': (reg, value, map) => map[reg] === value,
 };
 const operationMap = {
   inc: (map, reg, value) => {
@@ -12,11 +12,11 @@ const operationMap = {
   },
   dec: (map, reg, value) => {
     map[reg] -= value;
-  }
+  },
 };
 
 function solution(input) {
-  // let registers = {};
+  // Let registers = {};
 
   // for (const line of input.split('\n')) {
   //   const [register, operation, value, , ifRegister, comparison, comparator ] = line.trim().split(' ');
@@ -31,25 +31,32 @@ function solution(input) {
   //     opFunc(registers, register, +value);
   //   }
   // }
-  const registers = input.split('\n')
+  const registers = input
+    .split('\n')
     .map(line => line.trim().split(' '))
-    .reduce((acc, [register, operation, value, , ifRegister, comparison, comparator]) => {
-      acc[ifRegister] |= 0;
-      acc[register] |= 0;
+    .reduce(
+      (
+        acc,
+        [register, operation, value, , ifRegister, comparison, comparator],
+      ) => {
+        acc[ifRegister] |= 0;
+        acc[register] |= 0;
 
-      const compFunc = comparisonMap[comparison];
-      const opFunc = operationMap[operation];
+        const compFunc = comparisonMap[comparison];
+        const opFunc = operationMap[operation];
 
-      if(compFunc(ifRegister, +comparator, acc)) {
-        opFunc(acc, register, +value);
-      }
+        if (compFunc(ifRegister, Number(comparator), acc)) {
+          opFunc(acc, register, Number(value));
+        }
 
-      return acc;
-    }, {});
+        return acc;
+      },
+      {},
+    );
 
   const max = Object.values(registers).reduce(
-    (acc, cur) => cur > acc ? cur : acc,
-    -Infinity
+    (acc, cur) => (cur > acc ? cur : acc),
+    -Infinity,
   );
 
   return max;

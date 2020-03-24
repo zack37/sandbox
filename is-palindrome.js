@@ -1,19 +1,18 @@
-const reverse = string => {
-  let o = '';
-  for(var i = string.length - 1; i >= 0; i--) {
-    o += string[i];
-  }
-  return o;
-};
-
 const isPalindrome = str => {
-  const stripped = str.toLowerCase().replace(/[^a-z0-9]/gi, '');
+  const stripped = str.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
   if (stripped.length <= 1) {
     return true;
   }
   const half = Math.floor(stripped.length / 2);
 
-  return stripped.substring(0, half + 1) === reverse(stripped.substring(half));
+  for (let i = 0; i <= half; i++) {
+    const left = stripped[i];
+    const right = stripped[stripped.length - 1 - i];
+    if (left !== right) {
+      return false;
+    }
+  }
+  return true;
 };
 
 console.log(isPalindrome('kayak'));
@@ -23,8 +22,8 @@ console.log(isPalindrome('able was i, ere I saw elba.'));
 console.time('long palindrome');
 console.log(
   isPalindrome(
-    'Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.'
-  )
+    'Dennis, Nell, Edna, Leon, Nedra, Anita, Rolf, Nora, Alice, Carol, Leo, Jane, Reed, Dena, Dale, Basil, Rae, Penny, Lana, Dave, Denny, Lena, Ida, Bernadette, Ben, Ray, Lila, Nina, Jo, Ira, Mara, Sara, Mario, Jan, Ina, Lily, Arne, Bette, Dan, Reba, Diane, Lynn, Ed, Eva, Dana, Lynne, Pearl, Isabel, Ada, Ned, Dee, Rena, Joel, Lora, Cecil, Aaron, Flora, Tina, Arden, Noel, and Ellen sinned.',
+  ),
 );
 console.timeEnd('long palindrome');
 
@@ -178,6 +177,6 @@ Locks I rifle so troops atone re war. Only rebel or a crofter animates so cottag
 Pan is tune-pipe – so hot notes, paths up to honeydew.
 Odd locks, a maddened (I was aware) macaw on top, spot no seen knots, rifts or fan, I saw. Are maces a baton, madam? Oodles, madam? Rare laptops are too late – got too lit up.
 Nits rub – snip now, I’ll abate, not snip, nits I held.
-Nubile Danish tomboys I led to old loser as no melons I held; no fish to my name. Nod lower, do I dare? No, one nods a hairy snipe. (Edit: one hairy snipe, eh?) See silliness, else we’ll ask cornish to obey deity’s or god’s item. I, God, damn it! I was in it! To Hades, acne trap, sad loser! As warts pop, a dosser I – we – vile rat, sack! Same row, oh woe! Macaroni, rats, as a hoot, tie. I vomit on rats.`)
+Nubile Danish tomboys I led to old loser as no melons I held; no fish to my name. Nod lower, do I dare? No, one nods a hairy snipe. (Edit: one hairy snipe, eh?) See silliness, else we’ll ask cornish to obey deity’s or god’s item. I, God, damn it! I was in it! To Hades, acne trap, sad loser! As warts pop, a dosser I – we – vile rat, sack! Same row, oh woe! Macaroni, rats, as a hoot, tie. I vomit on rats.`),
 );
 console.timeEnd('longest palindrome');

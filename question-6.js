@@ -7,9 +7,9 @@ const bs = Array.from({ length: 10 }, (_, i) => i);
 
 const resultMatrix = [];
 
-for (let a of as) {
+for (const a of as) {
   resultMatrix[a] = [];
-  for (let b of bs) {
+  for (const b of bs) {
     const answer = f(a, b);
     resultMatrix[a][b] = answer;
   }

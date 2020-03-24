@@ -20,7 +20,7 @@ Array.prototype.mapScan = function(project, accum, initial) {
   const result = [];
   let acc = init;
 
-  for (var i = 0; i < source.length; i++) {
+  for (let i = 0; i < source.length; i++) {
     const projection = project ? project(acc, i) : acc;
     result.push(projection);
     acc = accum(acc, source[i]);
@@ -38,10 +38,10 @@ const populationFormula = (lambda, xn = INITIAL_POPULATION) => {
 };
 
 const growth = (lambda, years) => {
-  return [...Array(years).keys()].mapScan(
+  return [...new Array(years).keys()].mapScan(
     (population, year) => ({ year, population }),
     acc => populationFormula(lambda, acc),
-    INITIAL_POPULATION
+    INITIAL_POPULATION,
   );
 };
 

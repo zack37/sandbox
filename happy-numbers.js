@@ -4,7 +4,7 @@ function digitSum(value, sum = 0) {
   if (value <= 0) {
     return sum;
   }
-  return digitSum(Math.floor(value / 10), sum + value % 10);
+  return digitSum(Math.floor(value / 10), sum + (value % 10));
 }
 
 function squareDigitSum(value, sum = 0) {
@@ -33,5 +33,5 @@ const happyNumber = num => {
   return inner(num, []);
 };
 
-const results = [...Array(1000001).keys()].filter(happyNumber);
+const results = [...new Array(1000001).keys()].filter(happyNumber);
 console.log(results);

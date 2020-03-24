@@ -2,7 +2,7 @@ const camelCase = require('lodash/camelCase');
 const isPlainObject = require('lodash/isPlainObject');
 
 function normalizeObjectKeys(obj) {
-  if(!isPlainObject(obj) && !Array.isArray(obj)) {
+  if (!isPlainObject(obj) && !Array.isArray(obj)) {
     return obj;
   }
 
@@ -13,9 +13,9 @@ function normalizeObjectKeys(obj) {
         ? normalizeObjectKeys(value)
         : Array.isArray(value)
           ? value.map(normalizeObjectKeys)
-          :value
+          : value,
     }),
-    {}
+    {},
   );
 }
 
@@ -24,43 +24,43 @@ const body = {
     'PRICE_PER_KWH_MIN',
     'EPC_RATE',
     'SUN_HOUR_MIN',
-    'SUN_HOUR_MAX_EXCLUSIVE'
+    'SUN_HOUR_MAX_EXCLUSIVE',
   ],
   filter: {
     bool: {
       must: [
         {
           term: {
-            DEALER: 'dealer'
-          }
+            DEALER: 'dealer',
+          },
         },
         {
           term: {
-            CONTRACT_TYPE: 'contractType'
-          }
+            CONTRACT_TYPE: 'contractType',
+          },
         },
         {
           term: {
-            UTILITY_COMPANY: 'utility'
-          }
+            UTILITY_COMPANY: 'utility',
+          },
         },
         {
           range: {
             SUN_HOUR_MIN: {
-              lte: 'sunHours'
-            }
-          }
+              lte: 'sunHours',
+            },
+          },
         },
         {
           range: {
             SUN_HOUR_MAX_EXCLUSIVE: {
-              gt: 'sunHours'
-            }
-          }
-        }
-      ]
-    }
-  }
+              gt: 'sunHours',
+            },
+          },
+        },
+      ],
+    },
+  },
 };
 
 const normalized = normalizeObjectKeys(body);

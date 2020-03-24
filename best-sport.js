@@ -1,7 +1,7 @@
 function maxBy(collection, projection = x => x) {
   let maxValue = projection(collection[0]);
   let maxItem = collection[0];
-  for (var i = 1; i < collection.length; i++) {
+  for (let i = 1; i < collection.length; i++) {
     const item = collection[i];
     const value = projection(item);
     if (value > maxValue) {
@@ -47,7 +47,7 @@ const SPORTS = {
     attrs.legStrength * 3 +
     attrs.armStrength * 3 +
     attrs.coreStrength * 3 +
-    attrs.mentalStrength
+    attrs.mentalStrength,
 };
 
 const strengthAttrs = {
@@ -55,12 +55,12 @@ const strengthAttrs = {
   armStrength: 10,
   coreStrength: 10,
   mentalStrength: 10,
-  reactionTime: 10
+  reactionTime: 10,
 };
 
 const sportScores = Object.keys(SPORTS).map(key => [
   key,
-  SPORTS[key](strengthAttrs)
+  SPORTS[key](strengthAttrs),
 ]);
 
 const bestSport = maxBy(sportScores, x => x[1])[0];

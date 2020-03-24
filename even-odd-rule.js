@@ -1,4 +1,4 @@
-/*eslint no-unused-vars: off */
+/* eslint no-unused-vars: off */
 const _ = require('lodash');
 const { Suite } = require('benchmark');
 const path = require('path');
@@ -14,8 +14,7 @@ const isPointInPath = (point, poly) => {
     if (
       poly[i][1] > y !== poly[j][1] > y &&
       x <
-        (poly[j][0] - poly[i][0]) *
-          (y - poly[i][1]) /
+        ((poly[j][0] - poly[i][0]) * (y - poly[i][1])) /
           (poly[j][1] - poly[i][1]) +
           poly[i][0]
     ) {
@@ -28,7 +27,7 @@ const isPointInPath = (point, poly) => {
 
 const [node, file, numberOfEvents, numberOfPoints, precision] = process.argv;
 
-// const shape = plot(parseInt(numberOfPoints || 50000, 10), parseInt(precision || 10, 10));
+// Const shape = plot(parseInt(numberOfPoints || 50000, 10), parseInt(precision || 10, 10));
 
 // shapeTask.done('Finished generating shape');
 
@@ -37,10 +36,10 @@ const getBoundary = () => [
   [-11.0, -1.0],
   [-11.0, -11.0],
   [-1.0, -11.0],
-  [-1.0, -1.0]
+  [-1.0, -1.0],
 ];
 
-// console.log('number of points in shape', shape.length);
+// Console.log('number of points in shape', shape.length);
 // const boundary = getBoundary();
 
 // const timerLabel = `Running point-in-polygon for ${numberOfEvents} events with polygon sized ${numberOfPoints}`;
@@ -51,7 +50,7 @@ const otherBoundary = [[-5, 5], [5, 5], [5, 1], [-5, 5], [-5, 5]];
 
 console.log('==========', isPointInPath([0, 0], otherBoundary));
 
-// console.time(timerLabel);
+// Console.time(timerLabel);
 
 // evenOddTask.status('Begining algorithm').details(`Number of events: ${numberOfEvents} for shape sized ${numberOfPoints}`);
 
@@ -74,14 +73,14 @@ const boundary = getBoundary();
 
 // Event Benchmark Setup
 const shape = plot(50000, 10);
-const e1 = [...Array(1).keys()];
-const e10 = [...Array(10).keys()];
-const e100 = [...Array(100).keys()];
-const e1000 = [...Array(1000).keys()];
-const e10000 = [...Array(10000).keys()];
+const e1 = [...new Array(1).keys()];
+const e10 = [...new Array(10).keys()];
+const e100 = [...new Array(100).keys()];
+const e1000 = [...new Array(1000).keys()];
+const e10000 = [...new Array(10000).keys()];
 
 // Point Benchmark Setup
-const events = [...Array(50000).keys()];
+const events = [...new Array(50000).keys()];
 const p4 = plot(4, 1);
 const p20 = plot(20, 10);
 const p100 = plot(100, 10);
@@ -170,12 +169,12 @@ suite
     events.filter(() => p10000.some(p => isPointInPath(p, boundary)));
   })
   .on('complete', function() {
-    // console.log(this);
+    // Console.log(this);
     console.log(
       this.filter('successful').map(({ name, stats }) => ({
         name,
-        average: stats.mean * 1e9
-      }))
+        average: stats.mean * 1e9,
+      })),
     );
   })
   .run({ async: true });

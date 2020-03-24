@@ -1,7 +1,7 @@
 const { Observable } = require('rxjs/Rx');
 const { OuterSubscriber } = require('rxjs/OuterSubscriber');
 const { subscribeToResult } = require('rxjs/util/subscribeToResult');
-// const { EventEmitter } = require('events');
+// Const { EventEmitter } = require('events');
 
 // const e = new EventEmitter();
 
@@ -16,7 +16,7 @@ class ThrowOnSubscriber extends OuterSubscriber {
     this.error(innerValue);
   }
 
-  // notifyComplete() {}
+  // NotifyComplete() {}
 }
 
 class ThrowOnOperator {
@@ -25,23 +25,23 @@ class ThrowOnOperator {
   }
 
   call(subscriber, source) {
-    return source.subscribe(new ThrowOnSubscriber(subscriber, this.notifier))
+    return source.subscribe(new ThrowOnSubscriber(subscriber, this.notifier));
   }
 }
 
 Observable.prototype.throwOn = function(notifier) {
   return this.lift(new ThrowOnOperator(notifier));
-}
+};
 
 function throwOn(notifier) {
   return source => {
-    return notifier.subscribe((err) => source.error(err));
+    return notifier.subscribe(err => source.error(err));
   };
 }
 
 module.exports = {
   throwOn,
-  ThrowOnOperator
+  ThrowOnOperator,
 };
 
 // Observable.fromEvent(e, 'data')

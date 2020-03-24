@@ -1,6 +1,6 @@
 const test = require('tape');
 
-const sum = require('./');
+const sum = require('.');
 
 test('should sum 1 + 2', t => {
   t.equal(sum(1, 2), 3);

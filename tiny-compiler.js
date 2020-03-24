@@ -1,14 +1,14 @@
 const R = require('ramda');
 
 const whitespace = /\s/;
-const numbers = /[0-9]/;
+const numbers = /\d/;
 const letters = /[a-z]/i;
 
 const tokenizer = input => {
   console.log('tokenizing', input);
 
   let current = 0;
-  let tokens = [];
+  const tokens = [];
 
   while (current < input.length) {
     let char = input[current];
@@ -16,19 +16,16 @@ const tokenizer = input => {
     if (char === '(' || char === ')') {
       tokens.push({ type: 'paren', value: char });
       current++;
-    }
-    else if (whitespace.test(char)) {
+    } else if (whitespace.test(char)) {
       current++;
-    }
-    else if (numbers.test(char)) {
+    } else if (numbers.test(char)) {
       let value = '';
       while (numbers.test(char)) {
         value += char;
         char = input[++current];
       }
       tokens.push({ type: 'number', value });
-    }
-    else if (char === '"') {
+    } else if (char === '"') {
       let value = '';
       char = input[++current];
       while (char !== '"') {
@@ -37,16 +34,14 @@ const tokenizer = input => {
       }
       char = input[++current];
       tokens.push({ type: 'string', value });
-    }
-    else if (letters.test(char)) {
+    } else if (letters.test(char)) {
       let value = '';
       while (letters.test(char)) {
         value += char;
         char = input[++current];
       }
       tokens.push({ type: 'name', value });
-    }
-    else {
+    } else {
       throw new Error(`I don't know what this character is: ${char}`);
     }
   }
@@ -70,7 +65,7 @@ const parser = tokens => {
       current++;
       return { type: 'StringLiteral', value: token.value };
     }
-    if(token.type === 'name') {
+    if (token.type === 'name') {
       current++;
       return { type: 'Identifier', value: token.value };
     }
@@ -82,7 +77,7 @@ const parser = tokens => {
 
       while (
         token.type !== 'paren' ||
-        token.type === 'paren' && token.value !== ')'
+        (token.type === 'paren' && token.value !== ')')
       ) {
         node.params.push(walk());
         token = tokens[current];
@@ -96,9 +91,9 @@ const parser = tokens => {
     throw new TypeError(token.type);
   }
 
-  let ast = {
+  const ast = {
     type: 'Program',
-    body: []
+    body: [],
   };
 
   while (current < tokens.length) {
@@ -142,9 +137,9 @@ const traverser = (ast, visitor) => {
 };
 
 const transformer = ast => {
-  let newAst = {
+  const newAst = {
     type: 'Program',
-    body: []
+    body: [],
   };
 
   ast._context = newAst.body;
@@ -153,13 +148,13 @@ const transformer = ast => {
     NumberLiteral: {
       enter: (node, parent) => {
         parent._context.push({ type: 'NumberLiteral', value: node.value });
-      }
+      },
     },
 
     StringLiteral: {
       enter: (node, parent) => {
         parent._context.push({ type: 'StringLiteral', value: node.value });
-      }
+      },
     },
 
     CallExpression: {
@@ -167,7 +162,7 @@ const transformer = ast => {
         let expression = {
           type: 'CallExpression',
           callee: { type: 'Identifier', name: node.name },
-          arguments: []
+          arguments: [],
         };
 
         node._context = expression.arguments;
@@ -177,8 +172,8 @@ const transformer = ast => {
         }
 
         parent._context.push(expression);
-      }
-    }
+      },
+    },
   });
 
   return newAst;
@@ -186,16 +181,20 @@ const transformer = ast => {
 
 const codeGenerator = node => {
   const codeGeneratorMap = {
-    Program: R.pipe(R.prop('body'), R.map(codeGenerator), R.join('\n')),
+    Program: R.pipe(
+      R.prop('body'),
+      R.map(codeGenerator),
+      R.join('\n'),
+    ),
     ExpressionStatement: node => codeGenerator(node.expression) + ';',
     CallExpression: node =>
       `${codeGenerator(node.callee)}(${R.map(
         codeGenerator,
-        node.arguments
+        node.arguments,
       ).join(', ')})`,
     Identifier: node => node.name,
     NumberLiteral: node => node.value,
-    StringLiteral: node => `"${node.value}"`
+    StringLiteral: node => `"${node.value}"`,
   };
   const exp = codeGeneratorMap[node.type];
   if (!exp) {
@@ -204,7 +203,12 @@ const codeGenerator = node => {
   return exp(node);
 };
 
-const compiler = R.pipe(tokenizer, parser, transformer, codeGenerator);
+const compiler = R.pipe(
+  tokenizer,
+  parser,
+  transformer,
+  codeGenerator,
+);
 
 module.exports = {
   tokenizer,
@@ -212,7 +216,7 @@ module.exports = {
   traverser,
   transformer,
   codeGenerator,
-  compiler
+  compiler,
 };
 
 console.log(compiler('(add 2 subtract(4 2))'));

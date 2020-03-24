@@ -1,4 +1,4 @@
-/*eslint no-use-before-define: off */
+/* eslint no-use-before-define: off */
 const map = fn => list => {
   return list.isEmpty ? list : cons(fn(list.head), map(fn)(list.tail));
 };
@@ -75,7 +75,7 @@ const list = function() {
 
 const toArray = reduce((acc, cur) => acc.concat(cur), []);
 
-let consList = cons(1, cons(2, cons(3, nil)));
+const consList = cons(1, cons(2, cons(3, nil)));
 const double = x => x * 2;
 const add = (acc, cur) => acc + cur;
 
@@ -86,4 +86,8 @@ console.log(consList.reduce(add, 0));
 console.log(toArray(consList));
 console.log(consList.toArray());
 console.log(list(1, 2, 3));
-console.log(list(1, 2, 3).filter(x => x % 2 === 1).toArray());
+console.log(
+  list(1, 2, 3)
+    .filter(x => x % 2 === 1)
+    .toArray(),
+);

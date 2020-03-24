@@ -10,7 +10,7 @@ const characterMap = {
   '6': ':six:',
   '7': ':seven:',
   '8': ':eight:',
-  '9': ':nine:'
+  '9': ':nine:',
 };
 const isLetter = x => /[a-z]+/i.test(x);
 
@@ -24,6 +24,11 @@ const emojize = input =>
 
 const result = s
   .split(/\s+/)
-  .map(words => words.split('').map(emojize).join(' '))
+  .map(words =>
+    words
+      .split('')
+      .map(emojize)
+      .join(' '),
+  )
   .join('   ');
 process.stdout.write(result);

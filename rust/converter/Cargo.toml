@@ -1,0 +1,10 @@
+[package]
+authors = ["Zack Smith <zack.t.smith37@gmail.com>"]
+description = "Converts from one temperature scale to another"
+name = "converter"
+version = "1.0.0"
+
+[dependencies]
+clap = "2.32.0"
+lazy_static = "1.1.0"
+regex = "1.0.2"

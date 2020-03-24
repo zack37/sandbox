@@ -12,9 +12,9 @@ function gcd(a, b) {
   if (b > a) {
     [a, b] = [b, a];
   }
-  //eslint-disable-next-line no-constant-condition
+  // eslint-disable-next-line no-constant-condition
   let r;
-  while(b !== 0) {
+  while (b !== 0) {
     r = a % b;
     a = b;
     b = r;
@@ -24,7 +24,7 @@ function gcd(a, b) {
 }
 
 function randomBetween(lower, upper) {
-  return Math.random() * (upper - lower) + lower << 0;
+  return (Math.random() * (upper - lower) + lower) << 0;
 }
 
 function calculatePI(watchConvergence = false) {
@@ -43,13 +43,15 @@ function calculatePI(watchConvergence = false) {
 
   generator$.map(count => Math.sqrt(6 / (count / TRIALS))).subscribe({
     next: result => {
-      console.log(`Estimated PI = ${result}`)
-      console.log(`Difference of PI = ${Math.PI} - ${result} = ${Math.PI - result}`);
+      console.log(`Estimated PI = ${result}`);
+      console.log(
+        `Difference of PI = ${Math.PI} - ${result} = ${Math.PI - result}`,
+      );
     },
     complete: () => {
       const endTime = process.hrtime(startTime);
       console.log(`Process took ${hrToMs(endTime)}ms`);
-    }
+    },
   });
 }
 

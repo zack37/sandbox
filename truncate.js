@@ -7,15 +7,19 @@ const {
   __,
   append,
   join,
-  take
+  take,
 } = require('ramda');
 
 const truncate = curry((cutoff, tail, source) =>
   when(
     propSatisfies(gt(__, cutoff), 'length'),
-    pipe(take(cutoff - tail.length), append(tail), join('')),
-    source
-  )
+    pipe(
+      take(cutoff - tail.length),
+      append(tail),
+      join(''),
+    ),
+    source,
+  ),
 );
 
 console.log(truncate(10, '...', '12345'));

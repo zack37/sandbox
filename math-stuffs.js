@@ -17,7 +17,7 @@ const maths = source => {
     min,
     max,
     mean: sum / source.length,
-    range: max - min
+    range: max - min,
   };
 };
 

@@ -10,7 +10,12 @@ const result = _.flatMap(range, r1 => {
   .map(({ r1, r2 }) => r1 * r2)
   .filter(
     product =>
-      product.toString() === product.toString().split('').reverse().join('')
+      product.toString() ===
+      product
+        .toString()
+        .split('')
+        .reverse()
+        .join(''),
   )
   .sort((a, b) => b - a)[0];
 

@@ -1,0 +1,7 @@
+[package]
+name = "sudoku"
+version = "0.1.0"
+authors = ["Zack Smith <zachary.smith@vivintsolar.com>"]
+
+[dependencies]
+sudoku = "0.6.2"

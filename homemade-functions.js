@@ -1,3 +1,7 @@
+function isNil(value) {
+  return value === null || value === undefined;
+}
+
 /**
  * High order function used to collect a list of values into some output
  *
@@ -7,7 +11,7 @@
  * @returns
  */
 function reduce(reducer, initial, list) {
-  if (reducer == null || typeof reducer !== 'function') {
+  if (isNil(reducer) || typeof reducer !== 'function') {
     throw new TypeError('reducer must be provided and must be a function');
   }
 
@@ -32,9 +36,9 @@ function reduce(reducer, initial, list) {
 
   // return reduceInner(reducer, list, initial);
 
-  let i,
-    acc = initial,
-    length = list.length;
+  let i;
+  let acc = initial;
+  const { length } = list;
 
   for (i = 0; i < length; i++) {
     acc = reducer(acc, list[i]);
@@ -44,29 +48,31 @@ function reduce(reducer, initial, list) {
 }
 
 function map(projection, functor) {
-  return reduce(
-    (acc, cur) => {
-      return [...acc, projection(cur)];
-    },
-    [],
-    functor
-  );
+  return reduce((acc, cur) => [...acc, projection(cur)], [], functor);
 }
 
 function filter(predicate, list) {
-  return reduce(
-    (acc, cur) => {
-      return predicate(cur) ? [...acc, cur] : acc;
-    },
-    [],
-    list
-  );
+  return reduce((acc, cur) => (predicate(cur) ? [...acc, cur] : acc), [], list);
 }
 
 function some(predicate, list) {
-  let i,
-    length = list.length,
-    cur;
+  // TCO Version
+  // function inner(p, [head, ...tail]) {
+  //   if(!head) {
+  //     return false;
+  //   }
+  //   if(predicate(head)) {
+  //     return true;
+  //   }
+
+  //   return inner(p, tail);
+  // }
+
+  // return inner(predicate, list);
+
+  let i;
+  const { length } = list;
+  let cur;
 
   for (i = 0; i < length; i++) {
     cur = list[i];
@@ -78,9 +84,23 @@ function some(predicate, list) {
 }
 
 function every(predicate, list) {
-  let i,
-    length = list.length,
-    cur;
+  // TCO Version
+  // function inner(p, [head, ...tail]) {
+  //   if (!head) {
+  //     return true;
+  //   }
+  //   if (!predicate(head)) {
+  //     return false;
+  //   }
+
+  //   return inner(p, tail);
+  // }
+
+  // return inner(predicate, list);
+
+  let i;
+  const { length } = list;
+  let cur;
 
   for (i = 0; i < length; i++) {
     cur = list[i];
@@ -92,12 +112,15 @@ function every(predicate, list) {
 }
 
 function flatMap(projection, list) {
-  let i,
-    j,
-    length = list.length,
-    cur,
-    curLength,
-    results = [];
+  // Cleaner version
+  // return reduce((acc, cur) => [...acc, ...projection(cur)], [], list);
+
+  let i;
+  let j;
+  const { length } = list;
+  let cur;
+  let curLength;
+  const results = [];
 
   for (i = 0; i < length; i++) {
     cur = projection(list[i]);
@@ -119,7 +142,7 @@ function flatMap(projection, list) {
 - flatMap
 */
 
-const testList = [...Array(8).keys()].slice(1);
+const testList = [...new Array(8).keys()].slice(1);
 
 const mapped = map(x => x * 2, testList);
 console.log('mapped', mapped);

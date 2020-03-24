@@ -1,21 +1,21 @@
 const R = require('ramda');
 
 const cond = pairs => (...args) => {
-  const match = pairs.find(([predicate]) => predicate.apply(null, args));
+  const match = pairs.find(([predicate]) => predicate(...args));
   return match && match[1].apply(null, args);
 };
 
 const fn = cond([
   [R.equals(0), () => 'water freezes at 0°C'],
   [R.equals(100), () => 'water boils at 100°C'],
-  [R.T, x => `nothing special happens at ${x}°C`]
+  [R.T, x => `nothing special happens at ${x}°C`],
 ]);
 
 console.log(fn(0));
 console.log(fn(50));
 console.log(fn(100));
 
-//const between=(lower,upper)=>R.both(R.gte(R.__,lower),R.lte(R.__,upper));
+// Const between=(lower,upper)=>R.both(R.gte(R.__,lower),R.lte(R.__,upper));
 const between = (lower, upper) => value => value <= upper && value >= lower;
 
 const byGrade = R.groupBy(student => {
@@ -33,7 +33,7 @@ const byGrade = R.groupBy(student => {
     [between(90, 92), R.always('A-')],
     [between(93, 96), R.always('A')],
     [between(97, 100), R.always('A+')],
-    [R.T, R.always('N/A')]
+    [R.T, R.always('N/A')],
   ])(student.score);
 });
 
@@ -47,7 +47,11 @@ const trunc = limit => str => {
 const truncate = limit =>
   R.when(
     R.propSatisfies(R.gt(R.__, limit), 'length'),
-    R.pipe(R.take(limit), R.append('...'), R.join(''))
+    R.pipe(
+      R.take(limit),
+      R.append('...'),
+      R.join(''),
+    ),
   );
 
 console.log(truncate(10)('12345'));

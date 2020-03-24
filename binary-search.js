@@ -4,7 +4,9 @@ const search = (term, list) => {
     ? term
     : list[n] < term && list.length > 1
       ? search(term, list.slice(n, list.length + 1))
-      : list[n] > term && list.length > 1 ? search(term, list.slice(0, n)) : -1;
+      : list[n] > term && list.length > 1
+        ? search(term, list.slice(0, n))
+        : -1;
 };
 
 const whileSearch = (term, list) => {
@@ -13,10 +15,9 @@ const whileSearch = (term, list) => {
     if (list[n] === term) {
       return n;
     }
-    else if (list[n] > term) {
+    if (list[n] > term) {
       n = Math.floor(n / 2);
-    }
-    else {
+    } else {
       n = Math.floor(n * 1.5);
     }
   }
@@ -27,20 +28,20 @@ const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let i;
 
 console.log('search');
-// search
-for(i = 0; i < 12; i++) {
+// Search
+for (i = 0; i < 12; i++) {
   console.log(i, search(i, list));
 }
 
 console.log();
 
 console.log('whileSearch');
-// while search
-for(i = 0; i < 12; i++) {
+// While search
+for (i = 0; i < 12; i++) {
   console.log(i, whileSearch(i, list));
 }
 
-// console.log('0', search(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+// Console.log('0', search(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 // console.log('1', search(1, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 // console.log('2', search(2, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 // console.log('3', search(3, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));

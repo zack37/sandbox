@@ -1,5 +1,6 @@
 const Promise = require('bluebird');
 const { EventEmitter } = require('events');
+
 const emitter = new EventEmitter();
 
 class Worker {
@@ -28,7 +29,9 @@ class Worker {
 
 class SingleFuncWorkerPool {
   constructor(count, fn) {
-    this.workers = [...Array(count).keys()].map(() => new Worker(fn, emitter));
+    this.workers = [...new Array(count).keys()].map(
+      () => new Worker(fn, emitter),
+    );
   }
 
   getWorker() {
@@ -43,7 +46,7 @@ class SingleFuncWorkerPool {
       };
       emitter.on('worker:done', wait);
     }).then(workers => workers.pop());
-    // return Promise
+    // Return Promise
     //   .resolve()
     //   // .timeout(5000)
     //   .then(() => {
@@ -81,6 +84,6 @@ const w = module.exports(5, () => {
     }, 1000);
   });
 });
-Promise.map([...Array(100).keys()], () => {
+Promise.map([...new Array(100).keys()], () => {
   return w.getWorker().then(worker => worker.work());
 });

@@ -3,7 +3,7 @@ const Suite = require('benchmark').Suite;
 const benchmarkPrint = require('./benchmark-print');
 
 const suite = new Suite();
-const array = Array(100000);
+const array = new Array(100000);
 
 suite
   .add('let and length inside', () => {
@@ -15,7 +15,7 @@ suite
   })
   .add('var and length inside', () => {
     let count = 0;
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
       count++;
     }
     return count;
@@ -30,7 +30,7 @@ suite
   })
   .add('var outside, length inside', () => {
     let count = 0;
-    var i = 0;
+    let i = 0;
     for (; i < array.length; i++) {
       count++;
     }
@@ -47,7 +47,7 @@ suite
   .add('var inside, length outside', () => {
     let count = 0;
     const length = array.length;
-    for (var i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
       count++;
     }
     return count;
@@ -63,7 +63,7 @@ suite
   })
   .add('var outside, length, outside', () => {
     let count = 0;
-    var i = 0;
+    let i = 0;
     const length = array.length;
     for (; i < length; i++) {
       count++;

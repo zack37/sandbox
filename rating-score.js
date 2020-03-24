@@ -6,7 +6,10 @@ const getStars = (count, rating) => {
 
 const scoreForRatings = (ratings, maxRating = 5) => {
   const middle = Math.ceil(maxRating / 2);
-  return R.pipe(R.map(x => x - middle), R.sum)(ratings);
+  return R.pipe(
+    R.map(x => x - middle),
+    R.sum,
+  )(ratings);
 };
 
 const fiveStars = getStars(4405, 5);
@@ -20,7 +23,7 @@ const switchRatings = R.chain(x => x, [
   fourStars,
   threeStars,
   twoStars,
-  oneStars
+  oneStars,
 ]);
 
 console.time('single rating');
@@ -28,5 +31,5 @@ console.log(scoreForRatings(switchRatings));
 console.timeEnd('single rating');
 
 console.time('10000 ratings');
-scoreForRatings(Array(10000).fill(switchRatings));
+scoreForRatings(new Array(10000).fill(switchRatings));
 console.timeEnd('10000 ratings');

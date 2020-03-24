@@ -4,7 +4,7 @@ const benchmarkPrint = require('./benchmark-print');
 
 const suite = new Suite();
 
-let o = { p: 1 };
+const o = { p: 1 };
 
 suite
   .add('omit', () => {

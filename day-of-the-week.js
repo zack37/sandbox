@@ -5,11 +5,11 @@ const weekdayMap = [
   'Wednesday',
   'Thursday',
   'Friday',
-  'Saturday'
+  'Saturday',
 ];
 
 function calculateDoomsday(year) {
-  return (2 + year + year / 4 - year / 100 + year / 400 << 0) % 7;
+  return ((2 + year + year / 4 - year / 100 + year / 400) << 0) % 7;
 }
 
 console.log(weekdayMap[calculateDoomsday(1985)]);

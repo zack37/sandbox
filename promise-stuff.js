@@ -8,8 +8,8 @@ function dualifyTick(callback, promise) {
   return !callback
     ? promise
     : promise
-      .then(res => process.nextTick(() => callback(null, res)))
-      .catch(err => process.nextTick(() => callback(err)));
+        .then(res => process.nextTick(() => callback(null, res)))
+        .catch(err => process.nextTick(() => callback(err)));
 }
 
 const longPromiseSuccess = value => {
@@ -25,31 +25,31 @@ const longPromiseError = err => {
 };
 
 dualifyTick(null, longPromiseSuccess(5)).then(
-  console.log.bind(console, 'dualifyTick promise resolve')
+  console.log.bind(console, 'dualifyTick promise resolve'),
 );
 dualifyTick(null, longPromiseError('Oops')).catch(
-  console.log.bind(console, 'dualifyTick promise reject')
+  console.log.bind(console, 'dualifyTick promise reject'),
 );
 dualifyTick(
   console.log.bind(console, 'dualifyTick callback success'),
-  longPromiseSuccess(5)
+  longPromiseSuccess(5),
 );
 dualifyTick(
   console.log.bind(console, 'dualifyTick callback error'),
-  longPromiseError('Oops')
+  longPromiseError('Oops'),
 );
 
 dualify(null, longPromiseSuccess(5)).then(
-  console.log.bind(console, 'dualify promise resolve')
+  console.log.bind(console, 'dualify promise resolve'),
 );
 dualify(null, longPromiseError('Oops')).catch(
-  console.log.bind(console, 'dualify promise reject')
+  console.log.bind(console, 'dualify promise reject'),
 );
 dualify(
   console.log.bind(console, 'dualify callback success'),
-  longPromiseSuccess(5)
+  longPromiseSuccess(5),
 );
 dualify(
   console.log.bind(console, 'dualify callback error'),
-  longPromiseError('Oops')
+  longPromiseError('Oops'),
 );

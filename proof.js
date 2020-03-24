@@ -5,12 +5,12 @@ const geohash = 'g1,g2,g3,g4,g5,g6';
 
 // My way
 const myWay = _.flatMap(prefixes, p =>
-  geohash.split(',').map(g => p + ':' + g)
+  geohash.split(',').map(g => p + ':' + g),
 );
 
 // The dumb way
 const geohashes = geohash.split(',');
-let theDumbWay = [];
+const theDumbWay = [];
 
 prefixes.forEach(p => {
   geohashes.forEach(g => {
@@ -18,6 +18,6 @@ prefixes.forEach(p => {
   });
 });
 
-// results
+// Results
 console.log('My way', myWay);
 console.log('The dumb way', theDumbWay);

@@ -4,7 +4,5 @@ const debug = require('debug')('shitpost:bacon');
 
 module.exports = sender$ => {
   debug('initializing');
-  return Observable.from(sender$).filter(
-    msg => msg.author.id === baconId
-  )
+  return Observable.from(sender$).filter(msg => msg.author.id === baconId);
 };

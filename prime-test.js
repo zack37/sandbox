@@ -1,4 +1,4 @@
-const { Big } = require('big.js');
+const { Big: big } = require('big.js');
 const { Observable, Scheduler } = require('rxjs');
 const Progress = require('progress');
 const prettyHRTime = require('pretty-hrtime');
@@ -14,10 +14,10 @@ function isPrimeSqrt(p) {
     return false;
   }
 
-  let bigI = Big(5),
-    bigP = Big(p),
-    bigW = Big(2);
-  const big6 = Big(6);
+  let bigI = big(5);
+  let bigW = big(2);
+  const bigP = big(p);
+  const big6 = big(6);
 
   while (bigI.times(bigI).lte(bigP)) {
     if (bigP.mod(bigI).eq(0)) {
@@ -50,7 +50,7 @@ function leastFactor(n) {
   }
 
   const m = Math.floor(Math.sqrt(n));
-  for (var i = 7; i <= m; i += 30) {
+  for (let i = 7; i <= m; i += 30) {
     if (n % i === 0) {
       return i;
     }
@@ -95,7 +95,7 @@ function isPrimeBasic(p) {
     return false;
   }
 
-  for (var i = 5; i < Math.floor(Math.sqrt(p)) + 1; i += 2) {
+  for (let i = 5; i < Math.floor(Math.sqrt(p)) + 1; i += 2) {
     if (p % i === 0) {
       return false;
     }
@@ -108,18 +108,18 @@ function arbitrary(upper) {
     total: upper - 2,
     width: Math.min(180, Math.floor(Math.sqrt(upper))),
     incomplete: ' ',
-    head: '>'
+    head: '>',
   });
   bar.render();
 
   const progressStart = process.hrtime();
 
   return Observable.interval(0, Scheduler.asap)
-    .scan(acc => acc.plus(1), Big(2))
+    .scan(acc => acc.plus(1), big(2))
     .takeWhile(x => x.lt(upper))
     .do(() => bar.tick())
     .filter(isPrimeSqrt)
-    .reduce(acc => acc.plus(1), Big(0))
+    .reduce(acc => acc.plus(1), big(0))
     .subscribe({
       next: count => {
         const ratio = count.div(upper).times(100);
@@ -130,7 +130,7 @@ function arbitrary(upper) {
         const end = process.hrtime(progressStart);
         const prettyTime = prettyHRTime(end, { precise: true });
         console.log(`Generating primes took ${prettyTime}`);
-      }
+      },
     });
 }
 
@@ -139,7 +139,7 @@ function basic(upper) {
     total: upper - 2,
     width: Math.min(180, Math.floor(Math.sqrt(upper))),
     incomplete: ' ',
-    head: '>'
+    head: '>',
   });
   bar.render();
 
@@ -151,7 +151,7 @@ function basic(upper) {
     .count()
     .subscribe({
       next: count => {
-        const ratio = count / upper * 100;
+        const ratio = (count / upper) * 100;
 
         console.log(`Ratio of primes = ${count}/${upper} = ${ratio}%`);
       },
@@ -159,7 +159,7 @@ function basic(upper) {
         const end = process.hrtime(basicStart);
         const prettyTime = prettyHRTime(end, { precise: true });
         console.log(`Generating primes without progress took ${prettyTime}`);
-      }
+      },
     });
 }
 
@@ -170,20 +170,20 @@ function primitive(upper) {
     total: upper - 2,
     width: Math.min(180, Math.floor(Math.sqrt(upper))),
     incomplete: ' ',
-    head: '>'
+    head: '>',
   });
   bar.render();
 
-  for(var i = 3; i < upper - 2; i += 2) {
+  for (let i = 3; i < upper - 2; i += 2) {
     bar.tick();
-    if(isPrimeLeastFactor(i)) {
+    if (isPrimeLeastFactor(i)) {
       primeCount++;
     }
   }
 
   return Observable.of(primeCount).subscribe({
     next: count => {
-      const ratio = count / upper * 100;
+      const ratio = (count / upper) * 100;
 
       console.log(`Ratio of primes = ${count}/${upper} = ${ratio}%`);
     },
@@ -191,12 +191,12 @@ function primitive(upper) {
       const end = process.hrtime(primitiveStart);
       const prettyTime = prettyHRTime(end, { precise: true });
       console.log(`Generating primes without progress took ${prettyTime}`);
-    }
+    },
   });
 }
 
 Observable.concat(
-  // arbitrary(),
+  // Arbitrary(),
   basic(1000000),
-  primitive(1000000)
+  primitive(1000000),
 );

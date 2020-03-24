@@ -1,10 +1,10 @@
 'use strict';
 
 r = 'x';
-var x = 'm';
-var y = 'q';
+const x = 'm';
+const y = 'q';
 function f() {
-  var x = 'test';
+  const x = 'test';
   r = 'z';
 }
 f();

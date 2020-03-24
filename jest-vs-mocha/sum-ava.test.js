@@ -1,5 +1,5 @@
-const sum = require('./');
 const test = require('ava');
+const sum = require('.');
 
 test('should sum 1 + 2', t => {
   const one = 1;

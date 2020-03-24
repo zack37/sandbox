@@ -1,10 +1,13 @@
-JSON.tryParse = (text, reviver) => {
+JSON.tryParse = (text, reviver, onError) => {
+  if (typeof reviver === 'function' && arguments.length === 2) {
+    onError = reviver;
+    reviver = null;
+  }
+
   try {
     return JSON.parse(text, reviver);
-  }
-  catch (e) {
-    console.error(e);
-    return undefined;
+  } catch (e) {
+    return onError && onError(e);
   }
 };
 

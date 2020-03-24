@@ -1,6 +1,6 @@
-const { Observable } = require('rxjs');
 const { createInterface } = require('readline');
 const { createReadStream } = require('fs');
+const { Observable } = require('rxjs');
 const { blue, greenBright, redBright } = require('chalk');
 
 const format = globalPattern => ({ line, text }) =>
@@ -50,5 +50,5 @@ grep$(patternRegex, createReadStream('./big.file.txt'))
   .subscribe(
     console.log.bind(console, blue('rx')),
     err => console.error(err),
-    () => console.log('\n\n\n')
+    () => console.log('\n\n\n'),
   );

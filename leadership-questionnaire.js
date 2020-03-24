@@ -1,10 +1,10 @@
-const { Observable } = require('rxjs');
 const readline = require('readline');
-const questions = require('./leadership-questionnaire-questions');
+const { Observable } = require('rxjs');
 const { bold, red, yellow, green } = require('chalk');
 const joi = require('joi');
 const startCase = require('lodash/startCase');
 const R = require('ramda');
+const questions = require('./leadership-questionnaire-questions');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -25,7 +25,7 @@ const format = R.compose(
   R.join('\n'),
   R.map(([category, score]) => `${category}: ${score}`),
   R.map(([category, score]) => [startCase(category), getColor(score)]),
-  R.toPairs
+  R.toPairs,
 );
 const ask = Observable.bindCallback(rl.question.bind(rl));
 
@@ -36,7 +36,9 @@ Below is a list of statements about your interpersonal skills. Using the 1-5
 scale provided, rate each statement based on the degree to which it describes your actions or behaviors
 in your job. Check ${bold('one')} number that represents your rating.
 
-    ${bold(1)} - Strongly Disagree    ${bold(2)} - Disagree    ${bold(3)} - Undecided/Uncertain    ${bold(4)} - Agree    ${bold(5)} - Strongly Agree
+    ${bold(1)} - Strongly Disagree    ${bold(2)} - Disagree    ${bold(
+  3,
+)} - Undecided/Uncertain    ${bold(4)} - Agree    ${bold(5)} - Strongly Agree
 `);
 
 Observable.from(questions)
@@ -46,14 +48,14 @@ Observable.from(questions)
         ...question,
         answer: joi.attempt(answer, answerSchema),
       }))
-      .retry(2)
+      .retry(2),
   )
   .reduce(
     (acc, { answer, category }) => ({
       ...acc,
-      [category]: acc[category] + answer,
+      [category]: (acc[category] || 0) + answer,
     }),
-    { esteem: 0, empathy: 0, involvement: 0, share: 0, support: 0 }
+    {},
   )
   .subscribe({
     next: scores => {
@@ -68,8 +70,8 @@ ${format(scores)}
     error: error => {
       console.error(
         red(
-          'Why is this so hard for you? You have to answer with 1-5. Get it right, dummy'
-        )
+          'Why is this so hard for you? You have to answer with 1-5. Get it right, dummy',
+        ),
       );
       console.error(red(error));
       rl.close();

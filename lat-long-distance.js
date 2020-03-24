@@ -1,7 +1,7 @@
-let lat1 = 38.898556;
-let long1 = -77.037852;
-let lat2 = 38.897147;
-let long2 = -77.043934;
+const lat1 = 38.898556;
+const long1 = -77.037852;
+const lat2 = 38.897147;
+const long2 = -77.043934;
 
 const toRadians = degrees => degrees * (Math.PI / 180);
 
