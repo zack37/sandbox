@@ -69,7 +69,7 @@
     "ref-array": "^1.2.0",
     "ref-struct": "^1.1.0",
     "rxjs": "^6.4.0",
-    "sharp": "^0.21.1",
+    "sharp": "^0.30.5",
     "snowflake-sdk": "^1.1.10",
     "tinydate": "^1.0.1",
     "underscore": "^1.8.3"
