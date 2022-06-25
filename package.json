@@ -59,7 +59,7 @@
     "luxon": "^1.6.2",
     "mathjs": "^5.2.3",
     "moment": "^2.18.1",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.7",
     "observatory": "^1.0.0",
     "pretty-bytes": "^5.1.0",
     "pretty-hrtime": "^1.0.3",
